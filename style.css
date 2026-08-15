@@ -248,6 +248,35 @@ main { flex: 1; min-width: 0; }
 .activity-item .activity-team { color: var(--accent); font-weight: 700; }
 .activity-item .activity-time { color: var(--muted); font-size: 10.5px; display: block; margin-top: 1px; }
 .activity-empty { color: var(--muted); font-size: 12px; font-style: italic; }
+.activity-item.activity-fresh {
+  outline: 2px solid var(--yellow);
+  outline-offset: 1px;
+  animation: activity-blink 0.5s ease-in-out 3;
+}
+@keyframes activity-blink {
+  0%, 100% { background: var(--panel2); box-shadow: none; }
+  50% { background: rgba(232, 197, 71, 0.28); box-shadow: 0 0 8px 1px var(--yellow); }
+}
+.on-clock-indicator {
+  display: inline-block;
+  margin: 4px 0 8px 0;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+  background: var(--panel2);
+  border: 1px solid var(--border);
+}
+.on-clock-indicator:empty { display: none; }
+.on-clock-indicator.my-turn {
+  border: 2px solid var(--yellow);
+  animation: on-clock-blink 1s ease-in-out infinite;
+}
+@keyframes on-clock-blink {
+  0%, 100% { background: var(--panel2); color: var(--text); box-shadow: none; }
+  50% { background: var(--yellow); color: #1a1508; box-shadow: 0 0 12px 2px var(--yellow); }
+}
 .roster-note {
   color: var(--muted);
   font-size: 11.5px;

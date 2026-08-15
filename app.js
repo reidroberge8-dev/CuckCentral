@@ -107,19 +107,21 @@ function applyRosterCollapsed() {
 let seenPickKeys = new Set();
 let activityLog = []; // { team, name, pos, ts } newest first
 const ACTIVITY_MAX = 10;
-// True once the first sheet sync has completed. Picks discovered during that
-// first sync are the whole draft-so-far (page just loaded mid-draft), not
-// something that just happened, so we label them by round instead of
-// pretending we know the wall-clock time they were made. Every later sync
-// stamps real, distinct clock times.
 let initialSyncDone = false;
+// Keys of picks logged during the most recent sync - these get the
+// golden-outline/blink "just happened" treatment in renderActivity(), and
+// lose it again once the next sync doesn't add anything new for them.
+let freshKeys = new Set();
+// Tracks whether MY_TEAM_NAME was on the clock as of the last sync, so the
+// "your turn" ding only fires once on the transition, not every poll.
+let wasMyTurn = false;
 function renderActivity() {
   const el = document.getElementById('activity-list');
   if (!activityLog.length) {
     el.innerHTML = '<div class="activity-empty">No picks yet.</div>';
     return;
   }
-  el.innerHTML = activityLog.map(a => `<div class="activity-item">
+  el.innerHTML = activityLog.map(a => `<div class="activity-item${freshKeys.has(a.key) ? ' activity-fresh' : ''}">
       <span class="activity-team">${escapeHtml(a.team)}</span> drafted ${escapeHtml(a.name)}
       <span class="pos-badge pos-${a.pos}">${a.pos}</span>
       <span class="activity-time">${a.ts}</span>
@@ -331,6 +333,51 @@ function getColTeamNames(rows, headerCandidateRow, teamCols) {
   return map;
 }
 
+// Scan every cell in the sheet for one containing "On the Clock: <team>"
+// and return just the team name. The banner cell's own row/column position
+// isn't fixed (it moves as picks happen), so we search broadly rather than
+// assuming a specific row.
+function getOnTheClockTeam(rows) {
+  for (const row of rows) {
+    if (!row) continue;
+    for (const cell of row) {
+      const text = String(cell || '');
+      const match = text.match(/on the clock:?\s*(.+)/i);
+      if (match) {
+        // Only the first line after the prefix is ever the real team name.
+        return match[1].split('\n')[0].trim();
+      }
+    }
+  }
+  return '';
+}
+
+// Short two-tone "ding" so it's audible without an external sound file.
+// Browsers block audio until a user gesture unlocks the shared AudioContext
+// (wired once in wireControls), so this is a silent no-op until that happens.
+let sharedAudioCtx = null;
+function playDing() {
+  try {
+    if (!sharedAudioCtx) return;
+    const ctx = sharedAudioCtx;
+    const now = ctx.currentTime;
+    [880, 1320].forEach((freq, i) => {
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = 'sine';
+      osc.frequency.value = freq;
+      const start = now + i * 0.15;
+      gain.gain.setValueAtTime(0.0001, start);
+      gain.gain.exponentialRampToValueAtTime(0.25, start + 0.02);
+      gain.gain.exponentialRampToValueAtTime(0.0001, start + 0.35);
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start(start);
+      osc.stop(start + 0.4);
+    });
+  } catch (e) { /* audio unavailable - not critical */ }
+}
+
 // Parse a single drafted-player cell into {name, pos, teamAbbr, bye}.
 // Cell format: "Player Name\nPOS - TEAM(bye)"
 function parsePickCell(cell) {
@@ -491,24 +538,22 @@ async function syncDraftBoard(manual) {
       activityLog = activityLog.filter(a => !removedSet.has(a.key));
     }
 
-    if (newPicks.length) {
-      // First sync ever: these picks were all already on the board when the
-      // page loaded, not "just now" - label by round instead of faking a
-      // shared clock time for all of them. Later syncs are genuinely live,
-      // so give each pick its own real timestamp; if several land in the
-      // same poll, stagger by a second apiece so they don't render identically.
-      const now = Date.now();
-      const entries = newPicks.map((p, i) => ({
-        key: `${p.row}:${p.col}`,
-        team: colTeamNames[p.col] || 'Unknown',
-        name: p.name,
-        pos: p.pos,
-        ts: initialSyncDone
-          ? new Date(now - (newPicks.length - 1 - i) * 1000).toLocaleTimeString()
-          : `Round ${p.row - start + 1}`,
-      }));
+    // Every pick is labeled by round number, not a fabricated clock time -
+    // the sheet has no per-pick timestamp, and round number is honest and
+    // always distinct across rounds.
+    const entries = newPicks.map(p => ({
+      key: `${p.row}:${p.col}`,
+      team: colTeamNames[p.col] || 'Unknown',
+      name: p.name,
+      pos: p.pos,
+      ts: `Round ${p.row - start + 1}`,
+    }));
+    if (entries.length) {
       activityLog = [...entries.reverse(), ...activityLog].slice(0, ACTIVITY_MAX);
     }
+    // Only the picks that just arrived in *this* sync get the "new" golden
+    // highlight; anything from a prior sync settles back to normal.
+    freshKeys = new Set(entries.map(e => e.key));
 
     // Self-heal: any entry already in the log (including ones logged before
     // a past bug fix, sitting in a browser tab that's never been reloaded)
@@ -530,6 +575,24 @@ async function syncDraftBoard(manual) {
       renderRosterSidebar(starters, bench);
     } else {
       console.warn(`Could not find column for team "${MY_TEAM_NAME}" in sheet header.`);
+    }
+
+    // On-the-clock banner: parse the sheet's "On the Clock: X" cell and show
+    // it up top. When it's our team, blink continuously with a golden
+    // outline and ding once on the moment it becomes our turn (not every
+    // poll while it stays our turn).
+    const onClockTeam = getOnTheClockTeam(rows);
+    const indicator = document.getElementById('on-clock-indicator');
+    if (onClockTeam) {
+      const isMyTurn = normalizeTeamLabel(onClockTeam) === normalizeTeamLabel(MY_TEAM_NAME);
+      indicator.textContent = `On the Clock: ${onClockTeam}`;
+      indicator.classList.toggle('my-turn', isMyTurn);
+      if (isMyTurn && !wasMyTurn) playDing();
+      wasMyTurn = isMyTurn;
+    } else {
+      indicator.textContent = '';
+      indicator.classList.remove('my-turn');
+      wasMyTurn = false;
     }
 
     const now = new Date();
@@ -711,6 +774,17 @@ function wireControls() {
     try { localStorage.setItem(ROSTER_COLLAPSE_KEY, rosterCollapsed ? '1' : '0'); } catch (e) { /* storage unavailable */ }
     applyRosterCollapsed();
   });
+
+  // Browsers block audio playback until the page has seen a user gesture.
+  // Unlock the shared AudioContext on the first click anywhere, so the
+  // on-the-clock ding actually plays once your turn comes up later.
+  document.addEventListener('click', function unlockAudio() {
+    if (!sharedAudioCtx && typeof AudioContext !== 'undefined') {
+      try { sharedAudioCtx = new AudioContext(); } catch (e) { /* audio unavailable */ }
+    } else if (sharedAudioCtx && sharedAudioCtx.state === 'suspended') {
+      sharedAudioCtx.resume();
+    }
+  }, { once: false });
 }
 
 function startPolling() {
