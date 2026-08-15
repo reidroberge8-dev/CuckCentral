@@ -298,7 +298,12 @@ function getColTeamNames(rows, headerCandidateRow, teamCols) {
   const header = rows[headerCandidateRow] || [];
   const map = {};
   teamCols.forEach(c => {
-    const name = String(header[c] || '').replace(/on the clock:?/gi, '').trim();
+    // Guard against a header cell that transiently holds more than one line
+    // (e.g. an "On the Clock: X" banner overlapping the team-name row for a
+    // moment) - only the first line is ever the real team name, so drop
+    // anything after a newline before stripping the "on the clock" phrase.
+    const firstLine = String(header[c] || '').split('\n')[0];
+    const name = firstLine.replace(/on the clock:?/gi, '').trim();
     map[c] = name || `Team ${c}`;
   });
   return map;
