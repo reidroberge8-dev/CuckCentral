@@ -363,14 +363,26 @@ function extractAllPicks(rows, start, end, teamCols) {
 
 // Map each team column to its display name, reading the header row just
 // above the pick grid (stripping the "On the Clock:" prefix if present).
-function getColTeamNames(rows, headerCandidateRow, teamCols) {
+function getColTeamNames(rows, headerCandidateRow, teamCols, totalRowIdx) {
   const header = rows[headerCandidateRow] || [];
+  const totalRow = (totalRowIdx != null && rows[totalRowIdx]) || [];
   const map = {};
   teamCols.forEach(c => {
-    // Guard against a header cell that transiently holds more than one line
-    // (e.g. an "On the Clock: X" banner overlapping the team-name row for a
-    // moment) - only the first line is ever the real team name, so drop
-    // anything after a newline before stripping the "on the clock" phrase.
+    // The gviz CSV endpoint (the one that actually works from a browser -
+    // the plain export endpoint 307-redirects to a googleusercontent.com
+    // URL with no CORS header, so it's silently blocked and this is what's
+    // really in use) has a real bug: it collapses the banner row ("On the
+    // Clock: X") into the header row directly above the pick grid whenever
+    // both are otherwise sparse, gluing the two together into one cell,
+    // e.g. "On the Clock: Reid/MIke Devin" for a column really named
+    // "Devin". That corruption can't be detected/undone after the fact
+    // from the header row alone, because the corrupted text *is* the only
+    // header this column appears to have. The "Total" row below the grid
+    // is never touched by that merge, so prefer its value - it's always
+    // the clean, ground-truth team name - and only fall back to the header
+    // row above the grid if the Total row is missing or blank there.
+    const totalCell = String(totalRow[c] || '').split('\n')[0].trim();
+    if (totalCell) { map[c] = totalCell; return; }
     const firstLine = String(header[c] || '').split('\n')[0];
     const name = firstLine.replace(/on the clock:?/gi, '').trim();
     map[c] = name || `Team ${c}`;
@@ -578,7 +590,7 @@ async function syncDraftBoard(manual) {
     // Recent activity: diff every filled cell against what we've already
     // seen (by grid coordinate, not name) so this only surfaces picks made
     // since the page loaded, by any team, not just ours.
-    const colTeamNames = getColTeamNames(rows, start - 1, teamCols);
+    const colTeamNames = getColTeamNames(rows, start - 1, teamCols, end + 1);
     const allPicks = extractAllPicks(rows, start, end, teamCols);
     const currentKeys = new Set(allPicks.map(p => `${p.row}:${p.col}`));
     const newPicks = allPicks.filter(p => !seenPickKeys.has(`${p.row}:${p.col}`));
