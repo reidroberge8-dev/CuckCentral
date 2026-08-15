@@ -115,6 +115,39 @@ let freshKeys = new Set();
 // Tracks whether MY_TEAM_NAME was on the clock as of the last sync, so the
 // "your turn" ding only fires once on the transition, not every poll.
 let wasMyTurn = false;
+// Timestamp (ms) of the last successful sync, so the status line can show
+// "Synced Xs ago" - a live-updating relative time is more useful mid-draft
+// than a fixed clock reading you have to do the subtraction on yourself.
+let lastSyncAt = null;
+let lastDraftedCount = 0;
+
+// The header's real height changes now that the on-clock banner can appear
+// and disappear (it's empty/hidden between picks). Sticky panels below it
+// read this CSS var instead of a value that would go stale the moment that
+// banner's visibility changes.
+function updateHeaderHeightVar() {
+  const header = document.querySelector('header');
+  if (!header) return;
+  document.documentElement.style.setProperty('--header-h', `${header.offsetHeight}px`);
+}
+
+// Relative-time formatter for the sync status line, e.g. "3s ago", "2m ago".
+function formatAgo(ms) {
+  const s = Math.max(0, Math.round((Date.now() - ms) / 1000));
+  if (s < 60) return `${s}s ago`;
+  const m = Math.round(s / 60);
+  return `${m}m ago`;
+}
+
+// Ticks the "Synced Xs ago" text every few seconds without waiting for the
+// next poll, and only while the last sync actually succeeded - a sync error
+// message shouldn't get silently overwritten by a stale success timestamp.
+function tickSyncStatus() {
+  if (lastSyncAt == null) return;
+  const statusEl = document.getElementById('sync-status');
+  if (statusEl.classList.contains('sync-error')) return;
+  statusEl.textContent = `Synced ${formatAgo(lastSyncAt)} \u2014 ${lastDraftedCount} drafted`;
+}
 function renderActivity() {
   const el = document.getElementById('activity-list');
   if (!activityLog.length) {
@@ -595,10 +628,12 @@ async function syncDraftBoard(manual) {
       wasMyTurn = false;
     }
 
-    const now = new Date();
-    statusEl.textContent = `Synced ${now.toLocaleTimeString()} \u2014 ${draftedNames.size} drafted`;
+    lastSyncAt = Date.now();
+    lastDraftedCount = draftedNames.size;
     statusEl.classList.remove('sync-error');
+    tickSyncStatus();
     render();
+    updateHeaderHeightVar();
   } catch (e) {
     console.error('Sheet sync failed', e);
     statusEl.textContent = `Sync failed (${e.message}) \u2014 showing last known data`;
@@ -653,7 +688,7 @@ function buildTableHeader() {
     '<th data-key="pos">Pos</th>',
     '<th data-key="team">Team</th>',
     '<th data-key="injuryRisk" title="Injury risk category (Draft Sharks)">Inj Risk</th>',
-    '<th data-key="adp" title="Average Draft Position, 12-team PPR mocks (FantasyFootballCalculator.com)">ADP</th>',
+    '<th data-key="adp" title="Average Draft Position, 12-team non-PPR mocks (FantasyFootballCalculator.com)">ADP</th>',
     '<th data-key="customPts" class="sort-default">Proj Pts</th>',
   ].join('');
   const statHead = cols
@@ -792,6 +827,19 @@ function startPolling() {
   pollTimer = setInterval(() => syncDraftBoard(false), POLL_MS);
 }
 
+// Placeholder rows shown between "Loading draft board..." appearing and the
+// first real render, so the page doesn't sit on a blank table for the
+// second or so it takes to fetch players.json + the sheet.
+function renderTableSkeleton() {
+  const tbody = document.getElementById('table-body');
+  const cols = statColumnsFor(activePos);
+  const colCount = 5 + (cols ? cols.length : 1);
+  const rowsHtml = Array.from({ length: 10 }, () =>
+    `<tr class="skeleton-row">${'<td><div class="skeleton-bar"></div></td>'.repeat(colCount)}</tr>`
+  ).join('');
+  tbody.innerHTML = rowsHtml;
+}
+
 // ---------- init ----------
 (async function init() {
   buildPosFilters();
@@ -799,6 +847,10 @@ function startPolling() {
   wireControls();
   applyRosterCollapsed();
   renderActivity();
+  renderTableSkeleton();
+  updateHeaderHeightVar();
+  window.addEventListener('resize', updateHeaderHeightVar);
+  setInterval(tickSyncStatus, 5000);
   try {
     await loadPlayers();
     render();
