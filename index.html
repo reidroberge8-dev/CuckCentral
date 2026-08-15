@@ -4,17 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cuckville Cucks War Room 2026</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=20260815c">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
 </head>
 <body>
 <header>
-  <div class="header-top">
-    <h1>Cuckville Cucks War Room 2026 <span class="sub">Custom Scoring</span></h1>
-    <div class="status-bar">
-      <span id="sync-status">Loading draft board&hellip;</span>
-      <button id="refresh-btn" title="Refresh now">&#8635; Refresh</button>
-    </div>
+  <h1>Cuckville Cucks War Room 2026 <span class="sub">ESPN Custom Scoring</span></h1>
+  <div class="status-bar">
+    <span id="sync-status">Loading draft board&hellip;</span>
+    <button id="refresh-btn" title="Refresh now">&#8635; Refresh</button>
   </div>
   <div id="on-clock-indicator" class="on-clock-indicator"></div>
   <div class="source-links">
@@ -57,6 +55,7 @@
 <div class="table-wrap">
 <table id="player-table">
   <thead>
+    <tr id="header-group-row"></tr>
     <tr id="header-row"></tr>
   </thead>
   <tbody id="table-body"></tbody>
@@ -71,6 +70,6 @@
   Draft board synced live from <a id="sheet-link" href="#" target="_blank">Google Sheet</a>.
 </footer>
 
-<script src="app.js"></script>
+<script src="app.js?v=20260815c"></script>
 </body>
 </html>

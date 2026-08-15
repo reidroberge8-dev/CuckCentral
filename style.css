@@ -20,27 +20,30 @@ body {
   color: var(--text);
 }
 header {
-  padding: 16px 24px;
-  background: var(--panel);
-  border-bottom: 1px solid var(--border);
+  /* position:sticky also establishes a containing block for absolutely
+     positioned descendants (like relative would), which is what lets
+     .status-bar below pin itself to header's own top-right corner - i.e.
+     the literal top-right corner of the page, not just "somewhere in the
+     flex row". */
   position: sticky;
   top: 0;
   z-index: 10;
+  padding: 16px 24px;
+  background: var(--panel);
+  border-bottom: 1px solid var(--border);
 }
-.header-top {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 16px;
-}
-h1 { margin: 0 0 8px 0; font-size: 22px; }
+/* Reserve room on the right so a long title never runs under the pinned
+   status pill. */
+h1 { margin: 0 0 8px 0; font-size: 22px; max-width: calc(100% - 210px); }
 h1 .sub { color: var(--muted); font-size: 14px; font-weight: normal; }
 /* Deliberately a different, high-contrast color (teal) from everything
    else in the header - the blue source-links and yellow on-clock banner -
    so this pill reads at a glance as its own distinct thing: live sync
-   status, pinned to the top-right corner. */
+   status, pinned to the top-right corner of the page. */
 .status-bar {
-  flex-shrink: 0;
+  position: absolute;
+  top: 16px;
+  right: 24px;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -51,6 +54,7 @@ h1 .sub { color: var(--muted); font-size: 14px; font-weight: normal; }
   padding: 6px 10px 6px 14px;
   border-radius: 20px;
   white-space: nowrap;
+  z-index: 11;
 }
 #refresh-btn {
   background: #0f1117;
@@ -315,6 +319,26 @@ main { flex: 1; min-width: 0; }
 .on-clock-indicator.my-turn {
   border: 3px solid var(--yellow);
   animation: on-clock-blink 1s ease-in-out infinite;
+  cursor: pointer;
+}
+/* Clicked-to-silence state: keeps the gold border as a static reminder
+   it's still our pick, just without the blink/ding loop. Resets back to
+   .my-turn (flashing) the next time a *new* turn of ours starts. */
+.on-clock-indicator.my-turn-ack {
+  border: 3px solid var(--yellow);
+  background: var(--panel2);
+  color: var(--text);
+  cursor: default;
+}
+.stat-group-label {
+  text-align: center;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid var(--border);
+  background: var(--panel2);
 }
 @keyframes on-clock-blink {
   0%, 100% { background: var(--panel2); color: var(--text); box-shadow: none; }

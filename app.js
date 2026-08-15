@@ -115,6 +115,11 @@ let freshKeys = new Set();
 // Tracks whether MY_TEAM_NAME was on the clock as of the last sync, so the
 // "your turn" ding only fires once on the transition, not every poll.
 let wasMyTurn = false;
+// True once the user has clicked the flashing on-clock banner to
+// silence the animation for the current turn. Resets to false the next
+// time it becomes (or stops being) our turn, so the flash comes back
+// fresh on a future pick rather than staying muted forever.
+let onClockAcked = false;
 // Timestamp (ms) of the last successful sync, so the status line can show
 // "Synced Xs ago" - a live-updating relative time is more useful mid-draft
 // than a fixed clock reading you have to do the subtraction on yourself.
@@ -679,13 +684,25 @@ async function syncDraftBoard(manual) {
       }
       const isMyTurn = normalizeTeamLabel(onClockTeam) === normalizeTeamLabel(MY_TEAM_NAME);
       indicator.textContent = `On the Clock: ${onClockTeam}`;
-      indicator.classList.toggle('my-turn', isMyTurn);
-      if (isMyTurn && !wasMyTurn) playDing();
+      if (isMyTurn && !wasMyTurn) { playDing(); onClockAcked = false; }
       wasMyTurn = isMyTurn;
+      // Flash (my-turn) until the user clicks it to ack (my-turn-ack) -
+      // ack is cleared above whenever a *new* turn of ours starts, so a
+      // stale click from a previous pick never suppresses a fresh one.
+      indicator.classList.toggle('my-turn', isMyTurn && !onClockAcked);
+      indicator.classList.toggle('my-turn-ack', isMyTurn && onClockAcked);
+      indicator.onclick = () => {
+        if (!indicator.classList.contains('my-turn')) return;
+        onClockAcked = true;
+        indicator.classList.remove('my-turn');
+        indicator.classList.add('my-turn-ack');
+      };
     } else {
       indicator.textContent = '';
-      indicator.classList.remove('my-turn');
+      indicator.classList.remove('my-turn', 'my-turn-ack');
+      indicator.onclick = null;
       wasMyTurn = false;
+      onClockAcked = false;
     }
 
     lastSyncAt = Date.now();
@@ -746,29 +763,34 @@ function getFiltered() {
 // are always present, then that position's individual sortable stat
 // columns (or the ALL_STAT_COLUMNS union when no position filter is
 // active), then Status.
-function buildTableHeader() {
-  const headerRow = document.getElementById('header-row');
-  const cols = statColumnsFor(activePos);
-  const baseStart = [
-    '<th data-key="star" title="Starred"> </th>',
-    '<th data-key="posRank">Pos Rk</th>',
-    '<th data-key="name">Player</th>',
-    '<th data-key="pos">Pos</th>',
-    '<th data-key="team">Team</th>',
-    '<th data-key="injuryRisk" title="Injury risk category (Draft Sharks)">Inj Risk</th>',
-    '<th data-key="adp" title="Average Draft Position, 12-team non-PPR mocks (FantasyFootballCalculator.com)">ADP</th>',
-    '<th data-key="customPts" class="sort-default">Proj Pts</th>',
-  ].join('');
-  const statHead = cols
-    ? cols.map(c => `<th data-key="${c.key}">${c.label}</th>`).join('')
-    : '<th data-key="statline">Key Stats</th>';
-  const baseEnd = '<th data-key="status">Status</th>';
-  headerRow.innerHTML = baseStart + statHead + baseEnd;
+// Base (non-stat) column definitions shared by every position, in order.
+// rowspan is 2 whenever a stat-group label row is present above the real
+// stat columns, so these cells visually span both header rows.
+const BASE_START_COLS = [
+  { key: 'star', label: ' ', title: 'Starred' },
+  { key: 'posRank', label: 'Pos Rk' },
+  { key: 'name', label: 'Player' },
+  { key: 'pos', label: 'Pos' },
+  { key: 'team', label: 'Team' },
+  { key: 'injuryRisk', label: 'Inj Risk', title: 'Injury risk category (Draft Sharks)' },
+  { key: 'adp', label: 'ADP', title: 'Average Draft Position, 12-team non-PPR mocks (FantasyFootballCalculator.com)' },
+  { key: 'customPts', label: 'Proj Pts', sortDefault: true },
+];
+const BASE_END_COL = { key: 'status', label: 'Status' };
 
-  headerRow.querySelectorAll('th').forEach(th => {
+function headerCellHtml(col, rowspan) {
+  const attrs = [`data-key="${col.key}"`];
+  if (rowspan === 2) attrs.push('rowspan="2"');
+  if (col.title) attrs.push(`title="${col.title}"`);
+  if (col.sortDefault) attrs.push('class="sort-default"');
+  return `<th ${attrs.join(' ')}>${col.label}</th>`;
+}
+
+function attachHeaderSortHandlers(row) {
+  row.querySelectorAll('th[data-key]').forEach(th => {
     th.addEventListener('click', () => {
       const key = th.dataset.key;
-      if (key === 'statline' || key === 'star' || key === 'injuryRisk') return; // not real sortable fields
+      if (key === 'star' || key === 'injuryRisk') return; // not real sortable fields
       if (sortKey === key) {
         sortDir = sortDir === 'asc' ? 'desc' : 'asc';
       } else {
@@ -778,6 +800,38 @@ function buildTableHeader() {
       render();
     });
   });
+}
+
+// Two header rows: #header-group-row carries the "2026 Projections - Mike
+// Clay ESPN" label spanning just the real stat columns (when a position
+// has any - K/DST don't, see STAT_COLUMNS_BY_POS), and #header-row carries
+// the actual stat column headers underneath it. The base/status columns
+// use rowspan="2" to span both rows so they don't need a duplicate cell.
+// When there are no stat columns (K/DST), everything collapses back to a
+// single row and the group row is hidden.
+function buildTableHeader() {
+  const groupRow = document.getElementById('header-group-row');
+  const headerRow = document.getElementById('header-row');
+  const cols = statColumnsFor(activePos);
+  const hasStats = cols.length > 0;
+
+  if (hasStats) {
+    const baseStart = BASE_START_COLS.map(c => headerCellHtml(c, 2)).join('');
+    const statLabel = `<th colspan="${cols.length}" class="stat-group-label">2026 Projections &ndash; Mike Clay ESPN</th>`;
+    const baseEnd = headerCellHtml(BASE_END_COL, 2);
+    groupRow.innerHTML = baseStart + statLabel + baseEnd;
+    groupRow.style.display = '';
+    headerRow.innerHTML = cols.map(c => `<th data-key="${c.key}">${c.label}</th>`).join('');
+  } else {
+    groupRow.innerHTML = '';
+    groupRow.style.display = 'none';
+    const baseStart = BASE_START_COLS.map(c => headerCellHtml(c, 1)).join('');
+    const baseEnd = headerCellHtml(BASE_END_COL, 1);
+    headerRow.innerHTML = baseStart + baseEnd;
+  }
+
+  attachHeaderSortHandlers(groupRow);
+  attachHeaderSortHandlers(headerRow);
 }
 
 function render() {
@@ -820,7 +874,7 @@ function render() {
   document.getElementById('count-label').textContent =
     `${list.length} shown \u2014 ${draftedCount}/${total} drafted`;
 
-  document.querySelectorAll('#header-row th').forEach(th => {
+  document.querySelectorAll('#header-row th, #header-group-row th').forEach(th => {
     th.classList.remove('sorted-asc', 'sorted-desc');
     if (th.dataset.key === sortKey) th.classList.add(sortDir === 'asc' ? 'sorted-asc' : 'sorted-desc');
   });
