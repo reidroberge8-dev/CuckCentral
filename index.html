@@ -19,12 +19,21 @@
 <div class="page">
 
 <aside id="roster-sidebar">
-  <h2>Reid/Mike Roster</h2>
-  <div class="roster-section-label">Starters</div>
-  <table class="roster-table" id="starters-table"></table>
-  <div class="roster-total" id="starters-total"></div>
-  <div class="roster-section-label">Bench</div>
-  <table class="roster-table" id="bench-table"></table>
+  <div id="activity-box">
+    <h2>Recent Activity</h2>
+    <div id="activity-list" class="activity-list"></div>
+  </div>
+  <div class="roster-header">
+    <h2>Reid/Mike Roster</h2>
+    <button id="roster-toggle" title="Hide roster">&times;</button>
+  </div>
+  <div id="roster-body">
+    <div class="roster-section-label">Starters</div>
+    <table class="roster-table" id="starters-table"></table>
+    <div class="roster-total" id="starters-total"></div>
+    <div class="roster-section-label">Bench</div>
+    <table class="roster-table" id="bench-table"></table>
+  </div>
 </aside>
 
 <main>
@@ -33,6 +42,9 @@
   <div class="pos-filters" id="pos-filters"></div>
   <label class="avail-toggle">
     <input type="checkbox" id="hide-drafted"> Hide drafted
+  </label>
+  <label class="avail-toggle">
+    <input type="checkbox" id="show-starred-only"> Starred only
   </label>
   <span id="count-label"></span>
 </div>
@@ -50,7 +62,7 @@
 </div>
 
 <footer>
-  Custom league scoring (6pt PaTD, 0.2 PPR, IDP tkl/sack/INT). Projections: ESPN Mike Clay 2026 draft kit.
+  Custom league scoring (6pt PaTD, 0.2 PPR). Projections: ESPN Mike Clay 2026 draft kit.
   Draft board synced live from <a id="sheet-link" href="#" target="_blank">Google Sheet</a>.
 </footer>
 

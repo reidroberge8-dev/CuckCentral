@@ -12,7 +12,8 @@ const POLL_MS = 20000;
 // literal "C3:N18" reading would suggest). Detecting the pick-number column
 // (sequential integers starting at 1 in column B) is robust to sheet edits.
 
-const POSITIONS = ['QB', 'RB', 'WR', 'TE', 'DL', 'LB', 'DB'];
+// IDP (DL/LB/DB) are drafted in a separate process, not on this board.
+const POSITIONS = ['QB', 'RB', 'WR', 'TE'];
 
 // Team we're building the sidebar roster for. Matched against the sheet's
 // header row case/punctuation-insensitively, so "Reid/Mike" vs the sheet's
@@ -29,9 +30,6 @@ const ROSTER_SLOTS = [
   { key: 'WR1',  label: 'WR',    eligible: ['WR'] },
   { key: 'WR2',  label: 'WR',    eligible: ['WR'] },
   { key: 'TE',   label: 'TE',    eligible: ['TE'] },
-  { key: 'DL',   label: 'DL',    eligible: ['DL'] },
-  { key: 'LB',   label: 'LB',    eligible: ['LB'] },
-  { key: 'DB',   label: 'DB',    eligible: ['DB'] },
   { key: 'DST',  label: 'D/ST',  eligible: ['DST'] },
   { key: 'K',    label: 'K',     eligible: ['K'] },
   { key: 'RBWR', label: 'RB/WR', eligible: ['RB', 'WR'] },
@@ -69,9 +67,57 @@ let sortKey = 'customPts';
 let sortDir = 'desc';
 let searchTerm = '';
 let hideDrafted = false;
+let showStarredOnly = false;
 let pollTimer = null;
 
 document.getElementById('sheet-link').href = SHEET_VIEW_URL;
+
+// ---------- starred players (persisted locally per-browser) ----------
+const STAR_STORAGE_KEY = 'ffdb_starred_players';
+let starredNames = new Set();
+try {
+  starredNames = new Set(JSON.parse(localStorage.getItem(STAR_STORAGE_KEY) || '[]'));
+} catch (e) {
+  starredNames = new Set();
+}
+function saveStarred() {
+  try { localStorage.setItem(STAR_STORAGE_KEY, JSON.stringify([...starredNames])); } catch (e) { /* storage unavailable */ }
+}
+function toggleStar(norm) {
+  if (starredNames.has(norm)) starredNames.delete(norm); else starredNames.add(norm);
+  saveStarred();
+}
+
+// ---------- roster sidebar collapse (persisted locally per-browser) ----------
+const ROSTER_COLLAPSE_KEY = 'ffdb_roster_collapsed';
+let rosterCollapsed = false;
+try { rosterCollapsed = localStorage.getItem(ROSTER_COLLAPSE_KEY) === '1'; } catch (e) { rosterCollapsed = false; }
+function applyRosterCollapsed() {
+  const sidebar = document.getElementById('roster-sidebar');
+  const btn = document.getElementById('roster-toggle');
+  sidebar.classList.toggle('collapsed', rosterCollapsed);
+  btn.textContent = rosterCollapsed ? '\u2630' : '\u00d7';
+  btn.title = rosterCollapsed ? 'Show roster' : 'Hide roster';
+}
+
+// ---------- recent draft activity (in-memory for this session) ----------
+// Tracks every drafted-cell coordinate we've already seen so re-polling the
+// sheet only surfaces genuinely new picks (by any team, not just ours).
+let seenPickKeys = new Set();
+let activityLog = []; // { team, name, pos, ts } newest first
+const ACTIVITY_MAX = 10;
+function renderActivity() {
+  const el = document.getElementById('activity-list');
+  if (!activityLog.length) {
+    el.innerHTML = '<div class="activity-empty">No picks yet.</div>';
+    return;
+  }
+  el.innerHTML = activityLog.map(a => `<div class="activity-item">
+      <span class="activity-team">${escapeHtml(a.team)}</span> drafted ${escapeHtml(a.name)}
+      <span class="pos-badge pos-${a.pos}">${a.pos}</span>
+      <span class="activity-time">${a.ts}</span>
+    </div>`).join('');
+}
 
 // ---------- name normalization ----------
 function normalizeName(raw) {
@@ -104,10 +150,6 @@ function statLine(p) {
     case 'WR':
     case 'TE':
       return `${p.rec} rec, ${Math.round(p.re_yd)} recyd, ${p.re_td} recTD${p.ru_yds ? `, ${Math.round(p.ru_yds)} ryd` : ''}`;
-    case 'DL':
-    case 'LB':
-    case 'DB':
-      return `${p.tkl} tkl, ${p.sack} sk, ${p.intc} INT, ${p.ff} FF`;
     default:
       return '';
   }
@@ -142,24 +184,6 @@ const STAT_COLUMNS_BY_POS = {
     { key: 're_yd', label: 'Rec Yds',  fmt: fmtYds },
     { key: 're_td', label: 'Rec TD',   fmt: fmtStat },
   ],
-  DL: [
-    { key: 'tkl',  label: 'Tkl',  fmt: fmtStat },
-    { key: 'sack', label: 'Sack', fmt: fmtStat },
-    { key: 'intc', label: 'Int',  fmt: fmtStat },
-    { key: 'ff',   label: 'FF',   fmt: fmtStat },
-  ],
-  LB: [
-    { key: 'tkl',  label: 'Tkl',  fmt: fmtStat },
-    { key: 'sack', label: 'Sack', fmt: fmtStat },
-    { key: 'intc', label: 'Int',  fmt: fmtStat },
-    { key: 'ff',   label: 'FF',   fmt: fmtStat },
-  ],
-  DB: [
-    { key: 'tkl',  label: 'Tkl',  fmt: fmtStat },
-    { key: 'sack', label: 'Sack', fmt: fmtStat },
-    { key: 'intc', label: 'Int',  fmt: fmtStat },
-    { key: 'ff',   label: 'FF',   fmt: fmtStat },
-  ],
 };
 // null means "ALL" mode: render the single condensed statLine() column.
 function statColumnsFor(pos) { return STAT_COLUMNS_BY_POS[pos] || null; }
@@ -168,7 +192,9 @@ function statColumnsFor(pos) { return STAT_COLUMNS_BY_POS[pos] || null; }
 async function loadPlayers() {
   const res = await fetch('data/players.json', { cache: 'no-store' });
   if (!res.ok) throw new Error(`players.json fetch failed: ${res.status}`);
-  players = await res.json();
+  const allPlayers = await res.json();
+  // IDP (DL/LB/DB) are drafted separately, not on this board.
+  players = allPlayers.filter(p => POSITIONS.includes(p.pos));
   players.forEach(p => { p._norm = normalizeName(p.name); });
 }
 
@@ -235,6 +261,34 @@ function extractDraftedFromCsv(rows, start, end, teamCols) {
     }
   }
   return names;
+}
+
+// Every filled pick cell across every team, tagged with its grid coordinate
+// so the caller can diff against what it's seen before (for the recent
+// activity feed) without caring which team drafted what.
+function extractAllPicks(rows, start, end, teamCols) {
+  const picks = [];
+  for (let r = start; r <= end; r++) {
+    const row = rows[r];
+    if (!row) continue;
+    for (const c of teamCols) {
+      const parsed = parsePickCell(row[c]);
+      if (parsed) picks.push({ row: r, col: c, ...parsed });
+    }
+  }
+  return picks;
+}
+
+// Map each team column to its display name, reading the header row just
+// above the pick grid (stripping the "On the Clock:" prefix if present).
+function getColTeamNames(rows, headerCandidateRow, teamCols) {
+  const header = rows[headerCandidateRow] || [];
+  const map = {};
+  teamCols.forEach(c => {
+    const name = String(header[c] || '').replace(/on the clock:?/gi, '').trim();
+    map[c] = name || `Team ${c}`;
+  });
+  return map;
 }
 
 // Parse a single drafted-player cell into {name, pos, teamAbbr, bye}.
@@ -322,7 +376,7 @@ function assignRoster(picks) {
 // roster layout convention. This is independent of ROSTER_SLOTS fill order
 // above, which intentionally fills exact-position slots before flex slots so
 // the best players land in their true slot and flexes only get leftovers.
-const DISPLAY_ORDER = ['QB', 'RB1', 'RB2', 'RBWR', 'WR1', 'WR2', 'WRTE', 'TE', 'DL', 'LB', 'DB', 'DST', 'K'];
+const DISPLAY_ORDER = ['QB', 'RB1', 'RB2', 'RBWR', 'WR1', 'WR2', 'WRTE', 'TE', 'DST', 'K'];
 
 function renderRosterSidebar(starters, bench) {
   const startersTable = document.getElementById('starters-table');
@@ -378,6 +432,25 @@ async function syncDraftBoard(manual) {
     draftedNames = extractDraftedFromCsv(rows, start, end, teamCols);
     players.forEach(p => { p.drafted = draftedNames.has(p._norm); });
 
+    // Recent activity: diff every filled cell against what we've already
+    // seen (by grid coordinate, not name) so this only surfaces picks made
+    // since the page loaded, by any team, not just ours.
+    const colTeamNames = getColTeamNames(rows, start - 1, teamCols);
+    const allPicks = extractAllPicks(rows, start, end, teamCols);
+    const newPicks = allPicks.filter(p => !seenPickKeys.has(`${p.row}:${p.col}`));
+    newPicks.forEach(p => seenPickKeys.add(`${p.row}:${p.col}`));
+    if (newPicks.length) {
+      const ts = new Date().toLocaleTimeString();
+      const entries = newPicks.map(p => ({
+        team: colTeamNames[p.col] || 'Unknown',
+        name: p.name,
+        pos: p.pos,
+        ts,
+      }));
+      activityLog = [...entries.reverse(), ...activityLog].slice(0, ACTIVITY_MAX);
+    }
+    renderActivity();
+
     const myCol = findTeamColumn(rows, start, end, MY_TEAM_NAME);
     if (myCol !== -1) {
       const myPicks = getTeamPicks(rows, start, end, myCol);
@@ -403,6 +476,7 @@ function getFiltered() {
   let list = players;
   if (activePos !== 'ALL') list = list.filter(p => p.pos === activePos);
   if (hideDrafted) list = list.filter(p => !p.drafted);
+  if (showStarredOnly) list = list.filter(p => starredNames.has(p._norm));
   if (searchTerm) {
     const t = searchTerm.toLowerCase();
     list = list.filter(p => p.name.toLowerCase().includes(t) || p.team.toLowerCase().includes(t));
@@ -430,6 +504,7 @@ function buildTableHeader() {
   const headerRow = document.getElementById('header-row');
   const cols = statColumnsFor(activePos);
   const baseStart = [
+    '<th data-key="star" title="Starred"> </th>',
     '<th data-key="posRank">Pos Rk</th>',
     '<th data-key="name">Player</th>',
     '<th data-key="pos">Pos</th>',
@@ -445,7 +520,7 @@ function buildTableHeader() {
   headerRow.querySelectorAll('th').forEach(th => {
     th.addEventListener('click', () => {
       const key = th.dataset.key;
-      if (key === 'statline') return; // condensed summary column isn't a real sortable field
+      if (key === 'statline' || key === 'star') return; // not real sortable fields
       if (sortKey === key) {
         sortDir = sortDir === 'asc' ? 'desc' : 'asc';
       } else {
@@ -476,7 +551,9 @@ function render() {
     const statCellsHtml = cols
       ? cols.map(c => `<td class="stat-cell">${c.fmt(p[c.key])}</td>`).join('')
       : `<td class="stat-line">${statLine(p)}</td>`;
+    const isStarred = starredNames.has(p._norm);
     return `<tr class="${draftedCls.trim()}">
+      <td class="star-cell"><button class="star-btn${isStarred ? ' starred' : ''}" data-norm="${escapeHtml(p._norm)}" title="${isStarred ? 'Unstar' : 'Star'}">${isStarred ? '\u2605' : '\u2606'}</button></td>
       <td>${p.posRank}</td>
       <td class="name-cell">${escapeHtml(p.name)}</td>
       <td><span class="pos-badge pos-${p.pos}">${p.pos}</span></td>
@@ -527,7 +604,26 @@ function wireControls() {
     hideDrafted = e.target.checked;
     render();
   });
+  document.getElementById('show-starred-only').addEventListener('change', (e) => {
+    showStarredOnly = e.target.checked;
+    render();
+  });
   document.getElementById('refresh-btn').addEventListener('click', () => syncDraftBoard(true));
+
+  // Star buttons are rebuilt on every render(), so use event delegation on
+  // the (stable) tbody element instead of re-attaching per-row listeners.
+  document.getElementById('table-body').addEventListener('click', (e) => {
+    const btn = e.target.closest('.star-btn');
+    if (!btn) return;
+    toggleStar(btn.dataset.norm);
+    render();
+  });
+
+  document.getElementById('roster-toggle').addEventListener('click', () => {
+    rosterCollapsed = !rosterCollapsed;
+    try { localStorage.setItem(ROSTER_COLLAPSE_KEY, rosterCollapsed ? '1' : '0'); } catch (e) { /* storage unavailable */ }
+    applyRosterCollapsed();
+  });
 }
 
 function startPolling() {
@@ -540,6 +636,8 @@ function startPolling() {
   buildPosFilters();
   buildTableHeader();
   wireControls();
+  applyRosterCollapsed();
+  renderActivity();
   try {
     await loadPlayers();
     render();
