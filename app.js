@@ -106,6 +106,12 @@ function applyRosterCollapsed() {
 let seenPickKeys = new Set();
 let activityLog = []; // { team, name, pos, ts } newest first
 const ACTIVITY_MAX = 10;
+// True once the first sheet sync has completed. Picks discovered during that
+// first sync are the whole draft-so-far (page just loaded mid-draft), not
+// something that just happened, so we label them by round instead of
+// pretending we know the wall-clock time they were made. Every later sync
+// stamps real, distinct clock times.
+let initialSyncDone = false;
 function renderActivity() {
   const el = document.getElementById('activity-list');
   if (!activityLog.length) {
@@ -473,15 +479,23 @@ async function syncDraftBoard(manual) {
     const newPicks = allPicks.filter(p => !seenPickKeys.has(`${p.row}:${p.col}`));
     newPicks.forEach(p => seenPickKeys.add(`${p.row}:${p.col}`));
     if (newPicks.length) {
-      const ts = new Date().toLocaleTimeString();
-      const entries = newPicks.map(p => ({
+      // First sync ever: these picks were all already on the board when the
+      // page loaded, not "just now" - label by round instead of faking a
+      // shared clock time for all of them. Later syncs are genuinely live,
+      // so give each pick its own real timestamp; if several land in the
+      // same poll, stagger by a second apiece so they don't render identically.
+      const now = Date.now();
+      const entries = newPicks.map((p, i) => ({
         team: colTeamNames[p.col] || 'Unknown',
         name: p.name,
         pos: p.pos,
-        ts,
+        ts: initialSyncDone
+          ? new Date(now - (newPicks.length - 1 - i) * 1000).toLocaleTimeString()
+          : `Round ${p.row - start + 1}`,
       }));
       activityLog = [...entries.reverse(), ...activityLog].slice(0, ACTIVITY_MAX);
     }
+    initialSyncDone = true;
     renderActivity();
 
     const myCol = findTeamColumn(rows, start, end, MY_TEAM_NAME);
