@@ -63,8 +63,8 @@ function normalizeTeamLabel(s) {
 let players = [];          // full player list from players.json
 let draftedNames = new Set(); // normalized names currently drafted
 let activePos = 'ALL';
-let sortKey = 'customPts';
-let sortDir = 'desc';
+let sortKey = 'adp';
+let sortDir = 'asc';
 let searchTerm = '';
 let hideDrafted = false;
 let showStarredOnly = false;
@@ -198,23 +198,6 @@ function injuryCell(p) {
   const info = RISK_BADGE[p.injuryRisk];
   if (!info) return '<span class="inj-na">-</span>';
   return `<span class="inj-badge ${info.cls}" title="${p.injuryRisk}">${info.label}</span>`;
-}
-
-// Condensed multi-stat summary shown only in the "ALL" position view, where
-// showing every individual stat column at once (across every position) is
-// too noisy to be useful.
-function statLine(p) {
-  switch (p.pos) {
-    case 'QB':
-      return `${Math.round(p.p_yds)} pyd, ${p.p_td} pTD, ${p.intc} INT, ${Math.round(p.ru_yds)} ryd, ${p.ru_td} rTD`;
-    case 'RB':
-      return `${Math.round(p.ru_yds)} ryd, ${p.ru_td} rTD, ${p.rec} rec, ${Math.round(p.re_yd)} recyd, ${p.re_td} recTD`;
-    case 'WR':
-    case 'TE':
-      return `${p.rec} rec, ${Math.round(p.re_yd)} recyd, ${p.re_td} recTD${p.ru_yds ? `, ${Math.round(p.ru_yds)} ryd` : ''}`;
-    default:
-      return '';
-  }
 }
 
 // Per-position sortable stat columns. The ALL tab now shows the union of
@@ -773,8 +756,8 @@ const BASE_START_COLS = [
   { key: 'pos', label: 'Pos' },
   { key: 'team', label: 'Team' },
   { key: 'injuryRisk', label: 'Inj Risk', title: 'Injury risk category (Draft Sharks)' },
-  { key: 'adp', label: 'ADP', title: 'Average Draft Position, 12-team non-PPR mocks (FantasyFootballCalculator.com)' },
-  { key: 'customPts', label: 'Proj Pts', sortDefault: true },
+  { key: 'adp', label: 'ADP', title: 'Average Draft Position, 12-team non-PPR mocks (FantasyFootballCalculator.com)', sortDefault: true },
+  { key: 'customPts', label: 'Proj Pts' },
 ];
 const BASE_END_COL = { key: 'status', label: 'Status' };
 
@@ -841,8 +824,8 @@ function render() {
   // sorted by a stat column, then switched back to ALL), fall back to
   // sorting by projected points rather than silently sorting by nothing.
   const validKeys = new Set(['posRank', 'name', 'pos', 'team', 'customPts', 'status', 'adp', 'injuryRisk',
-    ...(cols ? cols.map(c => c.key) : [])]);
-  if (!validKeys.has(sortKey)) { sortKey = 'customPts'; sortDir = 'desc'; }
+    ...cols.map(c => c.key)]);
+  if (!validKeys.has(sortKey)) { sortKey = 'adp'; sortDir = 'asc'; }
 
   const list = getFiltered();
   const rows = list.map(p => {
@@ -850,9 +833,7 @@ function render() {
     const statusHtml = p.drafted
       ? '<span class="drafted-tag">DRAFTED</span>'
       : '<span class="avail-tag">Available</span>';
-    const statCellsHtml = cols
-      ? cols.map(c => `<td class="stat-cell">${c.fmt(p[c.key])}</td>`).join('')
-      : `<td class="stat-line">${statLine(p)}</td>`;
+    const statCellsHtml = cols.map(c => `<td class="stat-cell">${c.fmt(p[c.key])}</td>`).join('');
     const isStarred = starredNames.has(p._norm);
     return `<tr class="${draftedCls.trim()}">
       <td class="star-cell"><button class="star-btn${isStarred ? ' starred' : ''}" data-norm="${escapeHtml(p._norm)}" title="${isStarred ? 'Unstar' : 'Star'}">${isStarred ? '\u2605' : '\u2606'}</button></td>
@@ -955,7 +936,7 @@ function startPolling() {
 function renderTableSkeleton() {
   const tbody = document.getElementById('table-body');
   const cols = statColumnsFor(activePos);
-  const colCount = 5 + (cols ? cols.length : 1);
+  const colCount = BASE_START_COLS.length + cols.length + 1; // +1 for Status
   const rowsHtml = Array.from({ length: 10 }, () =>
     `<tr class="skeleton-row">${'<td><div class="skeleton-bar"></div></td>'.repeat(colCount)}</tr>`
   ).join('');

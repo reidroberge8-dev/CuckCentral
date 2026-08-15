@@ -33,17 +33,14 @@ header {
   border-bottom: 1px solid var(--border);
 }
 /* Reserve room on the right so a long title never runs under the pinned
-   status pill. */
-h1 { margin: 0 0 8px 0; font-size: 22px; max-width: calc(100% - 210px); }
+   link buttons (they wrap to 2 lines within max-width: 340px, so this only
+   needs to cover that box's width, not one long unbroken row). */
+h1 { margin: 0 0 8px 0; font-size: 22px; max-width: calc(100% - 360px); }
 h1 .sub { color: var(--muted); font-size: 14px; font-weight: normal; }
-/* Deliberately a different, high-contrast color (teal) from everything
-   else in the header - the blue source-links and yellow on-clock banner -
-   so this pill reads at a glance as its own distinct thing: live sync
-   status, pinned to the top-right corner of the page. */
+/* Sync/refresh pill now sits at the bottom-left of the header, in normal
+   flow (same spot the source links used to occupy) - still teal so it
+   reads as its own distinct thing next to the on-clock banner above it. */
 .status-bar {
-  position: absolute;
-  top: 16px;
-  right: 24px;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -54,7 +51,8 @@ h1 .sub { color: var(--muted); font-size: 14px; font-weight: normal; }
   padding: 6px 10px 6px 14px;
   border-radius: 20px;
   white-space: nowrap;
-  z-index: 11;
+  width: fit-content;
+  margin-top: 10px;
 }
 #refresh-btn {
   background: #0f1117;
@@ -67,7 +65,21 @@ h1 .sub { color: var(--muted); font-size: 14px; font-weight: normal; }
   font-weight: 700;
 }
 #refresh-btn:hover { background: #1a1d29; }
-.source-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+/* Source links now pinned to the header's top-right corner (swapped with
+   the sync pill's old spot). Capped at max-width so 3 buttons wrap to a
+   compact 2-line block in the corner instead of one very wide row that
+   would run behind the title on most screen widths. */
+.source-links {
+  position: absolute;
+  top: 16px;
+  right: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+  max-width: 340px;
+  z-index: 11;
+}
 .source-btn {
   background: var(--panel2);
   color: var(--muted);
@@ -395,4 +407,13 @@ main { flex: 1; min-width: 0; }
   .page { flex-direction: column; }
   #roster-sidebar { width: 100%; position: static; max-height: none; border-right: none; border-bottom: 1px solid var(--border); }
   #roster-sidebar.collapsed { width: 100%; }
+}
+
+/* Below this width the absolutely-positioned top-right link buttons would
+   have to squeeze the title down to nothing to avoid overlapping it -
+   drop back to plain stacked flow instead (title, then links, full width)
+   so nothing overlaps or clips on a phone. */
+@media (max-width: 700px) {
+  h1 { max-width: 100%; }
+  .source-links { position: static; top: auto; right: auto; margin-top: 10px; justify-content: flex-start; max-width: 100%; }
 }
