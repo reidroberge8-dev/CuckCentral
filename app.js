@@ -71,6 +71,7 @@ let showStarredOnly = false;
 let pollTimer = null;
 
 document.getElementById('sheet-link').href = SHEET_VIEW_URL;
+document.getElementById('sheet-link-btn').href = SHEET_VIEW_URL;
 
 // ---------- starred players (persisted locally per-browser) ----------
 const STAR_STORAGE_KEY = 'ffdb_starred_players';
@@ -508,6 +509,17 @@ async function syncDraftBoard(manual) {
       }));
       activityLog = [...entries.reverse(), ...activityLog].slice(0, ACTIVITY_MAX);
     }
+
+    // Self-heal: any entry already in the log (including ones logged before
+    // a past bug fix, sitting in a browser tab that's never been reloaded)
+    // gets its team name re-derived from the current header mapping on
+    // every sync, so a stale/incorrect team label can't linger forever.
+    activityLog = activityLog.map(a => {
+      const col = Number(String(a.key).split(':')[1]);
+      const freshTeam = colTeamNames[col];
+      return freshTeam ? { ...a, team: freshTeam } : a;
+    });
+
     initialSyncDone = true;
     renderActivity();
 

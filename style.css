@@ -39,6 +39,20 @@ h1 .sub { color: var(--muted); font-size: 14px; font-weight: normal; }
   font-size: 13px;
 }
 #refresh-btn:hover { border-color: var(--accent); }
+.source-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.source-btn {
+  background: var(--panel2);
+  color: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-size: 12.5px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.source-btn:hover { color: var(--accent); border-color: var(--accent); }
+#sheet-link-btn { color: var(--green); }
+#sheet-link-btn:hover { border-color: var(--green); color: var(--green); }
 .controls {
   display: flex;
   flex-wrap: wrap;
