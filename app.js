@@ -607,9 +607,14 @@ async function syncDraftBoard(manual) {
     if (entries.length) {
       activityLog = [...entries.reverse(), ...activityLog].slice(0, ACTIVITY_MAX);
     }
-    // Only the picks that just arrived in *this* sync get the "new" golden
-    // highlight; anything from a prior sync settles back to normal.
-    freshKeys = new Set(entries.map(e => e.key));
+    // Only the single most-recent pick overall gets the "new" golden
+    // highlight, never every pick from a multi-pick sync batch (e.g. the
+    // first sync after a page load, which can "discover" many picks at
+    // once) - activityLog[0] is always that newest entry after the splice
+    // above. If this sync didn't add anything new, freshKeys must be empty
+    // rather than re-highlighting whatever was already on top - otherwise
+    // the highlight would never clear as long as no new pick ever came in.
+    freshKeys = entries.length ? new Set([activityLog[0].key]) : new Set();
 
     // Self-heal: any entry already in the log (including ones logged before
     // a past bug fix, sitting in a browser tab that's never been reloaded)
