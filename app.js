@@ -257,12 +257,23 @@ function assignRoster(picks) {
   return { starters, bench };
 }
 
+// Sidebar display order: flexes are shown directly under their related
+// position group (RB/WR under the RBs, WR/TE under the WRs) to match ESPN's
+// roster layout convention. This is independent of ROSTER_SLOTS fill order
+// above, which intentionally fills exact-position slots before flex slots so
+// the best players land in their true slot and flexes only get leftovers.
+const DISPLAY_ORDER = ['QB', 'RB1', 'RB2', 'RBWR', 'WR1', 'WR2', 'WRTE', 'TE', 'DL', 'LB', 'DB', 'DST', 'K'];
+
 function renderRosterSidebar(starters, bench) {
   const startersTable = document.getElementById('starters-table');
   const benchTable = document.getElementById('bench-table');
   const totalEl = document.getElementById('starters-total');
 
-  startersTable.innerHTML = starters.map(({ slot, player }) => {
+  const ordered = DISPLAY_ORDER
+    .map(key => starters.find(s => s.slot.key === key))
+    .filter(Boolean);
+
+  startersTable.innerHTML = ordered.map(({ slot, player }) => {
     const cls = player ? '' : ' empty';
     const name = player ? escapeHtml(player.name) : '\u2014 empty \u2014';
     const pts = player && player.pts != null ? player.pts.toFixed(1) : '';

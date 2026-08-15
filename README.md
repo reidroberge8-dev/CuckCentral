@@ -63,4 +63,3 @@ single games.
 ## Files
 - `index.html` / `style.css` / `app.js` — the site
 - `data/players.json` — the 816-player projection dataset (custom-scored, ranked)
-<!-- token-auth push test Sat Aug 15 19:37:50 UTC 2026 -->
