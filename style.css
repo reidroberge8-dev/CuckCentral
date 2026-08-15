@@ -79,7 +79,7 @@ h1 .sub { color: var(--muted); font-size: 14px; font-weight: normal; }
 .avail-toggle { font-size: 13px; color: var(--muted); display: flex; gap: 6px; align-items: center; }
 #count-label { margin-left: auto; font-size: 13px; color: var(--muted); }
 .table-wrap { padding: 0 24px 40px; overflow-x: auto; }
-table { width: 100%; min-width: 1180px; border-collapse: collapse; font-size: 14px; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
 thead th {
   text-align: left;
   padding: 10px 12px;

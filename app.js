@@ -92,6 +92,78 @@ function normalizeName(raw) {
 function fmtYds(v) { return v == null ? '-' : Math.round(v).toString(); }
 function fmtStat(v) { return v == null ? '-' : Number(v).toFixed(1); }
 
+// Condensed multi-stat summary shown only in the "ALL" position view, where
+// showing every individual stat column at once (across every position) is
+// too noisy to be useful.
+function statLine(p) {
+  switch (p.pos) {
+    case 'QB':
+      return `${Math.round(p.p_yds)} pyd, ${p.p_td} pTD, ${p.intc} INT, ${Math.round(p.ru_yds)} ryd, ${p.ru_td} rTD`;
+    case 'RB':
+      return `${Math.round(p.ru_yds)} ryd, ${p.ru_td} rTD, ${p.rec} rec, ${Math.round(p.re_yd)} recyd, ${p.re_td} recTD`;
+    case 'WR':
+    case 'TE':
+      return `${p.rec} rec, ${Math.round(p.re_yd)} recyd, ${p.re_td} recTD${p.ru_yds ? `, ${Math.round(p.ru_yds)} ryd` : ''}`;
+    case 'DL':
+    case 'LB':
+    case 'DB':
+      return `${p.tkl} tkl, ${p.sack} sk, ${p.intc} INT, ${p.ff} FF`;
+    default:
+      return '';
+  }
+}
+
+// Individual sortable stat columns shown only when a single position filter
+// is active (ALL keeps the condensed statLine() summary instead - showing
+// all of these at once across every position was too messy).
+const STAT_COLUMNS_BY_POS = {
+  QB: [
+    { key: 'p_yds', label: 'Pass Yds', fmt: fmtYds },
+    { key: 'p_td',  label: 'Pass TD',  fmt: fmtStat },
+    { key: 'intc',  label: 'Int',      fmt: fmtStat },
+    { key: 'ru_yds', label: 'Rush Yds', fmt: fmtYds },
+    { key: 'ru_td', label: 'Rush TD',  fmt: fmtStat },
+  ],
+  RB: [
+    { key: 'ru_yds', label: 'Rush Yds', fmt: fmtYds },
+    { key: 'ru_td', label: 'Rush TD',  fmt: fmtStat },
+    { key: 'rec',   label: 'Rec',      fmt: fmtStat },
+    { key: 're_yd', label: 'Rec Yds',  fmt: fmtYds },
+    { key: 're_td', label: 'Rec TD',   fmt: fmtStat },
+  ],
+  WR: [
+    { key: 'rec',   label: 'Rec',      fmt: fmtStat },
+    { key: 're_yd', label: 'Rec Yds',  fmt: fmtYds },
+    { key: 're_td', label: 'Rec TD',   fmt: fmtStat },
+    { key: 'ru_yds', label: 'Rush Yds', fmt: fmtYds },
+  ],
+  TE: [
+    { key: 'rec',   label: 'Rec',      fmt: fmtStat },
+    { key: 're_yd', label: 'Rec Yds',  fmt: fmtYds },
+    { key: 're_td', label: 'Rec TD',   fmt: fmtStat },
+  ],
+  DL: [
+    { key: 'tkl',  label: 'Tkl',  fmt: fmtStat },
+    { key: 'sack', label: 'Sack', fmt: fmtStat },
+    { key: 'intc', label: 'Int',  fmt: fmtStat },
+    { key: 'ff',   label: 'FF',   fmt: fmtStat },
+  ],
+  LB: [
+    { key: 'tkl',  label: 'Tkl',  fmt: fmtStat },
+    { key: 'sack', label: 'Sack', fmt: fmtStat },
+    { key: 'intc', label: 'Int',  fmt: fmtStat },
+    { key: 'ff',   label: 'FF',   fmt: fmtStat },
+  ],
+  DB: [
+    { key: 'tkl',  label: 'Tkl',  fmt: fmtStat },
+    { key: 'sack', label: 'Sack', fmt: fmtStat },
+    { key: 'intc', label: 'Int',  fmt: fmtStat },
+    { key: 'ff',   label: 'FF',   fmt: fmtStat },
+  ],
+};
+// null means "ALL" mode: render the single condensed statLine() column.
+function statColumnsFor(pos) { return STAT_COLUMNS_BY_POS[pos] || null; }
+
 // ---------- data load ----------
 async function loadPlayers() {
   const res = await fetch('data/players.json', { cache: 'no-store' });
@@ -351,31 +423,66 @@ function getFiltered() {
   return list;
 }
 
+// Builds the header row to match the current position filter: base columns
+// are always present, then either the condensed statLine header (ALL) or
+// that position's individual sortable stat columns, then Status.
+function buildTableHeader() {
+  const headerRow = document.getElementById('header-row');
+  const cols = statColumnsFor(activePos);
+  const baseStart = [
+    '<th data-key="posRank">Pos Rk</th>',
+    '<th data-key="name">Player</th>',
+    '<th data-key="pos">Pos</th>',
+    '<th data-key="team">Team</th>',
+    '<th data-key="customPts" class="sort-default">Proj Pts</th>',
+  ].join('');
+  const statHead = cols
+    ? cols.map(c => `<th data-key="${c.key}">${c.label}</th>`).join('')
+    : '<th data-key="statline">Key Stats</th>';
+  const baseEnd = '<th data-key="status">Status</th>';
+  headerRow.innerHTML = baseStart + statHead + baseEnd;
+
+  headerRow.querySelectorAll('th').forEach(th => {
+    th.addEventListener('click', () => {
+      const key = th.dataset.key;
+      if (key === 'statline') return; // condensed summary column isn't a real sortable field
+      if (sortKey === key) {
+        sortDir = sortDir === 'asc' ? 'desc' : 'asc';
+      } else {
+        sortKey = key;
+        sortDir = (key === 'name' || key === 'pos' || key === 'team') ? 'asc' : 'desc';
+      }
+      render();
+    });
+  });
+}
+
 function render() {
   const tbody = document.getElementById('table-body');
+  const cols = statColumnsFor(activePos);
+  // If the active sort column isn't in the current header set (e.g. user
+  // sorted by a stat column, then switched back to ALL), fall back to
+  // sorting by projected points rather than silently sorting by nothing.
+  const validKeys = new Set(['posRank', 'name', 'pos', 'team', 'customPts', 'status',
+    ...(cols ? cols.map(c => c.key) : [])]);
+  if (!validKeys.has(sortKey)) { sortKey = 'customPts'; sortDir = 'desc'; }
+
   const list = getFiltered();
   const rows = list.map(p => {
     const draftedCls = p.drafted ? ' drafted' : '';
     const statusHtml = p.drafted
       ? '<span class="drafted-tag">DRAFTED</span>'
       : '<span class="avail-tag">Available</span>';
+    const statCellsHtml = cols
+      ? cols.map(c => `<td class="stat-cell">${c.fmt(p[c.key])}</td>`).join('')
+      : `<td class="stat-line">${statLine(p)}</td>`;
     return `<tr class="${draftedCls.trim()}">
       <td>${p.posRank}</td>
       <td class="name-cell">${escapeHtml(p.name)}</td>
       <td><span class="pos-badge pos-${p.pos}">${p.pos}</span></td>
       <td>${p.team}</td>
       <td>${p.customPts != null ? p.customPts.toFixed(1) : '-'}</td>
-      <td class="stat-cell">${fmtYds(p.p_yds)}</td>
-      <td class="stat-cell">${fmtStat(p.p_td)}</td>
-      <td class="stat-cell">${fmtStat(p.intc)}</td>
-      <td class="stat-cell">${fmtYds(p.ru_yds)}</td>
-      <td class="stat-cell">${fmtStat(p.ru_td)}</td>
-      <td class="stat-cell">${fmtStat(p.rec)}</td>
-      <td class="stat-cell">${fmtYds(p.re_yd)}</td>
-      <td class="stat-cell">${fmtStat(p.re_td)}</td>
-      <td class="stat-cell">${fmtStat(p.tkl)}</td>
-      <td class="stat-cell">${fmtStat(p.sack)}</td>
-      <td class="stat-cell">${fmtStat(p.ff)}</td>
+      ${statCellsHtml}
       <td>${statusHtml}</td>
     </tr>`;
   }).join('');
@@ -386,7 +493,7 @@ function render() {
   document.getElementById('count-label').textContent =
     `${list.length} shown \u2014 ${draftedCount}/${total} drafted`;
 
-  document.querySelectorAll('#player-table thead th').forEach(th => {
+  document.querySelectorAll('#header-row th').forEach(th => {
     th.classList.remove('sorted-asc', 'sorted-desc');
     if (th.dataset.key === sortKey) th.classList.add(sortDir === 'asc' ? 'sorted-asc' : 'sorted-desc');
   });
@@ -405,6 +512,7 @@ function buildPosFilters() {
     btn.addEventListener('click', () => {
       activePos = btn.dataset.pos;
       container.querySelectorAll('button').forEach(b => b.classList.toggle('active', b === btn));
+      buildTableHeader();
       render();
     });
   });
@@ -420,18 +528,6 @@ function wireControls() {
     render();
   });
   document.getElementById('refresh-btn').addEventListener('click', () => syncDraftBoard(true));
-  document.querySelectorAll('#player-table thead th').forEach(th => {
-    th.addEventListener('click', () => {
-      const key = th.dataset.key;
-      if (sortKey === key) {
-        sortDir = sortDir === 'asc' ? 'desc' : 'asc';
-      } else {
-        sortKey = key;
-        sortDir = (key === 'name' || key === 'pos' || key === 'team') ? 'asc' : 'desc';
-      }
-      render();
-    });
-  });
 }
 
 function startPolling() {
@@ -442,6 +538,7 @@ function startPolling() {
 // ---------- init ----------
 (async function init() {
   buildPosFilters();
+  buildTableHeader();
   wireControls();
   try {
     await loadPlayers();
