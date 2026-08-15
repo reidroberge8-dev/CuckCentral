@@ -139,26 +139,18 @@ function fmtYds(v) { return v == null ? '-' : Math.round(v).toString(); }
 function fmtStat(v) { return v == null ? '-' : Number(v).toFixed(1); }
 function fmtAdp(v) { return v == null ? '-' : Number(v).toFixed(1); }
 
-// Sleeper's injury_status codes, mapped to a short badge label + severity
-// class. This is a *current* designation (this week), not a season-long
-// risk prediction - there's no free equivalent of Draft Sharks' proprietary
-// injury-risk model, so this is the honest substitute: real, live, but
-// narrower in scope than what was originally asked for.
-const INJURY_BADGE = {
-  Out: { label: 'Out', cls: 'inj-bad' },
-  IR: { label: 'IR', cls: 'inj-bad' },
-  PUP: { label: 'PUP', cls: 'inj-bad' },
-  Sus: { label: 'Susp', cls: 'inj-bad' },
-  Questionable: { label: 'Q', cls: 'inj-warn' },
-  DNR: { label: 'DNR', cls: 'inj-warn' },
-  COV: { label: 'COVID', cls: 'inj-warn' },
-  NA: { label: 'NA', cls: 'inj-warn' },
+// Draft Sharks injury risk categories, mapped to badge label + CSS class.
+const RISK_BADGE = {
+  'Very Low Risk': { label: 'Very Low', cls: 'inj-vlow'  },
+  'Low Risk':      { label: 'Low',      cls: 'inj-low'   },
+  'Medium Risk':   { label: 'Medium',   cls: 'inj-med'   },
+  'High Risk':     { label: 'High',     cls: 'inj-high'  },
+  'Very High Risk':{ label: 'Very High',cls: 'inj-vhigh' },
 };
 function injuryCell(p) {
-  const info = INJURY_BADGE[p.injuryStatus];
-  if (!info) return '<span class="inj-ok">-</span>';
-  const title = p.injuryBodyPart ? `${p.injuryStatus} - ${p.injuryBodyPart}` : p.injuryStatus;
-  return `<span class="inj-badge ${info.cls}" title="${escapeHtml(title)}">${info.label}</span>`;
+  const info = RISK_BADGE[p.injuryRisk];
+  if (!info) return '<span class="inj-na">-</span>';
+  return `<span class="inj-badge ${info.cls}" title="${p.injuryRisk}">${info.label}</span>`;
 }
 
 // Condensed multi-stat summary shown only in the "ALL" position view, where
@@ -558,7 +550,7 @@ function buildTableHeader() {
     '<th data-key="name">Player</th>',
     '<th data-key="pos">Pos</th>',
     '<th data-key="team">Team</th>',
-    '<th data-key="injuryStatus" title="Current injury designation (Sleeper) - not a season-long risk prediction">Inj</th>',
+    '<th data-key="injuryRisk" title="Injury risk category (Draft Sharks)">Inj Risk</th>',
     '<th data-key="adp" title="Average Draft Position, 12-team PPR mocks (FantasyFootballCalculator.com)">ADP</th>',
     '<th data-key="customPts" class="sort-default">Proj Pts</th>',
   ].join('');
@@ -571,7 +563,7 @@ function buildTableHeader() {
   headerRow.querySelectorAll('th').forEach(th => {
     th.addEventListener('click', () => {
       const key = th.dataset.key;
-      if (key === 'statline' || key === 'star' || key === 'injuryStatus') return; // not real sortable fields
+      if (key === 'statline' || key === 'star' || key === 'injuryRisk') return; // not real sortable fields
       if (sortKey === key) {
         sortDir = sortDir === 'asc' ? 'desc' : 'asc';
       } else {
@@ -589,7 +581,7 @@ function render() {
   // If the active sort column isn't in the current header set (e.g. user
   // sorted by a stat column, then switched back to ALL), fall back to
   // sorting by projected points rather than silently sorting by nothing.
-  const validKeys = new Set(['posRank', 'name', 'pos', 'team', 'customPts', 'status', 'adp',
+  const validKeys = new Set(['posRank', 'name', 'pos', 'team', 'customPts', 'status', 'adp', 'injuryRisk',
     ...(cols ? cols.map(c => c.key) : [])]);
   if (!validKeys.has(sortKey)) { sortKey = 'customPts'; sortDir = 'desc'; }
 

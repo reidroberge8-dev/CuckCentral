@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
-"""Bake ADP and current injury-status fields into data/players.json.
+"""Bake ADP (and optionally injury risk) into data/players.json.
 
-Data sources (both free, no login required):
+Data sources:
   - ADP: FantasyFootballCalculator.com public API (12-team PPR mock drafts).
-  - Injury status: Sleeper's public NFL players API (this is a *current*
-    designation - Questionable/Out/IR/PUP/etc - not a season-long injury
-    risk prediction; there is no free equivalent of Draft Sharks'
-    proprietary injury-risk model, so this is the honest substitute).
+  - Injury Risk: Draft Sharks Injury Predictor (manual paste into
+    scripts/enrich_adp_injury.py; not available via public API). The
+    injuryRisk field is set separately by parse_draftsharks_risk().
 
 This is a one-time bake (same pattern as the Mike Clay projections already
 in players.json) rather than a live client-side fetch, because:
