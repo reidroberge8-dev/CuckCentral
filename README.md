@@ -8,6 +8,12 @@ Static site: open `index.html` in a browser, or host it (GitHub Pages, Netlify, 
 - Polls the Google Sheet draft board every 20 seconds (and on manual "Refresh")
   and marks any player already picked as "DRAFTED" (dimmed row, strikethrough name).
 - Sortable/searchable table, position filter chips, "hide drafted" toggle.
+- Left sidebar: a live "Reid/Mike Roster" panel showing every player your team
+  (Reid/Mike) has drafted, auto-slotted into your actual ESPN roster shape —
+  QB, 2 RB, 2 WR, TE, DL, LB, DB, D/ST, K, plus RB/WR and WR/TE flex, then
+  5 bench slots + 1 IR slot. Empty slots show "— empty —". This is a
+  *best-lineup suggestion* based on projected points, not a read of manual
+  bench/start decisions (the draft sheet has no way to know those).
 
 ## Deploying to GitHub Pages
 1. Create a new repo (e.g. `ff-draft-board-2026`) on github.com, public visibility.
@@ -40,6 +46,19 @@ projections. They do NOT include 40+/50+ yard TD bonuses or 100/200/300/400-yard
 game bonuses, since those only exist in game-log data, not season totals. Treat
 "Proj Pts" as very close but not exact for players who rack up long TDs or huge
 single games.
+
+## Roster sidebar details
+- Team match: the sidebar looks for a column header matching "Reid/Mike"
+  (case/typo tolerant — matches the sheet's actual "Reid/MIke" spelling too).
+  If your team name in the sheet ever changes, update `MY_TEAM_NAME` at the
+  top of `app.js` to match.
+- IDP slot mapping: the sheet's specific position labels (DE, DT, CB, S, etc.)
+  are collapsed onto the combined DL / DB categories used in the projections
+  data, matching how the league's DL and DB slots work (one combined slot
+  each, no sub-position limit).
+- K and D/ST aren't in the Clay projection set (it only covers offensive
+  skill positions and IDP), so if you draft a kicker or defense they'll show
+  up in the roster with a blank points column — that's expected, not a bug.
 
 ## Files
 - `index.html` / `style.css` / `app.js` — the site

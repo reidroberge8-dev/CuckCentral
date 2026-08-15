@@ -14,6 +14,54 @@ const POLL_MS = 20000;
 
 const POSITIONS = ['QB', 'RB', 'WR', 'TE', 'DL', 'LB', 'DB'];
 
+// Team we're building the sidebar roster for. Matched against the sheet's
+// header row case/punctuation-insensitively, so "Reid/Mike" vs the sheet's
+// actual "Reid/MIke" typo still resolves.
+const MY_TEAM_NAME = 'Reid/Mike';
+
+// ESPN roster settings for this league (from league scoring/roster config).
+// Order matters: exact-position slots are filled before flex slots so the
+// best players land in their true slot and flexes get the next-best leftover.
+const ROSTER_SLOTS = [
+  { key: 'QB',   label: 'QB',    eligible: ['QB'] },
+  { key: 'RB1',  label: 'RB',    eligible: ['RB'] },
+  { key: 'RB2',  label: 'RB',    eligible: ['RB'] },
+  { key: 'WR1',  label: 'WR',    eligible: ['WR'] },
+  { key: 'WR2',  label: 'WR',    eligible: ['WR'] },
+  { key: 'TE',   label: 'TE',    eligible: ['TE'] },
+  { key: 'DL',   label: 'DL',    eligible: ['DL'] },
+  { key: 'LB',   label: 'LB',    eligible: ['LB'] },
+  { key: 'DB',   label: 'DB',    eligible: ['DB'] },
+  { key: 'DST',  label: 'D/ST',  eligible: ['DST'] },
+  { key: 'K',    label: 'K',     eligible: ['K'] },
+  { key: 'RBWR', label: 'RB/WR', eligible: ['RB', 'WR'] },
+  { key: 'WRTE', label: 'WR/TE', eligible: ['WR', 'TE'] },
+];
+const BENCH_SLOTS = 5; // + 1 IR shown separately, always empty (no IR status data available)
+
+// ESPN's own position labels (as they appear in the sheet's "POS - TEAM(bye)"
+// line) collapsed onto the combined IDP categories used in the projections
+// dataset (DL = edge + interior, DB = corner + safety).
+const POS_ALIAS = {
+  DE: 'DL', DT: 'DL', EDGE: 'DL', IDL: 'DL', DL: 'DL',
+  CB: 'DB', S: 'DB', SS: 'DB', FS: 'DB', DB: 'DB',
+  LB: 'LB', ILB: 'LB', OLB: 'LB', MLB: 'LB',
+  QB: 'QB', RB: 'RB', WR: 'WR', TE: 'TE',
+  DST: 'DST', DEF: 'DST',
+  K: 'K', PK: 'K',
+};
+function mapSheetPos(raw) {
+  const key = String(raw || '').toUpperCase().replace(/[^A-Z]/g, '');
+  return POS_ALIAS[key] || key;
+}
+function normalizeTeamLabel(s) {
+  return String(s || '')
+    .toLowerCase()
+    .replace(/on the clock:?/g, '')
+    .replace(/[^a-z0-9]/g, '')
+    .trim();
+}
+
 let players = [];          // full player list from players.json
 let draftedNames = new Set(); // normalized names currently drafted
 let activePos = 'ALL';
@@ -111,16 +159,8 @@ function findTeamColumns(rows, headerCandidateRow) {
   return cols.length ? cols : Array.from({ length: 12 }, (_, i) => i + 2); // fallback: C-N
 }
 
-function extractDraftedFromCsv(csvText) {
-  const parsed = Papa.parse(csvText, { skipEmptyLines: false });
-  const rows = parsed.data;
-  const { start, end } = findPickRows(rows);
+function extractDraftedFromCsv(rows, start, end, teamCols) {
   const names = new Set();
-  if (start === -1) {
-    console.warn('Could not locate pick-number sequence in sheet; no drafted names extracted.');
-    return names;
-  }
-  const teamCols = findTeamColumns(rows, start - 1);
   for (let r = start; r <= end; r++) {
     const row = rows[r];
     if (!row) continue;
@@ -137,13 +177,145 @@ function extractDraftedFromCsv(csvText) {
   return names;
 }
 
+// Parse a single drafted-player cell into {name, pos, teamAbbr, bye}.
+// Cell format: "Player Name\nPOS - TEAM(bye)"
+function parsePickCell(cell) {
+  const trimmed = String(cell || '').trim();
+  if (!trimmed || /on the clock/i.test(trimmed)) return null;
+  const lines = trimmed.split('\n');
+  const name = (lines[0] || '').trim();
+  if (!name) return null;
+  const meta = (lines[1] || '').trim(); // e.g. "WR - NYG(8)"
+  let pos = '', teamAbbr = '', bye = '';
+  const dashIdx = meta.indexOf(' - ');
+  if (dashIdx !== -1) {
+    pos = meta.slice(0, dashIdx).trim();
+    const rest = meta.slice(dashIdx + 3).trim(); // "NYG(8)"
+    const byeMatch = rest.match(/\((\d+)\)/);
+    bye = byeMatch ? byeMatch[1] : '';
+    teamAbbr = rest.replace(/\(.*\)/, '').trim();
+  }
+  return { name, pos: mapSheetPos(pos), teamAbbr, bye };
+}
+
+// Locate the column for a given team name. Checks the row just above the
+// pick grid (has an "On the Clock:" prefix contaminating one cell) and the
+// "Total" summary row just below the grid (clean team names), since either
+// can carry the header depending on how the sheet is laid out.
+function findTeamColumn(rows, start, end, teamName) {
+  const target = normalizeTeamLabel(teamName);
+  const candidateRows = [start - 1, end + 1, end + 2, end + 3];
+  for (const r of candidateRows) {
+    const row = rows[r];
+    if (!row) continue;
+    for (let c = 2; c < row.length; c++) {
+      if (normalizeTeamLabel(row[c]) === target) return c;
+    }
+  }
+  return -1;
+}
+
+// Pull every pick made by one team, in draft order.
+function getTeamPicks(rows, start, end, col) {
+  const picks = [];
+  for (let r = start; r <= end; r++) {
+    const row = rows[r];
+    if (!row) continue;
+    const parsed = parsePickCell(row[col]);
+    if (parsed) picks.push(parsed);
+  }
+  return picks;
+}
+
+// Attach projection data (customPts, exact pos, stat fields) to a pick by
+// matching normalized names against the loaded players.json list.
+function enrichPick(pick) {
+  const norm = normalizeName(pick.name);
+  const match = players.find(p => p._norm === norm);
+  if (match) {
+    return { name: match.name, pos: match.pos, pts: match.customPts, teamAbbr: match.team, matched: true };
+  }
+  return { name: pick.name, pos: pick.pos, pts: null, teamAbbr: pick.teamAbbr, matched: false };
+}
+
+// Greedy "best available" lineup builder: fills exact-position slots first,
+// then flex slots, from the team's drafted pool sorted by projected points.
+// This is a projection-based *suggested* optimal lineup, not a read of
+// whatever bench/start toggles the owner has actually set in ESPN (the draft
+// sheet has no way to know that).
+function assignRoster(picks) {
+  const pool = picks.map(enrichPick);
+  pool.sort((a, b) => (b.pts ?? -1) - (a.pts ?? -1));
+  const used = new Set();
+  const starters = ROSTER_SLOTS.map(slot => {
+    const idx = pool.findIndex((p, i) => !used.has(i) && slot.eligible.includes(p.pos));
+    if (idx === -1) return { slot, player: null };
+    used.add(idx);
+    return { slot, player: pool[idx] };
+  });
+  const bench = pool.filter((_, i) => !used.has(i));
+  return { starters, bench };
+}
+
+function renderRosterSidebar(starters, bench) {
+  const startersTable = document.getElementById('starters-table');
+  const benchTable = document.getElementById('bench-table');
+  const totalEl = document.getElementById('starters-total');
+
+  startersTable.innerHTML = starters.map(({ slot, player }) => {
+    const cls = player ? '' : ' empty';
+    const name = player ? escapeHtml(player.name) : '\u2014 empty \u2014';
+    const pts = player && player.pts != null ? player.pts.toFixed(1) : '';
+    return `<tr>
+      <td class="slot-label">${slot.label}</td>
+      <td class="slot-player${cls}">${name}</td>
+      <td class="slot-pts">${pts}</td>
+    </tr>`;
+  }).join('');
+
+  let sum = 0;
+  starters.forEach(({ player }) => { if (player && player.pts != null) sum += player.pts; });
+  totalEl.textContent = `Starters: ${sum.toFixed(1)} pts`;
+
+  const benchRows = bench.slice(0, BENCH_SLOTS).map(player => {
+    const pts = player.pts != null ? player.pts.toFixed(1) : '';
+    return `<tr>
+      <td class="slot-label">${player.pos}</td>
+      <td class="slot-player">${escapeHtml(player.name)}</td>
+      <td class="slot-pts">${pts}</td>
+    </tr>`;
+  });
+  const emptyBenchCount = Math.max(0, BENCH_SLOTS - bench.length);
+  for (let i = 0; i < emptyBenchCount; i++) {
+    benchRows.push(`<tr><td class="slot-label">BE</td><td class="slot-player empty">\u2014 empty \u2014</td><td class="slot-pts"></td></tr>`);
+  }
+  benchRows.push(`<tr><td class="slot-label">IR</td><td class="slot-player empty">\u2014 empty \u2014</td><td class="slot-pts"></td></tr>`);
+  benchTable.innerHTML = benchRows.join('');
+}
+
 async function syncDraftBoard(manual) {
   const statusEl = document.getElementById('sync-status');
   if (manual) statusEl.textContent = 'Refreshing\u2026';
   try {
     const csvText = await fetchSheetCsv();
-    draftedNames = extractDraftedFromCsv(csvText);
+    const parsed = Papa.parse(csvText, { skipEmptyLines: false });
+    const rows = parsed.data;
+    const { start, end } = findPickRows(rows);
+    if (start === -1) throw new Error('pick grid not found in sheet');
+    const teamCols = findTeamColumns(rows, start - 1);
+
+    draftedNames = extractDraftedFromCsv(rows, start, end, teamCols);
     players.forEach(p => { p.drafted = draftedNames.has(p._norm); });
+
+    const myCol = findTeamColumn(rows, start, end, MY_TEAM_NAME);
+    if (myCol !== -1) {
+      const myPicks = getTeamPicks(rows, start, end, myCol);
+      const { starters, bench } = assignRoster(myPicks);
+      renderRosterSidebar(starters, bench);
+    } else {
+      console.warn(`Could not find column for team "${MY_TEAM_NAME}" in sheet header.`);
+    }
+
     const now = new Date();
     statusEl.textContent = `Synced ${now.toLocaleTimeString()} \u2014 ${draftedNames.size} drafted`;
     statusEl.classList.remove('sync-error');
