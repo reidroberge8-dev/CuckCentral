@@ -269,16 +269,28 @@ async function loadPlayers() {
 }
 
 // ---------- sheet sync ----------
+// The plain /export?format=csv endpoint is the primary source - it exports
+// exactly one CSV row per sheet row. The /gviz/tq endpoint (tried second,
+// only as a fallback if export is unreachable) has a real quirk on this
+// sheet: because a label cell in column A visually spans the "Standard" and
+// "Top Available" header rows, gviz collapses those two sheet rows into one
+// CSV row and space-joins every column's two values together wherever both
+// happen to be non-empty. On this sheet that corrupts the "On the Clock: X"
+// cell specifically (the row directly below it, "Top Available", happens to
+// have a real value in that exact column), turning it into "On the Clock: X
+// Y" - a second team's name silently glued onto the real one. Every prior
+// build/test in this project used export CSV directly, so this bug only
+// ever showed up live, never in the test harness, until this was found.
 async function fetchSheetCsv() {
   let text;
   try {
-    const res = await fetch(`${SHEET_CSV_URL}&_=${Date.now()}`, { cache: 'no-store' });
-    if (!res.ok) throw new Error(`gviz status ${res.status}`);
+    const res = await fetch(`${SHEET_CSV_FALLBACK}&_=${Date.now()}`, { cache: 'no-store' });
+    if (!res.ok) throw new Error(`export status ${res.status}`);
     text = await res.text();
   } catch (e) {
-    console.warn('gviz/tq fetch failed, trying export fallback', e);
-    const res2 = await fetch(`${SHEET_CSV_FALLBACK}&_=${Date.now()}`, { cache: 'no-store' });
-    if (!res2.ok) throw new Error(`export status ${res2.status}`);
+    console.warn('export fetch failed, trying gviz fallback', e);
+    const res2 = await fetch(`${SHEET_CSV_URL}&_=${Date.now()}`, { cache: 'no-store' });
+    if (!res2.ok) throw new Error(`gviz status ${res2.status}`);
     text = await res2.text();
   }
   return text;
@@ -394,19 +406,30 @@ function playDing() {
     if (!sharedAudioCtx) return;
     const ctx = sharedAudioCtx;
     const now = ctx.currentTime;
-    [880, 1320].forEach((freq, i) => {
+    // A real bell isn't a pure tone - it's a fundamental plus a few
+    // inharmonic overtones, each decaying at a different rate (the higher
+    // ones die out fastest). Layering sine partials at bell-like frequency
+    // ratios with staggered decay times gives a "ring" character instead of
+    // a flat electronic beep.
+    const fundamental = 880;
+    const partials = [
+      { ratio: 1.0, gain: 0.30, decay: 1.4 },
+      { ratio: 2.0, gain: 0.16, decay: 1.0 },
+      { ratio: 2.4, gain: 0.10, decay: 0.7 },
+      { ratio: 3.8, gain: 0.06, decay: 0.4 },
+    ];
+    partials.forEach(({ ratio, gain: peak, decay }) => {
       const osc = ctx.createOscillator();
       const gain = ctx.createGain();
       osc.type = 'sine';
-      osc.frequency.value = freq;
-      const start = now + i * 0.15;
-      gain.gain.setValueAtTime(0.0001, start);
-      gain.gain.exponentialRampToValueAtTime(0.25, start + 0.02);
-      gain.gain.exponentialRampToValueAtTime(0.0001, start + 0.35);
+      osc.frequency.value = fundamental * ratio;
+      gain.gain.setValueAtTime(0.0001, now);
+      gain.gain.exponentialRampToValueAtTime(peak, now + 0.015);
+      gain.gain.exponentialRampToValueAtTime(0.0001, now + decay);
       osc.connect(gain);
       gain.connect(ctx.destination);
-      osc.start(start);
-      osc.stop(start + 0.4);
+      osc.start(now);
+      osc.stop(now + decay + 0.05);
     });
   } catch (e) { /* audio unavailable - not critical */ }
 }
@@ -614,9 +637,24 @@ async function syncDraftBoard(manual) {
     // it up top. When it's our team, blink continuously with a golden
     // outline and ding once on the moment it becomes our turn (not every
     // poll while it stays our turn).
-    const onClockTeam = getOnTheClockTeam(rows);
+    let onClockTeam = getOnTheClockTeam(rows);
     const indicator = document.getElementById('on-clock-indicator');
     if (onClockTeam) {
+      // Defense in depth: a CSV source glitch (e.g. a merged header row)
+      // can glue a second team's name onto the real one, e.g. "Reid/MIke
+      // Devin" when only "Reid/MIke" is actually on the clock. If the raw
+      // text isn't a known team as-is, try trimming trailing words one at a
+      // time until it matches one of this sheet's actual team names, rather
+      // than showing (and blinking gold over) a name nobody drafted under.
+      const knownTeams = Object.values(colTeamNames);
+      const isKnown = (t) => knownTeams.some(k => normalizeTeamLabel(k) === normalizeTeamLabel(t));
+      if (!isKnown(onClockTeam)) {
+        const words = onClockTeam.split(/\s+/);
+        for (let cut = words.length - 1; cut >= 1; cut--) {
+          const candidate = words.slice(0, cut).join(' ');
+          if (isKnown(candidate)) { onClockTeam = candidate; break; }
+        }
+      }
       const isMyTurn = normalizeTeamLabel(onClockTeam) === normalizeTeamLabel(MY_TEAM_NAME);
       indicator.textContent = `On the Clock: ${onClockTeam}`;
       indicator.classList.toggle('my-turn', isMyTurn);
