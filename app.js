@@ -85,24 +85,12 @@ function normalizeName(raw) {
   return s;
 }
 
-// ---------- stat line formatting ----------
-function statLine(p) {
-  switch (p.pos) {
-    case 'QB':
-      return `${Math.round(p.p_yds)} pyd, ${p.p_td} pTD, ${p.intc} INT, ${Math.round(p.ru_yds)} ryd, ${p.ru_td} rTD`;
-    case 'RB':
-      return `${Math.round(p.ru_yds)} ryd, ${p.ru_td} rTD, ${p.rec} rec, ${Math.round(p.re_yd)} recyd, ${p.re_td} recTD`;
-    case 'WR':
-    case 'TE':
-      return `${p.rec} rec, ${Math.round(p.re_yd)} recyd, ${p.re_td} recTD${p.ru_yds ? `, ${Math.round(p.ru_yds)} ryd` : ''}`;
-    case 'DL':
-    case 'LB':
-    case 'DB':
-      return `${p.tkl} tkl, ${p.sack} sk, ${p.intc} INT, ${p.ff} FF`;
-    default:
-      return '';
-  }
-}
+// ---------- stat formatting ----------
+// Yardage stats are rounded to whole numbers; count/rate stats (TD, rec,
+// tackles, sacks, INT, FF) keep one decimal since projections are often
+// fractional (e.g. a backup DL projected for 0.2 INT on the season).
+function fmtYds(v) { return v == null ? '-' : Math.round(v).toString(); }
+function fmtStat(v) { return v == null ? '-' : Number(v).toFixed(1); }
 
 // ---------- data load ----------
 async function loadPlayers() {
@@ -377,7 +365,17 @@ function render() {
       <td><span class="pos-badge pos-${p.pos}">${p.pos}</span></td>
       <td>${p.team}</td>
       <td>${p.customPts != null ? p.customPts.toFixed(1) : '-'}</td>
-      <td class="stat-line">${statLine(p)}</td>
+      <td class="stat-cell">${fmtYds(p.p_yds)}</td>
+      <td class="stat-cell">${fmtStat(p.p_td)}</td>
+      <td class="stat-cell">${fmtStat(p.intc)}</td>
+      <td class="stat-cell">${fmtYds(p.ru_yds)}</td>
+      <td class="stat-cell">${fmtStat(p.ru_td)}</td>
+      <td class="stat-cell">${fmtStat(p.rec)}</td>
+      <td class="stat-cell">${fmtYds(p.re_yd)}</td>
+      <td class="stat-cell">${fmtStat(p.re_td)}</td>
+      <td class="stat-cell">${fmtStat(p.tkl)}</td>
+      <td class="stat-cell">${fmtStat(p.sack)}</td>
+      <td class="stat-cell">${fmtStat(p.ff)}</td>
       <td>${statusHtml}</td>
     </tr>`;
   }).join('');
