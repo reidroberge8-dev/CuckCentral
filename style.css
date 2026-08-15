@@ -220,7 +220,7 @@ tr.drafted td.name-cell { text-decoration: line-through; }
 }
 main { flex: 1; min-width: 0; }
 #roster-sidebar {
-  width: 260px;
+  width: 300px;
   flex-shrink: 0;
   background: var(--panel);
   border-right: 1px solid var(--border);
@@ -280,7 +280,7 @@ main { flex: 1; min-width: 0; }
   padding-bottom: 12px;
   border-bottom: 1px solid var(--border);
 }
-.activity-list { display: flex; flex-direction: column; gap: 6px; max-height: 220px; overflow-y: auto; }
+.activity-list { display: flex; flex-direction: column; gap: 6px; max-height: 220px; overflow-y: auto; padding-right: 5px; }
 .activity-item {
   font-size: 12px;
   line-height: 1.4;
