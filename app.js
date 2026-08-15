@@ -137,6 +137,29 @@ function normalizeName(raw) {
 // fractional (e.g. a backup DL projected for 0.2 INT on the season).
 function fmtYds(v) { return v == null ? '-' : Math.round(v).toString(); }
 function fmtStat(v) { return v == null ? '-' : Number(v).toFixed(1); }
+function fmtAdp(v) { return v == null ? '-' : Number(v).toFixed(1); }
+
+// Sleeper's injury_status codes, mapped to a short badge label + severity
+// class. This is a *current* designation (this week), not a season-long
+// risk prediction - there's no free equivalent of Draft Sharks' proprietary
+// injury-risk model, so this is the honest substitute: real, live, but
+// narrower in scope than what was originally asked for.
+const INJURY_BADGE = {
+  Out: { label: 'Out', cls: 'inj-bad' },
+  IR: { label: 'IR', cls: 'inj-bad' },
+  PUP: { label: 'PUP', cls: 'inj-bad' },
+  Sus: { label: 'Susp', cls: 'inj-bad' },
+  Questionable: { label: 'Q', cls: 'inj-warn' },
+  DNR: { label: 'DNR', cls: 'inj-warn' },
+  COV: { label: 'COVID', cls: 'inj-warn' },
+  NA: { label: 'NA', cls: 'inj-warn' },
+};
+function injuryCell(p) {
+  const info = INJURY_BADGE[p.injuryStatus];
+  if (!info) return '<span class="inj-ok">-</span>';
+  const title = p.injuryBodyPart ? `${p.injuryStatus} - ${p.injuryBodyPart}` : p.injuryStatus;
+  return `<span class="inj-badge ${info.cls}" title="${escapeHtml(title)}">${info.label}</span>`;
+}
 
 // Condensed multi-stat summary shown only in the "ALL" position view, where
 // showing every individual stat column at once (across every position) is
@@ -508,6 +531,13 @@ function getFiltered() {
       if (av > bv) return 1 * dir;
       return 0;
     }
+    if (sortKey === 'adp') {
+      // Missing ADP always sorts last, regardless of asc/desc.
+      if (av == null && bv == null) return 0;
+      if (av == null) return 1;
+      if (bv == null) return -1;
+      return (av - bv) * dir;
+    }
     av = av == null ? -Infinity : av;
     bv = bv == null ? -Infinity : bv;
     return (av - bv) * dir;
@@ -528,6 +558,8 @@ function buildTableHeader() {
     '<th data-key="name">Player</th>',
     '<th data-key="pos">Pos</th>',
     '<th data-key="team">Team</th>',
+    '<th data-key="injuryStatus" title="Current injury designation (Sleeper) - not a season-long risk prediction">Inj</th>',
+    '<th data-key="adp" title="Average Draft Position, 12-team PPR mocks (FantasyFootballCalculator.com)">ADP</th>',
     '<th data-key="customPts" class="sort-default">Proj Pts</th>',
   ].join('');
   const statHead = cols
@@ -539,12 +571,12 @@ function buildTableHeader() {
   headerRow.querySelectorAll('th').forEach(th => {
     th.addEventListener('click', () => {
       const key = th.dataset.key;
-      if (key === 'statline' || key === 'star') return; // not real sortable fields
+      if (key === 'statline' || key === 'star' || key === 'injuryStatus') return; // not real sortable fields
       if (sortKey === key) {
         sortDir = sortDir === 'asc' ? 'desc' : 'asc';
       } else {
         sortKey = key;
-        sortDir = (key === 'name' || key === 'pos' || key === 'team') ? 'asc' : 'desc';
+        sortDir = (key === 'name' || key === 'pos' || key === 'team' || key === 'adp') ? 'asc' : 'desc';
       }
       render();
     });
@@ -557,7 +589,7 @@ function render() {
   // If the active sort column isn't in the current header set (e.g. user
   // sorted by a stat column, then switched back to ALL), fall back to
   // sorting by projected points rather than silently sorting by nothing.
-  const validKeys = new Set(['posRank', 'name', 'pos', 'team', 'customPts', 'status',
+  const validKeys = new Set(['posRank', 'name', 'pos', 'team', 'customPts', 'status', 'adp',
     ...(cols ? cols.map(c => c.key) : [])]);
   if (!validKeys.has(sortKey)) { sortKey = 'customPts'; sortDir = 'desc'; }
 
@@ -577,6 +609,8 @@ function render() {
       <td class="name-cell">${escapeHtml(p.name)}</td>
       <td><span class="pos-badge pos-${p.pos}">${p.pos}</span></td>
       <td>${p.team}</td>
+      <td>${injuryCell(p)}</td>
+      <td>${fmtAdp(p.adp)}</td>
       <td>${p.customPts != null ? p.customPts.toFixed(1) : '-'}</td>
       ${statCellsHtml}
       <td>${statusHtml}</td>
