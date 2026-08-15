@@ -94,10 +94,10 @@ let rosterCollapsed = false;
 try { rosterCollapsed = localStorage.getItem(ROSTER_COLLAPSE_KEY) === '1'; } catch (e) { rosterCollapsed = false; }
 function applyRosterCollapsed() {
   const sidebar = document.getElementById('roster-sidebar');
-  const btn = document.getElementById('roster-toggle');
+  const btn = document.getElementById('panel-toggle-top');
   sidebar.classList.toggle('collapsed', rosterCollapsed);
-  btn.textContent = rosterCollapsed ? '\u2630' : '\u00d7';
-  btn.title = rosterCollapsed ? 'Show roster' : 'Hide roster';
+  btn.textContent = rosterCollapsed ? 'Show side panel' : 'Hide side panel';
+  btn.title = rosterCollapsed ? 'Show side panel' : 'Hide side panel';
 }
 
 // ---------- recent draft activity (in-memory for this session) ----------
@@ -476,8 +476,20 @@ async function syncDraftBoard(manual) {
     // since the page loaded, by any team, not just ours.
     const colTeamNames = getColTeamNames(rows, start - 1, teamCols);
     const allPicks = extractAllPicks(rows, start, end, teamCols);
+    const currentKeys = new Set(allPicks.map(p => `${p.row}:${p.col}`));
     const newPicks = allPicks.filter(p => !seenPickKeys.has(`${p.row}:${p.col}`));
     newPicks.forEach(p => seenPickKeys.add(`${p.row}:${p.col}`));
+
+    // A pick that was previously logged but whose cell is now empty (the
+    // sheet owner undid/cleared it) should disappear from the activity feed
+    // too - it's no longer true that it happened.
+    const removedKeys = [...seenPickKeys].filter(k => !currentKeys.has(k));
+    if (removedKeys.length) {
+      const removedSet = new Set(removedKeys);
+      removedKeys.forEach(k => seenPickKeys.delete(k));
+      activityLog = activityLog.filter(a => !removedSet.has(a.key));
+    }
+
     if (newPicks.length) {
       // First sync ever: these picks were all already on the board when the
       // page loaded, not "just now" - label by round instead of faking a
@@ -486,6 +498,7 @@ async function syncDraftBoard(manual) {
       // same poll, stagger by a second apiece so they don't render identically.
       const now = Date.now();
       const entries = newPicks.map((p, i) => ({
+        key: `${p.row}:${p.col}`,
         team: colTeamNames[p.col] || 'Unknown',
         name: p.name,
         pos: p.pos,
@@ -643,14 +656,21 @@ function escapeHtml(s) {
 function buildPosFilters() {
   const container = document.getElementById('pos-filters');
   const all = ['ALL', ...POSITIONS];
-  container.innerHTML = all.map(p => `<button data-pos="${p}" class="${p === activePos ? 'active' : ''}">${p}</button>`).join('');
-  container.querySelectorAll('button').forEach(btn => {
+  const posButtons = all.map(p => `<button data-pos="${p}" class="${p === activePos ? 'active' : ''}">${p}</button>`).join('');
+  const starButton = `<button id="star-filter-btn" class="star-filter-btn${showStarredOnly ? ' active' : ''}" title="Show starred players only">\u2605 Starred</button>`;
+  container.innerHTML = posButtons + starButton;
+  container.querySelectorAll('button[data-pos]').forEach(btn => {
     btn.addEventListener('click', () => {
       activePos = btn.dataset.pos;
-      container.querySelectorAll('button').forEach(b => b.classList.toggle('active', b === btn));
+      container.querySelectorAll('button[data-pos]').forEach(b => b.classList.toggle('active', b === btn));
       buildTableHeader();
       render();
     });
+  });
+  document.getElementById('star-filter-btn').addEventListener('click', (e) => {
+    showStarredOnly = !showStarredOnly;
+    e.target.classList.toggle('active', showStarredOnly);
+    render();
   });
 }
 
@@ -661,10 +681,6 @@ function wireControls() {
   });
   document.getElementById('hide-drafted').addEventListener('change', (e) => {
     hideDrafted = e.target.checked;
-    render();
-  });
-  document.getElementById('show-starred-only').addEventListener('change', (e) => {
-    showStarredOnly = e.target.checked;
     render();
   });
   document.getElementById('refresh-btn').addEventListener('click', () => syncDraftBoard(true));
@@ -678,7 +694,7 @@ function wireControls() {
     render();
   });
 
-  document.getElementById('roster-toggle').addEventListener('click', () => {
+  document.getElementById('panel-toggle-top').addEventListener('click', () => {
     rosterCollapsed = !rosterCollapsed;
     try { localStorage.setItem(ROSTER_COLLAPSE_KEY, rosterCollapsed ? '1' : '0'); } catch (e) { /* storage unavailable */ }
     applyRosterCollapsed();

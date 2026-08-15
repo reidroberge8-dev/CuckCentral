@@ -76,6 +76,17 @@ h1 .sub { color: var(--muted); font-size: 14px; font-weight: normal; }
   border-color: var(--accent);
   font-weight: 600;
 }
+.star-filter-btn {
+  margin-left: 4px;
+  border-left: 1px solid var(--border);
+  padding-left: 12px !important;
+}
+.star-filter-btn.active {
+  background: var(--yellow);
+  color: #0f1117;
+  border-color: var(--yellow);
+  font-weight: 600;
+}
 .avail-toggle { font-size: 13px; color: var(--muted); display: flex; gap: 6px; align-items: center; }
 #count-label { margin-left: auto; font-size: 13px; color: var(--muted); }
 .table-wrap { padding: 0 24px 40px; overflow-x: auto; }
@@ -170,19 +181,21 @@ main { flex: 1; min-width: 0; }
 }
 .roster-header { display: flex; align-items: center; justify-content: space-between; }
 .roster-header h2 { margin: 0; }
-#roster-toggle {
+.panel-toggle-top {
+  display: block;
+  width: 100%;
   background: var(--panel2);
   color: var(--muted);
   border: 1px solid var(--border);
   border-radius: 6px;
-  width: 22px;
-  height: 22px;
-  line-height: 1;
+  padding: 6px 8px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 12.5px;
+  font-weight: 600;
+  margin-bottom: 12px;
   flex-shrink: 0;
 }
-#roster-toggle:hover { color: var(--accent); border-color: var(--accent); }
+.panel-toggle-top:hover { color: var(--accent); border-color: var(--accent); }
 #roster-sidebar.collapsed {
   width: 40px;
   padding: 16px 8px;
@@ -192,6 +205,17 @@ main { flex: 1; min-width: 0; }
 #roster-sidebar.collapsed #roster-body,
 #roster-sidebar.collapsed .roster-header h2 {
   display: none;
+}
+#roster-sidebar.collapsed .panel-toggle-top {
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  font-size: 0;
+  writing-mode: vertical-rl;
+}
+#roster-sidebar.collapsed .panel-toggle-top::before {
+  content: '\2630';
+  font-size: 14px;
 }
 #activity-box {
   margin-bottom: 16px;
