@@ -155,9 +155,9 @@ function statLine(p) {
   }
 }
 
-// Individual sortable stat columns shown only when a single position filter
-// is active (ALL keeps the condensed statLine() summary instead - showing
-// all of these at once across every position was too messy).
+// Per-position sortable stat columns. The ALL tab now shows the union of
+// all of these (see ALL_STAT_COLUMNS below) rather than a condensed
+// summary line.
 const STAT_COLUMNS_BY_POS = {
   QB: [
     { key: 'p_yds', label: 'Pass Yds', fmt: fmtYds },
@@ -185,8 +185,21 @@ const STAT_COLUMNS_BY_POS = {
     { key: 're_td', label: 'Rec TD',   fmt: fmtStat },
   ],
 };
-// null means "ALL" mode: render the single condensed statLine() column.
-function statColumnsFor(pos) { return STAT_COLUMNS_BY_POS[pos] || null; }
+// Full column set for the "ALL" tab: the deduped union of every
+// position's individual stat columns (now that IDP is gone, this is only
+// 8 columns total, not the 15+ it would have been with tkl/sack/ff mixed
+// in, so showing them all at once is no longer too noisy).
+const ALL_STAT_COLUMNS = [
+  { key: 'p_yds',  label: 'Pass Yds', fmt: fmtYds },
+  { key: 'p_td',   label: 'Pass TD',  fmt: fmtStat },
+  { key: 'intc',   label: 'Int',      fmt: fmtStat },
+  { key: 'ru_yds', label: 'Rush Yds', fmt: fmtYds },
+  { key: 'ru_td',  label: 'Rush TD',  fmt: fmtStat },
+  { key: 'rec',    label: 'Rec',      fmt: fmtStat },
+  { key: 're_yd',  label: 'Rec Yds',  fmt: fmtYds },
+  { key: 're_td',  label: 'Rec TD',   fmt: fmtStat },
+];
+function statColumnsFor(pos) { return STAT_COLUMNS_BY_POS[pos] || ALL_STAT_COLUMNS; }
 
 // ---------- data load ----------
 async function loadPlayers() {
@@ -498,8 +511,9 @@ function getFiltered() {
 }
 
 // Builds the header row to match the current position filter: base columns
-// are always present, then either the condensed statLine header (ALL) or
-// that position's individual sortable stat columns, then Status.
+// are always present, then that position's individual sortable stat
+// columns (or the ALL_STAT_COLUMNS union when no position filter is
+// active), then Status.
 function buildTableHeader() {
   const headerRow = document.getElementById('header-row');
   const cols = statColumnsFor(activePos);
