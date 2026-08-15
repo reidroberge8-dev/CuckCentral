@@ -13,7 +13,7 @@ const POLL_MS = 20000;
 // (sequential integers starting at 1 in column B) is robust to sheet edits.
 
 // IDP (DL/LB/DB) are drafted in a separate process, not on this board.
-const POSITIONS = ['QB', 'RB', 'WR', 'TE'];
+const POSITIONS = ['QB', 'RB', 'WR', 'TE', 'K', 'DST'];
 
 // Team we're building the sidebar roster for. Matched against the sheet's
 // header row case/punctuation-insensitively, so "Reid/Mike" vs the sheet's
@@ -146,7 +146,7 @@ function tickSyncStatus() {
   if (lastSyncAt == null) return;
   const statusEl = document.getElementById('sync-status');
   if (statusEl.classList.contains('sync-error')) return;
-  statusEl.textContent = `Synced ${formatAgo(lastSyncAt)} \u2014 ${lastDraftedCount} drafted`;
+  statusEl.textContent = `Synced ${formatAgo(lastSyncAt)}`;
 }
 function renderActivity() {
   const el = document.getElementById('activity-list');
@@ -241,6 +241,11 @@ const STAT_COLUMNS_BY_POS = {
     { key: 're_yd', label: 'Rec Yds',  fmt: fmtYds },
     { key: 're_td', label: 'Rec TD',   fmt: fmtStat },
   ],
+  // K and D/ST have no real per-game stat lines in this dataset (no Clay
+  // projection source covers them - see README) - just rank + estimated
+  // Proj Pts, so an empty column list here is intentional, not a gap.
+  K: [],
+  DST: [],
 };
 // Full column set for the "ALL" tab: the deduped union of every
 // position's individual stat columns (now that IDP is gone, this is only
@@ -699,7 +704,15 @@ async function syncDraftBoard(manual) {
 // ---------- filtering / sorting / rendering ----------
 function getFiltered() {
   let list = players;
-  if (activePos !== 'ALL') list = list.filter(p => p.pos === activePos);
+  if (activePos === 'ALL') {
+    // K and D/ST are deliberately excluded from the combined "ALL" view -
+    // they're a different kind of ranking (ADP-based estimate, no real
+    // stat line) and would just clutter the main skill-position board.
+    // They're only ever shown when their own filter button is active.
+    list = list.filter(p => p.pos !== 'K' && p.pos !== 'DST');
+  } else {
+    list = list.filter(p => p.pos === activePos);
+  }
   if (hideDrafted) list = list.filter(p => !p.drafted);
   if (showStarredOnly) list = list.filter(p => starredNames.has(p._norm));
   if (searchTerm) {

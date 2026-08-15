@@ -10,6 +10,7 @@
   --yellow: #e8c547;
   --red: #ef5a6a;
   --drafted: #3a3f4d;
+  --sync: #2dd4bf;
 }
 * { box-sizing: border-box; }
 body {
@@ -26,19 +27,42 @@ header {
   top: 0;
   z-index: 10;
 }
+.header-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
 h1 { margin: 0 0 8px 0; font-size: 22px; }
 h1 .sub { color: var(--muted); font-size: 14px; font-weight: normal; }
-.status-bar { display: flex; align-items: center; gap: 12px; font-size: 13px; color: var(--muted); }
+/* Deliberately a different, high-contrast color (teal) from everything
+   else in the header - the blue source-links and yellow on-clock banner -
+   so this pill reads at a glance as its own distinct thing: live sync
+   status, pinned to the top-right corner. */
+.status-bar {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #0f1117;
+  background: var(--sync);
+  padding: 6px 10px 6px 14px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
 #refresh-btn {
-  background: var(--panel2);
-  color: var(--text);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 4px 10px;
+  background: #0f1117;
+  color: var(--sync);
+  border: 1px solid transparent;
+  border-radius: 14px;
+  padding: 4px 12px;
   cursor: pointer;
   font-size: 13px;
+  font-weight: 700;
 }
-#refresh-btn:hover { border-color: var(--accent); }
+#refresh-btn:hover { background: #1a1d29; }
 .source-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
 .source-btn {
   background: var(--panel2);
@@ -53,6 +77,8 @@ h1 .sub { color: var(--muted); font-size: 14px; font-weight: normal; }
 .source-btn:hover { color: var(--accent); border-color: var(--accent); }
 #sheet-link-btn { color: var(--green); }
 #sheet-link-btn:hover { border-color: var(--green); color: var(--green); }
+#adp-link-btn, #injury-link-btn { color: var(--accent); border-color: var(--accent); }
+#adp-link-btn:hover, #injury-link-btn:hover { color: var(--accent); border-color: var(--accent); background: #4da3ff1a; }
 .controls {
   display: flex;
   flex-wrap: wrap;
@@ -147,6 +173,8 @@ tbody td { padding: 8px 12px; }
 .pos-DL { background: #b073ff33; color: #b073ff; }
 .pos-LB { background: #ff9f4033; color: #ff9f40; }
 .pos-DB { background: #40d9ff33; color: #40d9ff; }
+.pos-K { background: #f472b633; color: #f472b6; }
+.pos-DST { background: #94a3b833; color: #94a3b8; }
 tr.drafted { opacity: 0.4; }
 tr.drafted td.name-cell { text-decoration: line-through; }
 .drafted-tag {
