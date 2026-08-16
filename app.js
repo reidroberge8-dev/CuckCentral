@@ -63,7 +63,7 @@ function normalizeTeamLabel(s) {
 let players = [];          // full player list from players.json
 let draftedNames = new Set(); // normalized names currently drafted
 let activePos = 'ALL';
-let sortKey = 'adp';
+let sortKey = 'espnRank';
 let sortDir = 'asc';
 let searchTerm = '';
 let hideDrafted = false;
@@ -756,8 +756,8 @@ const BASE_START_COLS = [
   { key: 'pos', label: 'Pos' },
   { key: 'team', label: 'Team' },
   { key: 'injuryRisk', label: 'Inj Risk', title: 'Injury risk category (Draft Sharks)' },
-  { key: 'adp', label: 'ADP', title: 'Average Draft Position, 12-team non-PPR mocks (FantasyFootballCalculator.com)', sortDefault: true },
-  { key: 'espnRank', label: 'ESPN Rk', title: 'ESPN Non-PPR Top 300 overall ranking (Aug 2026). Players outside the top 300 show —.' },
+  { key: 'adp', label: 'ADP', title: 'Average Draft Position, 12-team non-PPR mocks (FantasyFootballCalculator.com)' },
+  { key: 'espnRank', label: 'ESPN Rk', title: 'ESPN Non-PPR Top 300 overall ranking (Aug 2026). Players outside the top 300 show —.', sortDefault: true },
   { key: 'customPts', label: 'Proj Pts' },
 ];
 const BASE_END_COL = { key: 'status', label: 'Status' };
@@ -826,7 +826,7 @@ function render() {
   // sorting by projected points rather than silently sorting by nothing.
   const validKeys = new Set(['posRank', 'name', 'pos', 'team', 'customPts', 'status', 'adp', 'espnRank', 'injuryRisk',
     ...cols.map(c => c.key)]);
-  if (!validKeys.has(sortKey)) { sortKey = 'adp'; sortDir = 'asc'; }
+  if (!validKeys.has(sortKey)) { sortKey = 'espnRank'; sortDir = 'asc'; }
 
   const list = getFiltered();
   const rows = list.map(p => {
