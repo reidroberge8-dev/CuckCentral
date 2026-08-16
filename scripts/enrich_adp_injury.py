@@ -32,6 +32,15 @@ SLEEPER_PLAYERS_URL = "https://api.sleeper.app/v1/players/nfl"
 
 FANTASY_POS = {"QB", "RB", "WR", "TE"}
 
+# Name aliases: maps (normalize_name(our_name), pos) -> normalize_name(ffc_name)
+# Use when the display name we want differs from what FFC uses.
+# Ken Walker III is now named "Kenneth Walker III" in players.json (direct match).
+NAME_ALIASES = {
+    ("kenneth gainwell", "RB"): "kenny gainwell",   # ESPN: Kenneth, FFC: Kenny
+    ("chigoziem okonkwo", "TE"): "chig okonkwo",    # ESPN: full name, FFC: nickname
+    ("cameron ward", "QB"):      "cam ward",         # ESPN: Cameron, FFC: Cam
+}
+
 
 def normalize_name(raw):
     """Must stay identical to normalizeName() in app.js."""
@@ -66,7 +75,11 @@ def main():
     for p in players:
         if p["pos"] not in FANTASY_POS:
             continue
-        key = (normalize_name(p["name"]), p["pos"])
+        norm = normalize_name(p["name"])
+        pos = p["pos"]
+        # Apply alias if defined (display name differs from FFC name)
+        lookup_norm = NAME_ALIASES.get((norm, pos), norm)
+        key = (lookup_norm, pos)
         p["adp"] = adp_by_key.get(key)
         if p["adp"] is not None:
             adp_matched += 1
@@ -93,7 +106,10 @@ def main():
     for p in players:
         if p["pos"] not in FANTASY_POS:
             continue
-        key = (normalize_name(p["name"]), p["pos"])
+        norm = normalize_name(p["name"])
+        pos = p["pos"]
+        lookup_norm = NAME_ALIASES.get((norm, pos), norm)
+        key = (lookup_norm, pos)
         info = injury_by_key.get(key)
         p["injuryStatus"] = info["status"] if info else None
         p["injuryBodyPart"] = info["bodyPart"] if info else None
