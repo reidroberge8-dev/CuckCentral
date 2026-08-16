@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cuckville Cucks War Room 2026</title>
-<link rel="stylesheet" href="style.css?v=20260815e">
+<link rel="stylesheet" href="style.css?v=20260816a">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
 </head>
 <body>
@@ -31,7 +31,10 @@
     <div id="activity-list" class="activity-list"></div>
   </div>
   <div class="roster-header">
-    <h2>Reid/Mike Roster</h2>
+    <h2 id="roster-title">Reid/Mike Roster</h2>
+    <select id="team-select" title="Select a team to view">
+      <option value="ALL">Show All Teams</option>
+    </select>
   </div>
   <div id="roster-body">
     <div class="roster-section-label">Starters</div>
@@ -70,6 +73,6 @@
   Draft board synced live from <a id="sheet-link" href="#" target="_blank">Google Sheet</a>.
 </footer>
 
-<script src="app.js?v=20260816b"></script>
+<script src="app.js?v=20260816c"></script>
 </body>
 </html>

@@ -120,6 +120,14 @@ let wasMyTurn = false;
 // time it becomes (or stops being) our turn, so the flash comes back
 // fresh on a future pick rather than staying muted forever.
 let onClockAcked = false;
+// Which team's roster to show / on-clock-watch. 'ALL' = show every team
+// (starters-only compact view) and watch MY_TEAM_NAME for the ding.
+const WATCH_TEAM_KEY = 'ffdb_watch_team';
+let watchTeam = 'ALL';
+try { watchTeam = localStorage.getItem(WATCH_TEAM_KEY) || 'ALL'; } catch(e) {}
+// Cached sheet parse so the dropdown can re-render rosters without a re-fetch.
+let cachedRows = null, cachedStart = -1, cachedEnd = -1;
+let cachedTeamCols = [], cachedColTeamNames = {};
 // Timestamp (ms) of the last successful sync, so the status line can show
 // "Synced Xs ago" - a live-updating relative time is more useful mid-draft
 // than a fixed clock reading you have to do the subtraction on yourself.
@@ -566,6 +574,86 @@ function renderRosterSidebar(starters, bench) {
   benchTable.innerHTML = benchRows.join('');
 }
 
+// Populate (or refresh) the #team-select dropdown with the actual
+// team names read from the sheet. Preserves the current selection.
+function buildTeamDropdown(colTeamNames) {
+  const sel = document.getElementById('team-select');
+  if (!sel) return;
+  const names = Object.values(colTeamNames).filter(Boolean).sort();
+  // Rebuild options: keep "Show All Teams" first, then sorted team names.
+  sel.innerHTML = '<option value="ALL">Show All Teams</option>' +
+    names.map(n => `<option value="${escapeHtml(n)}">${escapeHtml(n)}</option>`).join('');
+  // Re-apply stored selection if the team still exists.
+  if (names.some(n => n === watchTeam)) sel.value = watchTeam;
+  else sel.value = 'ALL';
+}
+
+// Render whichever roster view matches the current watchTeam setting.
+function renderSelectedRoster() {
+  if (!cachedRows || cachedStart === -1) return;
+  const titleEl = document.getElementById('roster-title');
+  if (watchTeam === 'ALL') {
+    if (titleEl) titleEl.textContent = 'All Rosters';
+    renderAllTeamsRoster();
+  } else {
+    if (titleEl) titleEl.textContent = `${watchTeam} Roster`;
+    const col = findTeamColumn(cachedRows, cachedStart, cachedEnd, watchTeam);
+    if (col !== -1) {
+      const picks = getTeamPicks(cachedRows, cachedStart, cachedEnd, col);
+      const { starters, bench } = assignRoster(picks);
+      renderRosterSidebar(starters, bench);
+    } else {
+      document.getElementById('starters-table').innerHTML =
+        '<tr><td colspan="3" style="opacity:.5;padding:8px">Team not found in sheet.</td></tr>';
+      document.getElementById('bench-table').innerHTML = '';
+      document.getElementById('starters-total').textContent = '';
+    }
+  }
+}
+
+// "Show All Teams" view: compact starters-only section per team.
+function renderAllTeamsRoster() {
+  const startersTable = document.getElementById('starters-table');
+  const benchTable    = document.getElementById('bench-table');
+  const totalEl       = document.getElementById('starters-total');
+  if (totalEl) totalEl.textContent = '';
+  if (benchTable) benchTable.innerHTML = '';
+  const names = Object.values(cachedColTeamNames).filter(Boolean);
+  if (!names.length) {
+    startersTable.innerHTML = '<tr><td colspan="3" style="opacity:.5;padding:8px">No teams found.</td></tr>';
+    return;
+  }
+  // Derive pick order (teams that have picked first, by pick count desc).
+  const sections = names.map(name => {
+    const col = findTeamColumn(cachedRows, cachedStart, cachedEnd, name);
+    const picks = col !== -1 ? getTeamPicks(cachedRows, cachedStart, cachedEnd, col) : [];
+    const { starters } = assignRoster(picks);
+    let sum = 0;
+    starters.forEach(({ player }) => { if (player && player.pts != null) sum += player.pts; });
+    return { name, starters, pts: sum };
+  });
+  // Render each team as a labelled block inside the starters table.
+  // Use <tbody> groups: one header row + starters rows per team.
+  startersTable.innerHTML = sections.map(({ name, starters, pts }) => {
+    const ordered = DISPLAY_ORDER
+      .map(key => starters.find(s => s.slot.key === key))
+      .filter(Boolean);
+    const rows = ordered.map(({ slot, player }) => {
+      const cls = player ? '' : ' empty';
+      const pname = player ? escapeHtml(player.name) : '\u2014';
+      const ppts  = player && player.pts != null ? player.pts.toFixed(1) : '';
+      return `<tr><td class="slot-label">${slot.label}</td>`
+           + `<td class="slot-player${cls}">${pname}</td>`
+           + `<td class="slot-pts">${ppts}</td></tr>`;
+    }).join('');
+    const ptsTxt = pts > 0 ? ` · ${pts.toFixed(1)} pts` : '';
+    return `<tbody class="team-section">`
+         + `<tr class="team-section-header"><td colspan="3">${escapeHtml(name)}${ptsTxt}</td></tr>`
+         + rows
+         + `</tbody>`;
+  }).join('');
+}
+
 async function syncDraftBoard(manual) {
   const statusEl = document.getElementById('sync-status');
   if (manual) statusEl.textContent = 'Refreshing\u2026';
@@ -634,14 +722,11 @@ async function syncDraftBoard(manual) {
     initialSyncDone = true;
     renderActivity();
 
-    const myCol = findTeamColumn(rows, start, end, MY_TEAM_NAME);
-    if (myCol !== -1) {
-      const myPicks = getTeamPicks(rows, start, end, myCol);
-      const { starters, bench } = assignRoster(myPicks);
-      renderRosterSidebar(starters, bench);
-    } else {
-      console.warn(`Could not find column for team "${MY_TEAM_NAME}" in sheet header.`);
-    }
+    // Cache parsed sheet data so the dropdown can re-render without re-fetching.
+    cachedRows = rows; cachedStart = start; cachedEnd = end;
+    cachedTeamCols = teamCols; cachedColTeamNames = colTeamNames;
+    buildTeamDropdown(colTeamNames);
+    renderSelectedRoster();
 
     // On-the-clock banner: parse the sheet's "On the Clock: X" cell and show
     // it up top. When it's our team, blink continuously with a golden
@@ -665,7 +750,8 @@ async function syncDraftBoard(manual) {
           if (isKnown(candidate)) { onClockTeam = candidate; break; }
         }
       }
-      const isMyTurn = normalizeTeamLabel(onClockTeam) === normalizeTeamLabel(MY_TEAM_NAME);
+      const watchedTeamForClock = watchTeam === 'ALL' ? MY_TEAM_NAME : watchTeam;
+    const isMyTurn = normalizeTeamLabel(onClockTeam) === normalizeTeamLabel(watchedTeamForClock);
       indicator.textContent = `On the Clock: ${onClockTeam}`;
       if (isMyTurn && !wasMyTurn) { playDing(); onClockAcked = false; }
       wasMyTurn = isMyTurn;
@@ -907,6 +993,14 @@ function wireControls() {
     if (!btn) return;
     toggleStar(btn.dataset.norm);
     render();
+  });
+
+  document.getElementById('team-select').addEventListener('change', (e) => {
+    watchTeam = e.target.value;
+    try { localStorage.setItem(WATCH_TEAM_KEY, watchTeam); } catch(_) {}
+    // Reset on-clock state so the new team's turn evaluates fresh next poll.
+    wasMyTurn = false; onClockAcked = false;
+    renderSelectedRoster();
   });
 
   document.getElementById('panel-toggle-top').addEventListener('click', () => {
