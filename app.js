@@ -837,13 +837,13 @@ function getFiltered() {
 // stat columns, so these cells visually span both header rows.
 const BASE_START_COLS = [
   { key: 'star', label: ' ', title: 'Starred' },
+  { key: 'espnRank', label: 'ESPN Rk', title: 'ESPN Non-PPR Top 300 overall ranking (Aug 2026). Players outside the top 300 show —.', sortDefault: true },
   { key: 'posRank', label: 'Pos Rk' },
   { key: 'name', label: 'Player' },
   { key: 'pos', label: 'Pos' },
   { key: 'team', label: 'Team' },
   { key: 'injuryRisk', label: 'Inj Risk', title: 'Injury risk category (Draft Sharks)' },
   { key: 'adp', label: 'ADP', title: 'Average Draft Position, 12-team non-PPR mocks (FantasyFootballCalculator.com)' },
-  { key: 'espnRank', label: 'ESPN Rk', title: 'ESPN Non-PPR Top 300 overall ranking (Aug 2026). Players outside the top 300 show —.', sortDefault: true },
   { key: 'customPts', label: 'Proj Pts' },
 ];
 const BASE_END_COL = { key: 'status', label: 'Status' };
@@ -924,13 +924,13 @@ function render() {
     const isStarred = starredNames.has(p._norm);
     return `<tr class="${draftedCls.trim()}">
       <td class="star-cell"><button class="star-btn${isStarred ? ' starred' : ''}" data-norm="${escapeHtml(p._norm)}" title="${isStarred ? 'Unstar' : 'Star'}">${isStarred ? '\u2605' : '\u2606'}</button></td>
+      <td>${p.espnRank != null ? p.espnRank : '—'}</td>
       <td>${p.posRank}</td>
       <td class="name-cell">${escapeHtml(p.name)}</td>
       <td><span class="pos-badge pos-${p.pos}">${p.pos}</span></td>
       <td>${p.team}</td>
       <td>${injuryCell(p)}</td>
       <td>${fmtAdp(p.adp)}</td>
-      <td>${p.espnRank != null ? p.espnRank : '—'}</td>
       <td>${p.customPts != null ? p.customPts.toFixed(1) : '-'}</td>
       ${statCellsHtml}
       <td>${statusHtml}</td>
