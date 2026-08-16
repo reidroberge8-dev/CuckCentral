@@ -422,12 +422,19 @@ main { flex: 1; min-width: 0; }
   cursor: pointer;
   font-size: 14px;
   line-height: 1;
-  color: var(--muted);
-  padding: 0;
-  opacity: 0.4;
+  padding: 2px 3px;
+  border-radius: 4px;
+  opacity: 0.12;
+  filter: grayscale(1);
+  transition: opacity 0.15s, filter 0.15s;
 }
-.sleeper-btn.sleepered { opacity: 1; color: #5dd8d8; }
-.sleeper-btn:hover { opacity: 1; color: #5dd8d8; }
+.sleeper-btn.sleepered {
+  opacity: 1;
+  filter: grayscale(0) drop-shadow(0 0 4px #5dd8d8);
+  background: rgba(93, 216, 216, 0.18);
+}
+.sleeper-btn:hover { opacity: 0.7; filter: grayscale(0); }
+.sleeper-btn.sleepered:hover { opacity: 1; }
 
 /* ── Target round input ── */
 .tgt-cell { text-align: center; width: 52px; }
