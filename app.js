@@ -68,6 +68,7 @@ let sortDir = 'asc';
 let searchTerm = '';
 let hideDrafted = false;
 let showStarredOnly = false;
+let showSleepersOnly = false;
 let pollTimer = null;
 
 document.getElementById('sheet-link').href = SHEET_VIEW_URL;
@@ -87,6 +88,36 @@ function saveStarred() {
 function toggleStar(norm) {
   if (starredNames.has(norm)) starredNames.delete(norm); else starredNames.add(norm);
   saveStarred();
+}
+
+// ---------- sleeper picks (persisted locally per-browser) ----------
+const SLEEPER_STORAGE_KEY = 'ffdb_sleeper_players';
+let sleeperNames = new Set();
+try {
+  sleeperNames = new Set(JSON.parse(localStorage.getItem(SLEEPER_STORAGE_KEY) || '[]'));
+} catch (e) { sleeperNames = new Set(); }
+function saveSleepers() {
+  try { localStorage.setItem(SLEEPER_STORAGE_KEY, JSON.stringify([...sleeperNames])); } catch (e) {}
+}
+function toggleSleeper(norm) {
+  if (sleeperNames.has(norm)) sleeperNames.delete(norm); else sleeperNames.add(norm);
+  saveSleepers();
+}
+
+// ---------- target rounds (persisted locally per-browser) ----------
+const TARGET_ROUNDS_KEY = 'ffdb_target_rounds';
+let targetRounds = {};
+try { targetRounds = JSON.parse(localStorage.getItem(TARGET_ROUNDS_KEY) || '{}'); } catch (e) {}
+function saveTargetRounds() {
+  try { localStorage.setItem(TARGET_ROUNDS_KEY, JSON.stringify(targetRounds)); } catch (e) {}
+}
+
+// ---------- player notes (persisted locally per-browser) ----------
+const PLAYER_NOTES_KEY = 'ffdb_player_notes';
+let playerNotes = {};
+try { playerNotes = JSON.parse(localStorage.getItem(PLAYER_NOTES_KEY) || '{}'); } catch (e) {}
+function savePlayerNotes() {
+  try { localStorage.setItem(PLAYER_NOTES_KEY, JSON.stringify(playerNotes)); } catch (e) {}
 }
 
 // ---------- roster sidebar collapse (persisted locally per-browser) ----------
@@ -257,7 +288,12 @@ const ALL_STAT_COLUMNS = [
   { key: 're_yd',  label: 'Rec Yds',  fmt: fmtYds },
   { key: 're_td',  label: 'Rec TD',   fmt: fmtStat },
 ];
-function statColumnsFor(pos) { return STAT_COLUMNS_BY_POS[pos] || ALL_STAT_COLUMNS; }
+function statColumnsFor(pos) {
+  // In starred/sleeper-only views the projected-stats columns are hidden
+  // so the board stays compact and focused on the annotation columns.
+  if (showStarredOnly || showSleepersOnly) return [];
+  return STAT_COLUMNS_BY_POS[pos] || ALL_STAT_COLUMNS;
+}
 
 // ---------- data load ----------
 async function loadPlayers() {
@@ -801,6 +837,7 @@ function getFiltered() {
   }
   if (hideDrafted) list = list.filter(p => !p.drafted);
   if (showStarredOnly) list = list.filter(p => starredNames.has(p._norm));
+  if (showSleepersOnly) list = list.filter(p => sleeperNames.has(p._norm));
   if (searchTerm) {
     const t = searchTerm.toLowerCase();
     list = list.filter(p => p.name.toLowerCase().includes(t) || p.team.toLowerCase().includes(t));
@@ -813,6 +850,15 @@ function getFiltered() {
       if (av < bv) return -1 * dir;
       if (av > bv) return 1 * dir;
       return 0;
+    }
+    if (sortKey === 'targetRound') {
+      // Missing target round always sorts last.
+      const atr = targetRounds[a._norm] ? Number(targetRounds[a._norm]) : null;
+      const btr = targetRounds[b._norm] ? Number(targetRounds[b._norm]) : null;
+      if (atr == null && btr == null) return 0;
+      if (atr == null) return 1;
+      if (btr == null) return -1;
+      return (atr - btr) * dir;
     }
     if (sortKey === 'adp' || sortKey === 'espnRank') {
       // Missing value always sorts last, regardless of asc/desc.
@@ -837,7 +883,9 @@ function getFiltered() {
 // stat columns, so these cells visually span both header rows.
 const BASE_START_COLS = [
   { key: 'star', label: ' ', title: 'Starred' },
+  { key: 'sleeper', label: ' ', title: 'Sleeper pick' },
   { key: 'espnRank', label: 'ESPN Rk', title: 'ESPN Non-PPR Top 300 overall ranking (Aug 2026). Players outside the top 300 show —.', sortDefault: true },
+  { key: 'targetRound', label: 'Tgt Rd', title: 'Your target draft round (saved in browser)' },
   { key: 'posRank', label: 'Pos Rk' },
   { key: 'name', label: 'Player' },
   { key: 'pos', label: 'Pos' },
@@ -847,6 +895,7 @@ const BASE_START_COLS = [
   { key: 'customPts', label: 'Proj Pts' },
 ];
 const BASE_END_COL = { key: 'status', label: 'Status' };
+const BASE_NOTES_COL = { key: 'notes', label: 'Notes', title: 'Personal notes (saved in browser)' };
 
 function headerCellHtml(col, rowspan) {
   const attrs = [`data-key="${col.key}"`];
@@ -860,7 +909,7 @@ function attachHeaderSortHandlers(row) {
   row.querySelectorAll('th[data-key]').forEach(th => {
     th.addEventListener('click', () => {
       const key = th.dataset.key;
-      if (key === 'star' || key === 'injuryRisk') return; // not real sortable fields
+      if (key === 'star' || key === 'sleeper' || key === 'notes' || key === 'injuryRisk') return; // not real sortable fields
       if (sortKey === key) {
         sortDir = sortDir === 'asc' ? 'desc' : 'asc';
       } else {
@@ -889,7 +938,8 @@ function buildTableHeader() {
     const baseStart = BASE_START_COLS.map(c => headerCellHtml(c, 2)).join('');
     const statLabel = `<th colspan="${cols.length}" class="stat-group-label">2026 Projections &ndash; Mike Clay ESPN</th>`;
     const baseEnd = headerCellHtml(BASE_END_COL, 2);
-    groupRow.innerHTML = baseStart + statLabel + baseEnd;
+    const notesHeader = headerCellHtml(BASE_NOTES_COL, 2);
+    groupRow.innerHTML = baseStart + statLabel + notesHeader + baseEnd;
     groupRow.style.display = '';
     headerRow.innerHTML = cols.map(c => `<th data-key="${c.key}">${c.label}</th>`).join('');
   } else {
@@ -897,7 +947,8 @@ function buildTableHeader() {
     groupRow.style.display = 'none';
     const baseStart = BASE_START_COLS.map(c => headerCellHtml(c, 1)).join('');
     const baseEnd = headerCellHtml(BASE_END_COL, 1);
-    headerRow.innerHTML = baseStart + baseEnd;
+    const notesHeader2 = headerCellHtml(BASE_NOTES_COL, 1);
+    headerRow.innerHTML = baseStart + notesHeader2 + baseEnd;
   }
 
   attachHeaderSortHandlers(groupRow);
@@ -905,12 +956,15 @@ function buildTableHeader() {
 }
 
 function render() {
+  // Don't clobber inputs the user is actively typing in (notes/tgt-input).
+  if (document.activeElement && document.activeElement.closest &&
+      document.activeElement.closest('#table-body')) return;
   const tbody = document.getElementById('table-body');
   const cols = statColumnsFor(activePos);
   // If the active sort column isn't in the current header set (e.g. user
   // sorted by a stat column, then switched back to ALL), fall back to
   // sorting by projected points rather than silently sorting by nothing.
-  const validKeys = new Set(['posRank', 'name', 'pos', 'team', 'customPts', 'status', 'adp', 'espnRank', 'injuryRisk',
+  const validKeys = new Set(['star', 'sleeper', 'posRank', 'name', 'pos', 'team', 'customPts', 'status', 'adp', 'espnRank', 'injuryRisk', 'targetRound', 'notes',
     ...cols.map(c => c.key)]);
   if (!validKeys.has(sortKey)) { sortKey = 'espnRank'; sortDir = 'asc'; }
 
@@ -922,9 +976,15 @@ function render() {
       : '<span class="avail-tag">Available</span>';
     const statCellsHtml = cols.map(c => `<td class="stat-cell">${c.fmt(p[c.key])}</td>`).join('');
     const isStarred = starredNames.has(p._norm);
+    const isSleeper = sleeperNames.has(p._norm);
+    const tgtRnd = targetRounds[p._norm] || '';
+    const tgtBadge = tgtRnd ? `<span class="tgt-badge">R${tgtRnd}</span>` : '';
+    const notesVal = escapeHtml(playerNotes[p._norm] || '');
     return `<tr class="${draftedCls.trim()}">
-      <td class="star-cell"><button class="star-btn${isStarred ? ' starred' : ''}" data-norm="${escapeHtml(p._norm)}" title="${isStarred ? 'Unstar' : 'Star'}">${isStarred ? '\u2605' : '\u2606'}</button></td>
+      <td class="star-cell"><button class="star-btn${isStarred ? ' starred' : ''}" data-norm="${escapeHtml(p._norm)}" title="${isStarred ? 'Unstar' : 'Star'}">${isStarred ? '\u2605' : '\u2606'}${tgtBadge}</button></td>
+      <td class="sleeper-cell"><button class="sleeper-btn${isSleeper ? ' sleepered' : ''}" data-norm="${escapeHtml(p._norm)}" title="${isSleeper ? 'Remove sleeper' : 'Mark as sleeper'}">\uD83D\uDCA4${tgtBadge}</button></td>
       <td>${p.espnRank != null ? p.espnRank : '—'}</td>
+      <td class="tgt-cell"><input class="tgt-input" type="number" min="1" max="20" placeholder="—" data-norm="${escapeHtml(p._norm)}" value="${tgtRnd}" title="Target draft round"></td>
       <td>${p.posRank}</td>
       <td class="name-cell">${escapeHtml(p.name)}</td>
       <td><span class="pos-badge pos-${p.pos}">${p.pos}</span></td>
@@ -933,6 +993,7 @@ function render() {
       <td>${fmtAdp(p.adp)}</td>
       <td>${p.customPts != null ? p.customPts.toFixed(1) : '-'}</td>
       ${statCellsHtml}
+      <td class="notes-cell"><input class="notes-input" type="text" placeholder="Notes…" data-norm="${escapeHtml(p._norm)}" value="${notesVal}" title="Personal notes"></td>
       <td>${statusHtml}</td>
     </tr>`;
   }).join('');
@@ -959,7 +1020,8 @@ function buildPosFilters() {
   const all = ['ALL', ...POSITIONS];
   const posButtons = all.map(p => `<button data-pos="${p}" class="${p === activePos ? 'active' : ''}">${p}</button>`).join('');
   const starButton = `<button id="star-filter-btn" class="star-filter-btn${showStarredOnly ? ' active' : ''}" title="Show starred players only">\u2605 Starred</button>`;
-  container.innerHTML = posButtons + starButton;
+  const sleeperButton = `<button id="sleeper-filter-btn" class="sleeper-filter-btn${showSleepersOnly ? ' active' : ''}" title="Show sleeper picks only">\uD83D\uDCA4 Sleepers</button>`;
+  container.innerHTML = posButtons + starButton + sleeperButton;
   container.querySelectorAll('button[data-pos]').forEach(btn => {
     btn.addEventListener('click', () => {
       activePos = btn.dataset.pos;
@@ -971,6 +1033,13 @@ function buildPosFilters() {
   document.getElementById('star-filter-btn').addEventListener('click', (e) => {
     showStarredOnly = !showStarredOnly;
     e.target.classList.toggle('active', showStarredOnly);
+    buildTableHeader();
+    render();
+  });
+  document.getElementById('sleeper-filter-btn').addEventListener('click', (e) => {
+    showSleepersOnly = !showSleepersOnly;
+    e.target.classList.toggle('active', showSleepersOnly);
+    buildTableHeader();
     render();
   });
 }
@@ -989,10 +1058,29 @@ function wireControls() {
   // Star buttons are rebuilt on every render(), so use event delegation on
   // the (stable) tbody element instead of re-attaching per-row listeners.
   document.getElementById('table-body').addEventListener('click', (e) => {
-    const btn = e.target.closest('.star-btn');
-    if (!btn) return;
-    toggleStar(btn.dataset.norm);
-    render();
+    const starBtn = e.target.closest('.star-btn');
+    if (starBtn) { toggleStar(starBtn.dataset.norm); render(); return; }
+    const sleeperBtn = e.target.closest('.sleeper-btn');
+    if (sleeperBtn) { toggleSleeper(sleeperBtn.dataset.norm); render(); return; }
+  });
+  // Input delegation for target round and notes.
+  document.getElementById('table-body').addEventListener('input', (e) => {
+    const tgtInput = e.target.closest('.tgt-input');
+    if (tgtInput) {
+      const v = tgtInput.value.trim();
+      if (v) targetRounds[tgtInput.dataset.norm] = Number(v);
+      else delete targetRounds[tgtInput.dataset.norm];
+      saveTargetRounds();
+      return;
+    }
+    const notesInput = e.target.closest('.notes-input');
+    if (notesInput) {
+      const v = notesInput.value;
+      if (v) playerNotes[notesInput.dataset.norm] = v;
+      else delete playerNotes[notesInput.dataset.norm];
+      savePlayerNotes();
+      return;
+    }
   });
 
   document.getElementById('team-select').addEventListener('change', (e) => {
@@ -1032,7 +1120,7 @@ function startPolling() {
 function renderTableSkeleton() {
   const tbody = document.getElementById('table-body');
   const cols = statColumnsFor(activePos);
-  const colCount = BASE_START_COLS.length + cols.length + 1; // +1 for Status
+  const colCount = BASE_START_COLS.length + cols.length + 2; // +1 for Status, +1 for Notes
   const rowsHtml = Array.from({ length: 10 }, () =>
     `<tr class="skeleton-row">${'<td><div class="skeleton-bar"></div></td>'.repeat(colCount)}</tr>`
   ).join('');
