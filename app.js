@@ -957,8 +957,10 @@ function buildTableHeader() {
 
 function render() {
   // Don't clobber inputs the user is actively typing in (notes/tgt-input).
-  if (document.activeElement && document.activeElement.closest &&
-      document.activeElement.closest('#table-body')) return;
+  // Only skip render when an INPUT/TEXTAREA has focus — not buttons.
+  const _ae = document.activeElement;
+  if (_ae && _ae.closest && _ae.closest('#table-body') &&
+      (_ae.tagName === 'INPUT' || _ae.tagName === 'TEXTAREA')) return;
   const tbody = document.getElementById('table-body');
   const cols = statColumnsFor(activePos);
   // If the active sort column isn't in the current header set (e.g. user
