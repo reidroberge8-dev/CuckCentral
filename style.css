@@ -284,7 +284,8 @@ main { flex: 1; min-width: 0; }
 }
 #roster-sidebar.collapsed #activity-box,
 #roster-sidebar.collapsed #roster-body,
-#roster-sidebar.collapsed .roster-header h2 {
+#roster-sidebar.collapsed .roster-header h2,
+#roster-sidebar.collapsed #team-select {
   display: none;
 }
 #roster-sidebar.collapsed .panel-toggle-top {
