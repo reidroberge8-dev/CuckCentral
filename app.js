@@ -66,7 +66,8 @@ let activePos = 'ALL';
 let sortKey = 'espnRank';
 let sortDir = 'asc';
 let searchTerm = '';
-let hideDrafted = false;
+const HIDE_DRAFTED_KEY = 'ffdb_hide_drafted';
+let hideDrafted = localStorage.getItem(HIDE_DRAFTED_KEY) === 'true';
 let showStarredOnly = false;
 let showSleepersOnly = false;
 let pollTimer = null;
@@ -1051,8 +1052,11 @@ function wireControls() {
     searchTerm = e.target.value;
     render();
   });
+  // Sync checkbox to persisted state (overrides any browser-restored value).
+  document.getElementById('hide-drafted').checked = hideDrafted;
   document.getElementById('hide-drafted').addEventListener('change', (e) => {
     hideDrafted = e.target.checked;
+    try { localStorage.setItem(HIDE_DRAFTED_KEY, hideDrafted); } catch(_) {}
     render();
   });
   document.getElementById('refresh-btn').addEventListener('click', () => syncDraftBoard(true));
