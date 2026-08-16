@@ -983,7 +983,7 @@ function render() {
     return `<tr class="${draftedCls.trim()}">
       <td class="star-cell"><button class="star-btn${isStarred ? ' starred' : ''}" data-norm="${escapeHtml(p._norm)}" title="${isStarred ? 'Unstar' : 'Star'}">${isStarred ? '\u2605' : '\u2606'}${tgtBadge}</button></td>
       <td class="sleeper-cell"><button class="sleeper-btn${isSleeper ? ' sleepered' : ''}" data-norm="${escapeHtml(p._norm)}" title="${isSleeper ? 'Remove sleeper' : 'Mark as sleeper'}">\uD83D\uDCA4${tgtBadge}</button></td>
-      <td>${p.espnRank != null ? p.espnRank : '—'}</td>
+      <td class="espn-rk-cell">${p.espnRank != null ? p.espnRank : '—'}</td>
       <td class="tgt-cell"><input class="tgt-input" type="number" min="1" max="20" placeholder="—" data-norm="${escapeHtml(p._norm)}" value="${tgtRnd}" title="Target draft round"></td>
       <td>${p.posRank}</td>
       <td class="name-cell">${escapeHtml(p.name)}</td>

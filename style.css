@@ -401,7 +401,7 @@ main { flex: 1; min-width: 0; }
   font-weight: 700;
   padding: 6px 2px 0 0;
 }
-.star-cell { text-align: center; width: 28px; }
+.star-cell { text-align: center; width: 58px; }
 .star-btn {
   background: none;
   border: none;
@@ -415,7 +415,7 @@ main { flex: 1; min-width: 0; }
 .star-btn:hover { color: var(--yellow); }
 
 /* ── Sleeper button ── */
-.sleeper-cell { text-align: center; width: 28px; }
+.sleeper-cell { text-align: center; width: 58px; }
 .sleeper-btn {
   background: none;
   border: none;
@@ -435,6 +435,12 @@ main { flex: 1; min-width: 0; }
 }
 .sleeper-btn:hover { opacity: 0.7; filter: grayscale(0); }
 .sleeper-btn.sleepered:hover { opacity: 1; }
+
+/* ── ESPN Rank cell ── */
+th[data-key="espnRank"], .espn-rk-cell {
+  width: 64px;
+  text-align: center;
+}
 
 /* ── Target round input ── */
 .tgt-cell { text-align: center; width: 52px; }
