@@ -401,7 +401,7 @@ main { flex: 1; min-width: 0; }
   font-weight: 700;
   padding: 6px 2px 0 0;
 }
-.star-cell { text-align: center; width: 58px; }
+.star-cell { text-align: center; width: 40px; }
 .star-btn {
   background: none;
   border: none;
@@ -415,7 +415,7 @@ main { flex: 1; min-width: 0; }
 .star-btn:hover { color: var(--yellow); }
 
 /* ── Sleeper button ── */
-.sleeper-cell { text-align: center; width: 58px; }
+.sleeper-cell { text-align: center; width: 40px; }
 .sleeper-btn {
   background: none;
   border: none;
@@ -438,12 +438,21 @@ main { flex: 1; min-width: 0; }
 
 /* ── ESPN Rank cell ── */
 th[data-key="espnRank"], .espn-rk-cell {
-  width: 64px;
+  width: 52px;
   text-align: center;
 }
 
+/* ── Narrow annotation column headers: allow wrap so columns stay tight ── */
+th[data-key="star"],
+th[data-key="sleeper"] { width: 40px; white-space: normal; word-break: break-word; text-align: center; }
+th[data-key="targetRound"] { width: 44px; white-space: normal; word-break: break-word; text-align: center; }
+th[data-key="posRank"] { width: 44px; white-space: normal; word-break: break-word; text-align: center; }
+
+/* ── Player name: never wrap ── */
+.name-cell { white-space: nowrap; }
+
 /* ── Target round input ── */
-.tgt-cell { text-align: center; width: 52px; }
+.tgt-cell { text-align: center; width: 44px; }
 .tgt-input {
   width: 44px;
   background: transparent;
