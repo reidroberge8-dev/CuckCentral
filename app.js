@@ -728,8 +728,8 @@ function getFiltered() {
       if (av > bv) return 1 * dir;
       return 0;
     }
-    if (sortKey === 'adp') {
-      // Missing ADP always sorts last, regardless of asc/desc.
+    if (sortKey === 'adp' || sortKey === 'espnRank') {
+      // Missing value always sorts last, regardless of asc/desc.
       if (av == null && bv == null) return 0;
       if (av == null) return 1;
       if (bv == null) return -1;
@@ -757,6 +757,7 @@ const BASE_START_COLS = [
   { key: 'team', label: 'Team' },
   { key: 'injuryRisk', label: 'Inj Risk', title: 'Injury risk category (Draft Sharks)' },
   { key: 'adp', label: 'ADP', title: 'Average Draft Position, 12-team non-PPR mocks (FantasyFootballCalculator.com)', sortDefault: true },
+  { key: 'espnRank', label: 'ESPN Rk', title: 'ESPN Non-PPR Top 300 overall ranking (Aug 2026). Players outside the top 300 show —.' },
   { key: 'customPts', label: 'Proj Pts' },
 ];
 const BASE_END_COL = { key: 'status', label: 'Status' };
@@ -823,7 +824,7 @@ function render() {
   // If the active sort column isn't in the current header set (e.g. user
   // sorted by a stat column, then switched back to ALL), fall back to
   // sorting by projected points rather than silently sorting by nothing.
-  const validKeys = new Set(['posRank', 'name', 'pos', 'team', 'customPts', 'status', 'adp', 'injuryRisk',
+  const validKeys = new Set(['posRank', 'name', 'pos', 'team', 'customPts', 'status', 'adp', 'espnRank', 'injuryRisk',
     ...cols.map(c => c.key)]);
   if (!validKeys.has(sortKey)) { sortKey = 'adp'; sortDir = 'asc'; }
 
@@ -843,6 +844,7 @@ function render() {
       <td>${p.team}</td>
       <td>${injuryCell(p)}</td>
       <td>${fmtAdp(p.adp)}</td>
+      <td>${p.espnRank != null ? p.espnRank : '—'}</td>
       <td>${p.customPts != null ? p.customPts.toFixed(1) : '-'}</td>
       ${statCellsHtml}
       <td>${statusHtml}</td>

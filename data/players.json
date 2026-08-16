@@ -19,7 +19,8 @@
     "adp": 20.3,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 36
   },
   {
     "name": "Lamar Jackson",
@@ -41,7 +42,8 @@
     "adp": 50.3,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Medium Risk"
+    "injuryRisk": "Medium Risk",
+    "espnRank": 56
   },
   {
     "name": "Jayden Daniels",
@@ -63,7 +65,8 @@
     "adp": 69.1,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 55
   },
   {
     "name": "Drake Maye",
@@ -85,7 +88,8 @@
     "adp": 47.9,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 57
   },
   {
     "name": "Jalen Hurts",
@@ -107,7 +111,8 @@
     "adp": 72.1,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 58
   },
   {
     "name": "Jaxson Dart",
@@ -129,7 +134,8 @@
     "adp": 107.2,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 75
   },
   {
     "name": "Bo Nix",
@@ -151,7 +157,8 @@
     "adp": 120.5,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 84
   },
   {
     "name": "Joe Burrow",
@@ -173,7 +180,8 @@
     "adp": 54.0,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 74
   },
   {
     "name": "Matthew Stafford",
@@ -195,7 +203,8 @@
     "adp": 75.2,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 86
   },
   {
     "name": "Brock Purdy",
@@ -217,7 +226,8 @@
     "adp": 80.6,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 85
   },
   {
     "name": "Caleb Williams",
@@ -239,7 +249,8 @@
     "adp": 100.3,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Very Low Risk"
+    "injuryRisk": "Very Low Risk",
+    "espnRank": 87
   },
   {
     "name": "Patrick Mahomes",
@@ -261,7 +272,8 @@
     "adp": 97.1,
     "injuryStatus": "Questionable",
     "injuryBodyPart": "Knee - ACL",
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 94
   },
   {
     "name": "Trevor Lawrence",
@@ -283,7 +295,8 @@
     "adp": 91.1,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 82
   },
   {
     "name": "Justin Herbert",
@@ -305,7 +318,8 @@
     "adp": 102.4,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 93
   },
   {
     "name": "Dak Prescott",
@@ -327,7 +341,8 @@
     "adp": 63.3,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 83
   },
   {
     "name": "Baker Mayfield",
@@ -349,7 +364,8 @@
     "adp": 136.2,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 149
   },
   {
     "name": "Jordan Love",
@@ -371,7 +387,8 @@
     "adp": 157.7,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Very High Risk"
+    "injuryRisk": "Very High Risk",
+    "espnRank": 198
   },
   {
     "name": "Jared Goff",
@@ -393,7 +410,8 @@
     "adp": 107.6,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 135
   },
   {
     "name": "Daniel Jones",
@@ -415,7 +433,8 @@
     "adp": 145.9,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 136
   },
   {
     "name": "Kyler Murray",
@@ -437,7 +456,8 @@
     "adp": 153.6,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 133
   },
   {
     "name": "Tyler Shough",
@@ -459,7 +479,8 @@
     "adp": 142.2,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Very Low Risk"
+    "injuryRisk": "Very Low Risk",
+    "espnRank": 134
   },
   {
     "name": "Malik Willis",
@@ -481,7 +502,8 @@
     "adp": 154.4,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Very Low Risk"
+    "injuryRisk": "Very Low Risk",
+    "espnRank": 150
   },
   {
     "name": "C.J. Stroud",
@@ -503,7 +525,8 @@
     "adp": 154.4,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 199
   },
   {
     "name": "Sam Darnold",
@@ -525,7 +548,8 @@
     "adp": 153.5,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 200
   },
   {
     "name": "Bryce Young",
@@ -547,7 +571,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 218
   },
   {
     "name": "Geno Smith",
@@ -569,7 +594,8 @@
     "adp": null,
     "injuryStatus": "Questionable",
     "injuryBodyPart": "Foot",
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 267
   },
   {
     "name": "Cameron Ward",
@@ -591,7 +617,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 219
   },
   {
     "name": "Aaron Rodgers",
@@ -613,7 +640,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Very High Risk"
+    "injuryRisk": "Very High Risk",
+    "espnRank": 269
   },
   {
     "name": "Jacoby Brissett",
@@ -635,7 +663,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Very Low Risk"
+    "injuryRisk": "Very Low Risk",
+    "espnRank": 220
   },
   {
     "name": "Fernando Mendoza",
@@ -657,7 +686,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 268
   },
   {
     "name": "Deshaun Watson",
@@ -679,7 +709,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 270
   },
   {
     "name": "Michael Penix Jr.",
@@ -701,7 +732,8 @@
     "adp": null,
     "injuryStatus": "Questionable",
     "injuryBodyPart": "Knee - ACL",
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": null
   },
   {
     "name": "Tua Tagovailoa",
@@ -723,7 +755,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 296
   },
   {
     "name": "Shedeur Sanders",
@@ -745,7 +778,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": null
   },
   {
     "name": "J.J. McCarthy",
@@ -767,7 +801,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": null
   },
   {
     "name": "Kirk Cousins",
@@ -789,7 +824,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Very Low Risk"
+    "injuryRisk": "Very Low Risk",
+    "espnRank": null
   },
   {
     "name": "Carson Beck",
@@ -811,7 +847,8 @@
     "adp": null,
     "injuryStatus": "Questionable",
     "injuryBodyPart": "Ribs",
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Justin Fields",
@@ -833,7 +870,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Joe Flacco",
@@ -855,7 +893,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jarrett Stidham",
@@ -877,7 +916,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jahmyr Gibbs",
@@ -897,7 +937,8 @@
     "adp": 1.5,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Medium Risk"
+    "injuryRisk": "Medium Risk",
+    "espnRank": 1
   },
   {
     "name": "Bijan Robinson",
@@ -917,7 +958,8 @@
     "adp": 2.2,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 2
   },
   {
     "name": "Jonathan Taylor",
@@ -937,7 +979,8 @@
     "adp": 4.1,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 7
   },
   {
     "name": "Christian McCaffrey",
@@ -957,7 +1000,8 @@
     "adp": 6.5,
     "injuryStatus": "Questionable",
     "injuryBodyPart": "Undisclosed",
-    "injuryRisk": "Very High Risk"
+    "injuryRisk": "Very High Risk",
+    "espnRank": 6
   },
   {
     "name": "Derrick Henry",
@@ -977,7 +1021,8 @@
     "adp": 7.2,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 10
   },
   {
     "name": "James Cook",
@@ -997,7 +1042,8 @@
     "adp": 9.1,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 12
   },
   {
     "name": "De'Von Achane",
@@ -1017,7 +1063,8 @@
     "adp": 11.5,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Very High Risk"
+    "injuryRisk": "Very High Risk",
+    "espnRank": 13
   },
   {
     "name": "Saquon Barkley",
@@ -1037,7 +1084,8 @@
     "adp": 14.6,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 15
   },
   {
     "name": "Ken Walker III",
@@ -1057,7 +1105,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 18
   },
   {
     "name": "Breece Hall",
@@ -1077,7 +1126,8 @@
     "adp": 27.2,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Medium Risk"
+    "injuryRisk": "Medium Risk",
+    "espnRank": 21
   },
   {
     "name": "Ashton Jeanty",
@@ -1097,7 +1147,8 @@
     "adp": 16.4,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 20
   },
   {
     "name": "Jeremiyah Love",
@@ -1117,7 +1168,8 @@
     "adp": 32.6,
     "injuryStatus": "Questionable",
     "injuryBodyPart": "Ankle",
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 19
   },
   {
     "name": "Javonte Williams",
@@ -1137,7 +1189,8 @@
     "adp": 29.7,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Medium Risk"
+    "injuryRisk": "Medium Risk",
+    "espnRank": 31
   },
   {
     "name": "Josh Jacobs",
@@ -1157,7 +1210,8 @@
     "adp": 18.6,
     "injuryStatus": "Questionable",
     "injuryBodyPart": "Groin",
-    "injuryRisk": "High Risk"
+    "injuryRisk": "High Risk",
+    "espnRank": 30
   },
   {
     "name": "Chase Brown",
@@ -1177,7 +1231,8 @@
     "adp": 19.3,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Medium Risk"
+    "injuryRisk": "Medium Risk",
+    "espnRank": 22
   },
   {
     "name": "Omarion Hampton",
@@ -1197,7 +1252,8 @@
     "adp": 22.3,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Very High Risk"
+    "injuryRisk": "Very High Risk",
+    "espnRank": 23
   },
   {
     "name": "Travis Etienne",
@@ -1217,7 +1273,8 @@
     "adp": 41.1,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Medium Risk"
+    "injuryRisk": "Medium Risk",
+    "espnRank": 37
   },
   {
     "name": "Quinshon Judkins",
@@ -1237,7 +1294,8 @@
     "adp": 49.4,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Medium Risk"
+    "injuryRisk": "Medium Risk",
+    "espnRank": 39
   },
   {
     "name": "Cam Skattebo",
@@ -1257,7 +1315,8 @@
     "adp": 34.6,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Very High Risk"
+    "injuryRisk": "Very High Risk",
+    "espnRank": 40
   },
   {
     "name": "Kyren Williams",
@@ -1277,7 +1336,8 @@
     "adp": 24.7,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Medium Risk"
+    "injuryRisk": "Medium Risk",
+    "espnRank": 38
   },
   {
     "name": "D'Andre Swift",
@@ -1297,7 +1357,8 @@
     "adp": 43.0,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Medium Risk"
+    "injuryRisk": "Medium Risk",
+    "espnRank": 60
   },
   {
     "name": "Bucky Irving",
@@ -1317,7 +1378,8 @@
     "adp": 46.7,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "High Risk"
+    "injuryRisk": "High Risk",
+    "espnRank": 59
   },
   {
     "name": "Bhayshul Tuten",
@@ -1337,7 +1399,8 @@
     "adp": 50.7,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Medium Risk"
+    "injuryRisk": "Medium Risk",
+    "espnRank": 41
   },
   {
     "name": "TreVeyon Henderson",
@@ -1357,7 +1420,8 @@
     "adp": 57.5,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "High Risk"
+    "injuryRisk": "High Risk",
+    "espnRank": 63
   },
   {
     "name": "Tony Pollard",
@@ -1377,7 +1441,8 @@
     "adp": 65.7,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 96
   },
   {
     "name": "Jadarian Price",
@@ -1397,7 +1462,8 @@
     "adp": 66.5,
     "injuryStatus": "Questionable",
     "injuryBodyPart": "Lower Body",
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 62
   },
   {
     "name": "David Montgomery",
@@ -1417,7 +1483,8 @@
     "adp": 58.6,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Very High Risk"
+    "injuryRisk": "Very High Risk",
+    "espnRank": 61
   },
   {
     "name": "Rico Dowdle",
@@ -1437,7 +1504,8 @@
     "adp": 71.5,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 95
   },
   {
     "name": "J.K. Dobbins",
@@ -1457,7 +1525,8 @@
     "adp": 78.5,
     "injuryStatus": "Questionable",
     "injuryBodyPart": "Undisclosed",
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 99
   },
   {
     "name": "Rhamondre Stevenson",
@@ -1477,7 +1546,8 @@
     "adp": 67.9,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "High Risk"
+    "injuryRisk": "High Risk",
+    "espnRank": 64
   },
   {
     "name": "Aaron Jones",
@@ -1497,7 +1567,8 @@
     "adp": 100.2,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "High Risk"
+    "injuryRisk": "High Risk",
+    "espnRank": 121
   },
   {
     "name": "Jaylen Warren",
@@ -1517,7 +1588,8 @@
     "adp": 73.7,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "High Risk"
+    "injuryRisk": "High Risk",
+    "espnRank": 97
   },
   {
     "name": "Kyle Monangai",
@@ -1537,7 +1609,8 @@
     "adp": 102.5,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 105
   },
   {
     "name": "Chuba Hubbard",
@@ -1557,7 +1630,8 @@
     "adp": 79.4,
     "injuryStatus": "Questionable",
     "injuryBodyPart": "Hamstring",
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 106
   },
   {
     "name": "Blake Corum",
@@ -1577,7 +1651,8 @@
     "adp": 109.5,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 115
   },
   {
     "name": "Jacory Croskey-Merritt",
@@ -1597,7 +1672,8 @@
     "adp": 93.4,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 100
   },
   {
     "name": "Jonathon Brooks",
@@ -1617,7 +1693,8 @@
     "adp": 116.3,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 98
   },
   {
     "name": "Kenneth Gainwell",
@@ -1637,7 +1714,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 107
   },
   {
     "name": "Rachaad White",
@@ -1657,7 +1735,8 @@
     "adp": 115.6,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 120
   },
   {
     "name": "RJ Harvey",
@@ -1677,7 +1756,8 @@
     "adp": 93.9,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 137
   },
   {
     "name": "Jordan Mason",
@@ -1697,7 +1777,8 @@
     "adp": 110.2,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 108
   },
   {
     "name": "Isiah Pacheco",
@@ -1717,7 +1798,8 @@
     "adp": 150.0,
     "injuryStatus": "Questionable",
     "injuryBodyPart": "Knee - MCL",
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 156
   },
   {
     "name": "Tyjae Spears",
@@ -1737,7 +1819,8 @@
     "adp": 156.8,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 140
   },
   {
     "name": "Zach Charbonnet",
@@ -1757,7 +1840,8 @@
     "adp": 136.8,
     "injuryStatus": "PUP",
     "injuryBodyPart": "Knee - ACL",
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 123
   },
   {
     "name": "Woody Marks",
@@ -1777,7 +1861,8 @@
     "adp": 144.0,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 122
   },
   {
     "name": "Alvin Kamara",
@@ -1797,7 +1882,8 @@
     "adp": 148.6,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 138
   },
   {
     "name": "Brian Robinson Jr.",
@@ -1817,7 +1903,8 @@
     "adp": 158.0,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 142
   },
   {
     "name": "Samaje Perine",
@@ -1837,7 +1924,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 223
   },
   {
     "name": "Justice Hill",
@@ -1857,7 +1945,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 195
   },
   {
     "name": "Tyrone Tracy Jr.",
@@ -1877,7 +1966,8 @@
     "adp": 150.9,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 141
   },
   {
     "name": "Keaton Mitchell",
@@ -1897,7 +1987,8 @@
     "adp": 156.5,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 155
   },
   {
     "name": "Tyler Allgeier",
@@ -1917,7 +2008,8 @@
     "adp": 148.7,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 154
   },
   {
     "name": "MarShawn Lloyd",
@@ -1937,7 +2029,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Very High Risk"
+    "injuryRisk": "Very High Risk",
+    "espnRank": 196
   },
   {
     "name": "Chris Rodriguez",
@@ -1957,7 +2050,8 @@
     "adp": 138.6,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 139
   },
   {
     "name": "Braelon Allen",
@@ -1977,7 +2071,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 168
   },
   {
     "name": "Ty Johnson",
@@ -1997,7 +2092,8 @@
     "adp": null,
     "injuryStatus": "Questionable",
     "injuryBodyPart": "Knee",
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 225
   },
   {
     "name": "Dylan Sampson",
@@ -2017,7 +2113,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 166
   },
   {
     "name": "Tank Bigsby",
@@ -2037,7 +2134,8 @@
     "adp": 146.1,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Very Low Risk"
+    "injuryRisk": "Very Low Risk",
+    "espnRank": 157
   },
   {
     "name": "Mike Washington Jr.",
@@ -2057,7 +2155,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 167
   },
   {
     "name": "Jordan James",
@@ -2077,7 +2176,8 @@
     "adp": null,
     "injuryStatus": "Questionable",
     "injuryBodyPart": "Ribs",
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 212
   },
   {
     "name": "Emari Demercado",
@@ -2097,7 +2197,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 249
   },
   {
     "name": "Jaydon Blue",
@@ -2117,7 +2218,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Very Low Risk"
+    "injuryRisk": "Very Low Risk",
+    "espnRank": 239
   },
   {
     "name": "Emmett Johnson",
@@ -2137,7 +2239,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 244
   },
   {
     "name": "Jaylen Wright",
@@ -2157,7 +2260,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 221
   },
   {
     "name": "Isaiah Davis",
@@ -2177,7 +2281,8 @@
     "adp": null,
     "injuryStatus": "Questionable",
     "injuryBodyPart": "Knee",
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 226
   },
   {
     "name": "George Holani",
@@ -2197,7 +2302,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 246
   },
   {
     "name": "Chris Brooks",
@@ -2217,7 +2323,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 250
   },
   {
     "name": "Jonah Coleman",
@@ -2237,7 +2344,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 193
   },
   {
     "name": "Ollie Gordon II",
@@ -2257,7 +2365,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 222
   },
   {
     "name": "Sean Tucker",
@@ -2277,7 +2386,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 247
   },
   {
     "name": "Malik Davis",
@@ -2297,7 +2407,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Kimani Vidal",
@@ -2317,7 +2428,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 214
   },
   {
     "name": "DJ Giddens",
@@ -2337,7 +2449,8 @@
     "adp": null,
     "injuryStatus": "Questionable",
     "injuryBodyPart": "Hamstring",
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 251
   },
   {
     "name": "Ray Davis",
@@ -2357,7 +2470,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 158
   },
   {
     "name": "LeQuint Allen",
@@ -2377,7 +2491,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 245
   },
   {
     "name": "Kyle Juszczyk",
@@ -2397,7 +2512,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Kaelon Black",
@@ -2417,7 +2533,8 @@
     "adp": null,
     "injuryStatus": "Questionable",
     "injuryBodyPart": "Thigh",
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 213
   },
   {
     "name": "Adam Randall",
@@ -2437,7 +2554,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 243
   },
   {
     "name": "Demond Claiborne",
@@ -2457,7 +2575,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 242
   },
   {
     "name": "Tahj Brooks",
@@ -2477,7 +2596,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 278
   },
   {
     "name": "Devin Singletary",
@@ -2497,7 +2617,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 277
   },
   {
     "name": "Nicholas Singleton",
@@ -2517,7 +2638,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 241
   },
   {
     "name": "Will Shipley",
@@ -2537,7 +2659,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Very Low Risk"
+    "injuryRisk": "Very Low Risk",
+    "espnRank": 266
   },
   {
     "name": "Hunter Luepke",
@@ -2557,7 +2680,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Tyler Badie",
@@ -2577,7 +2701,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Trevor Etienne",
@@ -2597,7 +2722,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 279
   },
   {
     "name": "Seth McGowan",
@@ -2617,7 +2743,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 280
   },
   {
     "name": "Kaytron Allen",
@@ -2637,7 +2764,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 240
   },
   {
     "name": "Alec Ingold",
@@ -2657,7 +2785,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Emanuel Wilson",
@@ -2677,7 +2806,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 265
   },
   {
     "name": "Kendre Miller",
@@ -2697,7 +2827,8 @@
     "adp": null,
     "injuryStatus": "Questionable",
     "injuryBodyPart": "Back",
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 281
   },
   {
     "name": "Jawhar Jordan",
@@ -2717,7 +2848,8 @@
     "adp": null,
     "injuryStatus": "Questionable",
     "injuryBodyPart": "Hip",
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 282
   },
   {
     "name": "Adam Prentice",
@@ -2737,7 +2869,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Connor Heyward",
@@ -2757,7 +2890,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Michael Burton",
@@ -2777,7 +2911,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Max Bredeson",
@@ -2797,7 +2932,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Kaleb Johnson",
@@ -2817,7 +2953,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 283
   },
   {
     "name": "Reggie Gilliam",
@@ -2837,7 +2974,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Riley Nowakowski",
@@ -2857,7 +2995,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Andrew Beck",
@@ -2877,7 +3016,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Patrick Ricard",
@@ -2897,7 +3037,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "British Brooks",
@@ -2917,7 +3058,8 @@
     "adp": null,
     "injuryStatus": "Questionable",
     "injuryBodyPart": "Hand",
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Kene Nwangwu",
@@ -2937,7 +3079,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Isaac Guerendo",
@@ -2957,7 +3100,8 @@
     "adp": null,
     "injuryStatus": "PUP",
     "injuryBodyPart": "Pectoral",
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": null
   },
   {
     "name": "Brashard Smith",
@@ -2977,7 +3121,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Bam Knight",
@@ -2997,7 +3142,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Dylan Laube",
@@ -3017,7 +3163,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Rasheen Ali",
@@ -3037,7 +3184,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jacob Saylors",
@@ -3057,7 +3205,8 @@
     "adp": null,
     "injuryStatus": "Questionable",
     "injuryBodyPart": "Ankle",
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "DeeJay Dallas",
@@ -3077,7 +3226,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Josh Williams",
@@ -3097,7 +3247,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Puka Nacua",
@@ -3117,7 +3268,8 @@
     "adp": 3.1,
     "injuryStatus": "Questionable",
     "injuryBodyPart": "Undisclosed",
-    "injuryRisk": "Medium Risk"
+    "injuryRisk": "Medium Risk",
+    "espnRank": 4
   },
   {
     "name": "Jaxon Smith-Njigba",
@@ -3137,7 +3289,8 @@
     "adp": 6.1,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 5
   },
   {
     "name": "Ja'Marr Chase",
@@ -3157,7 +3310,8 @@
     "adp": 4.9,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 3
   },
   {
     "name": "Amon-Ra St. Brown",
@@ -3177,7 +3331,8 @@
     "adp": 8.6,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 8
   },
   {
     "name": "CeeDee Lamb",
@@ -3197,7 +3352,8 @@
     "adp": 13.9,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Medium Risk"
+    "injuryRisk": "Medium Risk",
+    "espnRank": 9
   },
   {
     "name": "Justin Jefferson",
@@ -3217,7 +3373,8 @@
     "adp": 17.8,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 11
   },
   {
     "name": "Rashee Rice",
@@ -3237,7 +3394,8 @@
     "adp": 17.4,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Very High Risk"
+    "injuryRisk": "Very High Risk",
+    "espnRank": 16
   },
   {
     "name": "Drake London",
@@ -3257,7 +3415,8 @@
     "adp": 11.9,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Very High Risk"
+    "injuryRisk": "Very High Risk",
+    "espnRank": 14
   },
   {
     "name": "Nico Collins",
@@ -3277,7 +3436,8 @@
     "adp": 21.7,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Medium Risk"
+    "injuryRisk": "Medium Risk",
+    "espnRank": 25
   },
   {
     "name": "A.J. Brown",
@@ -3297,7 +3457,8 @@
     "adp": 19.1,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "High Risk"
+    "injuryRisk": "High Risk",
+    "espnRank": 26
   },
   {
     "name": "Zay Flowers",
@@ -3317,7 +3478,8 @@
     "adp": 24.0,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 35
   },
   {
     "name": "Malik Nabers",
@@ -3337,7 +3499,8 @@
     "adp": 30.9,
     "injuryStatus": "Questionable",
     "injuryBodyPart": "Knee - ACL",
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 27
   },
   {
     "name": "Tetairoa McMillan",
@@ -3357,7 +3520,8 @@
     "adp": 36.5,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 42
   },
   {
     "name": "Chris Olave",
@@ -3377,7 +3541,8 @@
     "adp": 26.8,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Very High Risk"
+    "injuryRisk": "Very High Risk",
+    "espnRank": 29
   },
   {
     "name": "George Pickens",
@@ -3397,7 +3562,8 @@
     "adp": 16.3,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 28
   },
   {
     "name": "Garrett Wilson",
@@ -3417,7 +3583,8 @@
     "adp": 41.5,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 33
   },
   {
     "name": "Emeka Egbuka",
@@ -3437,7 +3604,8 @@
     "adp": 33.9,
     "injuryStatus": "Questionable",
     "injuryBodyPart": "Undisclosed",
-    "injuryRisk": "Medium Risk"
+    "injuryRisk": "Medium Risk",
+    "espnRank": 34
   },
   {
     "name": "Davante Adams",
@@ -3457,7 +3625,8 @@
     "adp": 34.2,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Medium Risk"
+    "injuryRisk": "Medium Risk",
+    "espnRank": 32
   },
   {
     "name": "DeVonta Smith",
@@ -3477,7 +3646,8 @@
     "adp": 38.8,
     "injuryStatus": "Questionable",
     "injuryBodyPart": "Hamstring",
-    "injuryRisk": "Medium Risk"
+    "injuryRisk": "Medium Risk",
+    "espnRank": 43
   },
   {
     "name": "Jameson Williams",
@@ -3497,7 +3667,8 @@
     "adp": 38.6,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 48
   },
   {
     "name": "Rome Odunze",
@@ -3517,7 +3688,8 @@
     "adp": 40.7,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 44
   },
   {
     "name": "Terry McLaurin",
@@ -3537,7 +3709,8 @@
     "adp": 44.5,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 47
   },
   {
     "name": "Carnell Tate",
@@ -3557,7 +3730,8 @@
     "adp": 72.1,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 54
   },
   {
     "name": "Ladd McConkey",
@@ -3577,7 +3751,8 @@
     "adp": 46.5,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Medium Risk"
+    "injuryRisk": "Medium Risk",
+    "espnRank": 46
   },
   {
     "name": "Alec Pierce",
@@ -3597,7 +3772,8 @@
     "adp": 46.0,
     "injuryStatus": "PUP",
     "injuryBodyPart": "Ankle",
-    "injuryRisk": "High Risk"
+    "injuryRisk": "High Risk",
+    "espnRank": 66
   },
   {
     "name": "Tee Higgins",
@@ -3617,7 +3793,8 @@
     "adp": 32.9,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "High Risk"
+    "injuryRisk": "High Risk",
+    "espnRank": 45
   },
   {
     "name": "Jaylen Waddle",
@@ -3637,7 +3814,8 @@
     "adp": 52.8,
     "injuryStatus": "Questionable",
     "injuryBodyPart": "Undisclosed",
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 51
   },
   {
     "name": "DJ Moore",
@@ -3657,7 +3835,8 @@
     "adp": 49.8,
     "injuryStatus": "Questionable",
     "injuryBodyPart": "Lower Body",
-    "injuryRisk": "Medium Risk"
+    "injuryRisk": "Medium Risk",
+    "espnRank": 52
   },
   {
     "name": "Luther Burden III",
@@ -3677,7 +3856,8 @@
     "adp": 57.1,
     "injuryStatus": "Questionable",
     "injuryBodyPart": "Lower Body",
-    "injuryRisk": "Medium Risk"
+    "injuryRisk": "Medium Risk",
+    "espnRank": 53
   },
   {
     "name": "Courtland Sutton",
@@ -3697,7 +3877,8 @@
     "adp": 55.8,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Medium Risk"
+    "injuryRisk": "Medium Risk",
+    "espnRank": 65
   },
   {
     "name": "DK Metcalf",
@@ -3717,7 +3898,8 @@
     "adp": 60.6,
     "injuryStatus": "Questionable",
     "injuryBodyPart": "Undisclosed",
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 67
   },
   {
     "name": "Marvin Harrison Jr.",
@@ -3737,7 +3919,8 @@
     "adp": 63.1,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Medium Risk"
+    "injuryRisk": "Medium Risk",
+    "espnRank": 69
   },
   {
     "name": "Christian Watson",
@@ -3757,7 +3940,8 @@
     "adp": 56.6,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 76
   },
   {
     "name": "Mike Evans",
@@ -3777,7 +3961,8 @@
     "adp": 54.9,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "High Risk"
+    "injuryRisk": "High Risk",
+    "espnRank": 68
   },
   {
     "name": "Jordyn Tyson",
@@ -3797,7 +3982,8 @@
     "adp": 87.2,
     "injuryStatus": "Questionable",
     "injuryBodyPart": "Hamstring",
-    "injuryRisk": "Medium Risk"
+    "injuryRisk": "Medium Risk",
+    "espnRank": 78
   },
   {
     "name": "Matthew Golden",
@@ -3817,7 +4003,8 @@
     "adp": 105.6,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 80
   },
   {
     "name": "Parker Washington",
@@ -3837,7 +4024,8 @@
     "adp": 65.2,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 70
   },
   {
     "name": "Xavier Worthy",
@@ -3857,7 +4045,8 @@
     "adp": 87.2,
     "injuryStatus": "Questionable",
     "injuryBodyPart": "Shoulder",
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 91
   },
   {
     "name": "Brian Thomas Jr.",
@@ -3877,7 +4066,8 @@
     "adp": 67.4,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 79
   },
   {
     "name": "Michael Pittman Jr.",
@@ -3897,7 +4087,8 @@
     "adp": 92.8,
     "injuryStatus": "Questionable",
     "injuryBodyPart": "Leg",
-    "injuryRisk": "High Risk"
+    "injuryRisk": "High Risk",
+    "espnRank": 77
   },
   {
     "name": "Deebo Samuel",
@@ -3917,7 +4108,8 @@
     "adp": 91.7,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Medium Risk"
+    "injuryRisk": "Medium Risk",
+    "espnRank": 112
   },
   {
     "name": "Michael Wilson",
@@ -3937,7 +4129,8 @@
     "adp": 82.1,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Medium Risk"
+    "injuryRisk": "Medium Risk",
+    "espnRank": 88
   },
   {
     "name": "Quentin Johnston",
@@ -3957,7 +4150,8 @@
     "adp": 74.4,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Medium Risk"
+    "injuryRisk": "Medium Risk",
+    "espnRank": 90
   },
   {
     "name": "Jakobi Meyers",
@@ -3977,7 +4171,8 @@
     "adp": 84.5,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 89
   },
   {
     "name": "Makai Lemon",
@@ -3997,7 +4192,8 @@
     "adp": 95.5,
     "injuryStatus": "Questionable",
     "injuryBodyPart": "Undisclosed",
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 126
   },
   {
     "name": "Jordan Addison",
@@ -4017,7 +4213,8 @@
     "adp": 80.3,
     "injuryStatus": "Questionable",
     "injuryBodyPart": "Thumb",
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 81
   },
   {
     "name": "Wan'Dale Robinson",
@@ -4037,7 +4234,8 @@
     "adp": 102.6,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 92
   },
   {
     "name": "Jayden Reed",
@@ -4057,7 +4255,8 @@
     "adp": 85.7,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 113
   },
   {
     "name": "Khalil Shakir",
@@ -4077,7 +4276,8 @@
     "adp": 113.2,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 124
   },
   {
     "name": "KC Concepcion",
@@ -4097,7 +4297,8 @@
     "adp": 125.4,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 127
   },
   {
     "name": "Romeo Doubs",
@@ -4117,7 +4318,8 @@
     "adp": 100.8,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 129
   },
   {
     "name": "Josh Downs",
@@ -4137,7 +4339,8 @@
     "adp": 103.2,
     "injuryStatus": "Questionable",
     "injuryBodyPart": "Groin",
-    "injuryRisk": "High Risk"
+    "injuryRisk": "High Risk",
+    "espnRank": 114
   },
   {
     "name": "Calvin Ridley",
@@ -4157,7 +4360,8 @@
     "adp": 119.1,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Medium Risk"
+    "injuryRisk": "Medium Risk",
+    "espnRank": 147
   },
   {
     "name": "Chris Godwin",
@@ -4177,7 +4381,8 @@
     "adp": 84.8,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 128
   },
   {
     "name": "Rashid Shaheed",
@@ -4197,7 +4402,8 @@
     "adp": 103.5,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 143
   },
   {
     "name": "Stefon Diggs",
@@ -4217,7 +4423,8 @@
     "adp": 98.8,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 125
   },
   {
     "name": "Tre Tucker",
@@ -4237,7 +4444,8 @@
     "adp": 126.1,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 153
   },
   {
     "name": "Jerry Jeudy",
@@ -4257,7 +4465,8 @@
     "adp": 132.6,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 145
   },
   {
     "name": "Jalen Coker",
@@ -4277,7 +4486,8 @@
     "adp": 121.6,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 132
   },
   {
     "name": "Jayden Higgins",
@@ -4297,7 +4507,8 @@
     "adp": 121.2,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Very Low Risk"
+    "injuryRisk": "Very Low Risk",
+    "espnRank": 131
   },
   {
     "name": "Adonai Mitchell",
@@ -4317,7 +4528,8 @@
     "adp": 159.2,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 151
   },
   {
     "name": "Jalen McMillan",
@@ -4337,7 +4549,8 @@
     "adp": 139.9,
     "injuryStatus": "Questionable",
     "injuryBodyPart": "Calf",
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 146
   },
   {
     "name": "Denzel Boston",
@@ -4357,7 +4570,8 @@
     "adp": 149.2,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Medium Risk"
+    "injuryRisk": "Medium Risk",
+    "espnRank": 144
   },
   {
     "name": "Rashod Bateman",
@@ -4377,7 +4591,8 @@
     "adp": 129.4,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 162
   },
   {
     "name": "Jalen Nailor",
@@ -4397,7 +4612,8 @@
     "adp": 141.9,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 161
   },
   {
     "name": "De'Zhaun Stribling",
@@ -4417,7 +4633,8 @@
     "adp": 149.9,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 130
   },
   {
     "name": "Germie Bernard",
@@ -4437,7 +4654,8 @@
     "adp": 160.9,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 165
   },
   {
     "name": "Travis Hunter",
@@ -4457,7 +4675,8 @@
     "adp": 161.4,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Medium Risk"
+    "injuryRisk": "Medium Risk",
+    "espnRank": 152
   },
   {
     "name": "Tank Dell",
@@ -4477,7 +4696,8 @@
     "adp": 146.3,
     "injuryStatus": "Questionable",
     "injuryBodyPart": "Knee - ACL + MCL",
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 201
   },
   {
     "name": "Jauan Jennings",
@@ -4497,7 +4717,8 @@
     "adp": 144.7,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 197
   },
   {
     "name": "Omar Cooper Jr.",
@@ -4517,7 +4738,8 @@
     "adp": 169.6,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 205
   },
   {
     "name": "Malik Washington",
@@ -4537,7 +4759,8 @@
     "adp": 155.6,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 209
   },
   {
     "name": "Ja'Kobi Lane",
@@ -4557,7 +4780,8 @@
     "adp": 157.6,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 163
   },
   {
     "name": "Cooper Kupp",
@@ -4577,7 +4801,8 @@
     "adp": 155.2,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 210
   },
   {
     "name": "Zachariah Branch",
@@ -4597,7 +4822,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 204
   },
   {
     "name": "Xavier Legette",
@@ -4617,7 +4843,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 211
   },
   {
     "name": "Chris Bell",
@@ -4637,7 +4864,8 @@
     "adp": null,
     "injuryStatus": "PUP",
     "injuryBodyPart": "Knee - ACL",
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 229
   },
   {
     "name": "Jalen Tolbert",
@@ -4657,7 +4885,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 228
   },
   {
     "name": "Darnell Mooney",
@@ -4677,7 +4906,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Medium Risk"
+    "injuryRisk": "Medium Risk",
+    "espnRank": 273
   },
   {
     "name": "Dontayvion Wicks",
@@ -4697,7 +4927,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 164
   },
   {
     "name": "Ryan Flournoy",
@@ -4717,7 +4948,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 203
   },
   {
     "name": "Tre Harris",
@@ -4737,7 +4969,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Medium Risk"
+    "injuryRisk": "Medium Risk",
+    "espnRank": 202
   },
   {
     "name": "Caleb Douglas",
@@ -4757,7 +4990,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 148
   },
   {
     "name": "Darius Slayton",
@@ -4777,7 +5011,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 227
   },
   {
     "name": "Tyquan Thornton",
@@ -4797,7 +5032,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Very Low Risk"
+    "injuryRisk": "Very Low Risk",
+    "espnRank": 232
   },
   {
     "name": "Jack Bech",
@@ -4817,7 +5053,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 263
   },
   {
     "name": "Antonio Williams",
@@ -4837,7 +5074,8 @@
     "adp": 151.1,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Medium Risk"
+    "injuryRisk": "Medium Risk",
+    "espnRank": 231
   },
   {
     "name": "Kayshon Boutte",
@@ -4857,7 +5095,8 @@
     "adp": 156.6,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 208
   },
   {
     "name": "Jahan Dotson",
@@ -4877,7 +5116,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 224
   },
   {
     "name": "Jaylin Noel",
@@ -4897,7 +5137,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 233
   },
   {
     "name": "Isaac TeSlaa",
@@ -4917,7 +5158,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 252
   },
   {
     "name": "Kavontae Turpin",
@@ -4937,7 +5179,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 262
   },
   {
     "name": "Pat Bryant",
@@ -4957,7 +5200,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 253
   },
   {
     "name": "Savion Williams",
@@ -4977,7 +5221,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 275
   },
   {
     "name": "Marvin Mims",
@@ -4997,7 +5242,8 @@
     "adp": null,
     "injuryStatus": "Questionable",
     "injuryBodyPart": "Undisclosed",
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 261
   },
   {
     "name": "Tory Horton",
@@ -5017,7 +5263,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Medium Risk"
+    "injuryRisk": "Medium Risk",
+    "espnRank": 264
   },
   {
     "name": "Ted Hurst",
@@ -5037,7 +5284,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 271
   },
   {
     "name": "DeMario Douglas",
@@ -5057,7 +5305,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Very Low Risk"
+    "injuryRisk": "Very Low Risk",
+    "espnRank": 274
   },
   {
     "name": "Nick Westbrook-Ikhine",
@@ -5077,7 +5326,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Keon Coleman",
@@ -5097,7 +5347,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 234
   },
   {
     "name": "Devaughn Vele",
@@ -5117,7 +5368,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 230
   },
   {
     "name": "Elijah Sarratt",
@@ -5137,7 +5389,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Andrei Iosivas",
@@ -5157,7 +5410,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Very Low Risk"
+    "injuryRisk": "Very Low Risk",
+    "espnRank": 294
   },
   {
     "name": "Ashton Dulin",
@@ -5177,7 +5431,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 272
   },
   {
     "name": "Tutu Atwell",
@@ -5197,7 +5452,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 295
   },
   {
     "name": "Kevin Coleman Jr.",
@@ -5217,7 +5473,8 @@
     "adp": null,
     "injuryStatus": "Questionable",
     "injuryBodyPart": "Undisclosed",
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Troy Franklin",
@@ -5237,7 +5494,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": null
   },
   {
     "name": "Dyami Brown",
@@ -5257,7 +5515,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Kendrick Bourne",
@@ -5277,7 +5536,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": null
   },
   {
     "name": "Christian Kirk",
@@ -5297,7 +5557,8 @@
     "adp": null,
     "injuryStatus": "Questionable",
     "injuryBodyPart": "Undisclosed",
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Kalif Raymond",
@@ -5317,7 +5578,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Treylon Burks",
@@ -5337,7 +5599,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Josh Palmer",
@@ -5357,7 +5620,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Skyler Bell",
@@ -5377,7 +5641,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Bryce Lance",
@@ -5397,7 +5662,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Cyrus Allen",
@@ -5417,7 +5683,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Marquise Brown",
@@ -5437,7 +5704,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jordan Whittington",
@@ -5457,7 +5725,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Colbie Young",
@@ -5477,7 +5746,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Dont'e Thornton Jr.",
@@ -5497,7 +5767,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Xavier Hutchinson",
@@ -5517,7 +5788,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jaylin Lane",
@@ -5537,7 +5809,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Malachi Fields",
@@ -5557,7 +5830,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 284
   },
   {
     "name": "Zavion Thomas",
@@ -5577,7 +5851,8 @@
     "adp": null,
     "injuryStatus": "Questionable",
     "injuryBodyPart": "Undisclosed",
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Odell Beckham Jr.",
@@ -5597,7 +5872,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": null
   },
   {
     "name": "Isaiah Bond",
@@ -5617,7 +5893,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Very Low Risk"
+    "injuryRisk": "Very Low Risk",
+    "espnRank": null
   },
   {
     "name": "Chimere Dike",
@@ -5637,7 +5914,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Olamide Zaccheaus",
@@ -5657,7 +5935,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Roman Wilson",
@@ -5677,7 +5956,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Brenen Thompson",
@@ -5697,7 +5977,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Mack Hollins",
@@ -5717,7 +5998,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Very Low Risk"
+    "injuryRisk": "Very Low Risk",
+    "espnRank": null
   },
   {
     "name": "Konata Mumpfield",
@@ -5737,7 +6019,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Devontez Walker",
@@ -5757,7 +6040,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Kyle T. Williams",
@@ -5777,7 +6061,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Tez Johnson",
@@ -5797,7 +6082,8 @@
     "adp": null,
     "injuryStatus": "Questionable",
     "injuryBodyPart": "Groin",
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jimmy Horn Jr.",
@@ -5817,7 +6103,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "KeAndre Lambert-Smith",
@@ -5837,7 +6124,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jalen Royals",
@@ -5857,7 +6145,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": null
   },
   {
     "name": "Luke McCaffrey",
@@ -5877,7 +6166,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Very Low Risk"
+    "injuryRisk": "Very Low Risk",
+    "espnRank": null
   },
   {
     "name": "Malik Benson",
@@ -5897,7 +6187,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Elic Ayomanor",
@@ -5917,7 +6208,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Anthony Gould",
@@ -5937,7 +6229,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Calvin Austin III",
@@ -5957,7 +6250,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Greg Dortch",
@@ -5977,7 +6271,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Bo Melton",
@@ -5997,7 +6292,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Malachi Corley",
@@ -6017,7 +6313,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Tyrell Shavers",
@@ -6037,7 +6334,8 @@
     "adp": null,
     "injuryStatus": "PUP",
     "injuryBodyPart": "Knee - ACL",
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Isaiah Williams",
@@ -6057,7 +6355,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Derius Davis",
@@ -6077,7 +6376,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Xavier Smith",
@@ -6097,7 +6397,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Demarcus Robinson",
@@ -6117,7 +6418,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "CJ Daniels",
@@ -6137,7 +6439,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Mitchell Tinsley",
@@ -6157,7 +6460,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Justin Watson",
@@ -6177,7 +6481,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jonathan Mingo",
@@ -6197,7 +6502,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Barion Brown",
@@ -6217,7 +6523,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Reggie Virgil",
@@ -6237,7 +6544,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Tai Felton",
@@ -6257,7 +6565,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Darius Cooper",
@@ -6277,7 +6586,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Laquon Treadwell",
@@ -6297,7 +6607,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jahdae Walker",
@@ -6317,7 +6628,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Brycen Tremayne",
@@ -6337,7 +6649,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Cedric Tillman",
@@ -6357,7 +6670,8 @@
     "adp": null,
     "injuryStatus": "Questionable",
     "injuryBodyPart": "Undisclosed",
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Arian Smith",
@@ -6377,7 +6691,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Ben Skowronek",
@@ -6397,7 +6712,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Kaden Wetjen",
@@ -6417,7 +6733,8 @@
     "adp": null,
     "injuryStatus": "Questionable",
     "injuryBodyPart": "Undisclosed",
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Kameron Johnson",
@@ -6437,7 +6754,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Braxton Berrios",
@@ -6457,7 +6775,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Charlie Jones",
@@ -6477,7 +6796,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Myles Price",
@@ -6497,7 +6817,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "LaJohntay Wester",
@@ -6517,7 +6838,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Britain Covey",
@@ -6537,7 +6859,8 @@
     "adp": null,
     "injuryStatus": "Questionable",
     "injuryBodyPart": "Hamstring",
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Nikko Remigio",
@@ -6557,7 +6880,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jacob Cowing",
@@ -6577,7 +6901,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Ke'Shawn Williams",
@@ -6597,7 +6922,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Devin Duvernay",
@@ -6617,7 +6943,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Gage Larvadain",
@@ -6637,7 +6964,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Mason Tipton",
@@ -6657,7 +6985,8 @@
     "adp": null,
     "injuryStatus": "PUP",
     "injuryBodyPart": "Groin",
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Efton Chism III",
@@ -6677,7 +7006,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Skyy Moore",
@@ -6697,7 +7027,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Dareke Young",
@@ -6717,7 +7048,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Josh Cameron",
@@ -6737,7 +7069,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jalen Brooks",
@@ -6757,7 +7090,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Michael Bandy",
@@ -6777,7 +7111,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jeshaun Jones",
@@ -6797,7 +7132,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Mason Kinsey",
@@ -6817,7 +7153,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Brock Bowers",
@@ -6837,7 +7174,8 @@
     "adp": 53.3,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Very High Risk"
+    "injuryRisk": "Very High Risk",
+    "espnRank": 24
   },
   {
     "name": "Trey McBride",
@@ -6857,7 +7195,8 @@
     "adp": 53.4,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Medium Risk"
+    "injuryRisk": "Medium Risk",
+    "espnRank": 17
   },
   {
     "name": "Colston Loveland",
@@ -6877,7 +7216,8 @@
     "adp": 71.7,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "High Risk"
+    "injuryRisk": "High Risk",
+    "espnRank": 49
   },
   {
     "name": "Tyler Warren",
@@ -6897,7 +7237,8 @@
     "adp": 79.6,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 50
   },
   {
     "name": "Kyle Pitts",
@@ -6917,7 +7258,8 @@
     "adp": 106.2,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Medium Risk"
+    "injuryRisk": "Medium Risk",
+    "espnRank": 71
   },
   {
     "name": "Sam LaPorta",
@@ -6937,7 +7279,8 @@
     "adp": 104.3,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "High Risk"
+    "injuryRisk": "High Risk",
+    "espnRank": 72
   },
   {
     "name": "Harold Fannin Jr.",
@@ -6957,7 +7300,8 @@
     "adp": 103.7,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Medium Risk"
+    "injuryRisk": "Medium Risk",
+    "espnRank": 73
   },
   {
     "name": "George Kittle",
@@ -6977,7 +7321,8 @@
     "adp": 119.6,
     "injuryStatus": "PUP",
     "injuryBodyPart": "Achilles",
-    "injuryRisk": "Medium Risk"
+    "injuryRisk": "Medium Risk",
+    "espnRank": 102
   },
   {
     "name": "Dallas Goedert",
@@ -6997,7 +7342,8 @@
     "adp": 110.7,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Very High Risk"
+    "injuryRisk": "Very High Risk",
+    "espnRank": 103
   },
   {
     "name": "Tucker Kraft",
@@ -7017,7 +7363,8 @@
     "adp": 88.1,
     "injuryStatus": "Questionable",
     "injuryBodyPart": "Knee - ACL",
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 101
   },
   {
     "name": "Travis Kelce",
@@ -7037,7 +7384,8 @@
     "adp": 134.1,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Medium Risk"
+    "injuryRisk": "Medium Risk",
+    "espnRank": 104
   },
   {
     "name": "Mark Andrews",
@@ -7057,7 +7405,8 @@
     "adp": 127.0,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 109
   },
   {
     "name": "Kenyon Sadiq",
@@ -7077,7 +7426,8 @@
     "adp": 158.0,
     "injuryStatus": "Questionable",
     "injuryBodyPart": "Abdomen",
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 118
   },
   {
     "name": "Dalton Kincaid",
@@ -7097,7 +7447,8 @@
     "adp": 143.0,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "High Risk"
+    "injuryRisk": "High Risk",
+    "espnRank": 111
   },
   {
     "name": "Isaiah Likely",
@@ -7117,7 +7468,8 @@
     "adp": 134.4,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "High Risk"
+    "injuryRisk": "High Risk",
+    "espnRank": 116
   },
   {
     "name": "Jake Ferguson",
@@ -7137,7 +7489,8 @@
     "adp": 154.8,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 110
   },
   {
     "name": "Hunter Henry",
@@ -7157,7 +7510,8 @@
     "adp": 145.9,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 117
   },
   {
     "name": "T.J. Hockenson",
@@ -7177,7 +7531,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Medium Risk"
+    "injuryRisk": "Medium Risk",
+    "espnRank": 159
   },
   {
     "name": "Juwan Johnson",
@@ -7197,7 +7552,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 194
   },
   {
     "name": "Brenton Strange",
@@ -7217,7 +7573,8 @@
     "adp": 162.1,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Medium Risk"
+    "injuryRisk": "Medium Risk",
+    "espnRank": 160
   },
   {
     "name": "Darren Waller",
@@ -7237,7 +7594,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Medium Risk"
+    "injuryRisk": "Medium Risk",
+    "espnRank": 258
   },
   {
     "name": "Pat Freiermuth",
@@ -7257,7 +7615,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 206
   },
   {
     "name": "Dalton Schultz",
@@ -7277,7 +7636,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Medium Risk"
+    "injuryRisk": "Medium Risk",
+    "espnRank": 207
   },
   {
     "name": "Greg Dulcich",
@@ -7297,7 +7657,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 259
   },
   {
     "name": "Chigoziem Okonkwo",
@@ -7317,7 +7678,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Very Low Risk"
+    "injuryRisk": "Very Low Risk",
+    "espnRank": 215
   },
   {
     "name": "Gunnar Helm",
@@ -7337,7 +7699,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 217
   },
   {
     "name": "A.J. Barner",
@@ -7357,7 +7720,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 216
   },
   {
     "name": "Mike Gesicki",
@@ -7377,7 +7741,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 292
   },
   {
     "name": "Oronde Gadsden II",
@@ -7397,7 +7762,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 291
   },
   {
     "name": "Evan Engram",
@@ -7417,7 +7783,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": 290
   },
   {
     "name": "Cade Otton",
@@ -7437,7 +7804,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "High Risk"
+    "injuryRisk": "High Risk",
+    "espnRank": 260
   },
   {
     "name": "Michael Mayer",
@@ -7457,7 +7825,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": null
   },
   {
     "name": "David Njoku",
@@ -7477,7 +7846,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Very High Risk"
+    "injuryRisk": "Very High Risk",
+    "espnRank": 289
   },
   {
     "name": "Darnell Washington",
@@ -7497,7 +7867,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": null
   },
   {
     "name": "Dawson Knox",
@@ -7517,7 +7888,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Colby Parkinson",
@@ -7537,7 +7909,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 293
   },
   {
     "name": "Theo Johnson",
@@ -7557,7 +7930,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Elijah Arroyo",
@@ -7577,7 +7951,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Noah Gray",
@@ -7597,7 +7972,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Cole Kmet",
@@ -7617,7 +7993,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": null
   },
   {
     "name": "Mason Taylor",
@@ -7637,7 +8014,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Elijah Higgins",
@@ -7657,7 +8035,8 @@
     "adp": null,
     "injuryStatus": "Questionable",
     "injuryBodyPart": "Concussion",
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Austin Hooper",
@@ -7677,7 +8056,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Noah Fant",
@@ -7697,7 +8077,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": null
   },
   {
     "name": "Tommy Tremble",
@@ -7717,7 +8098,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Will Kacmarek",
@@ -7737,7 +8119,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Erick All",
@@ -7757,7 +8140,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Tyler Higbee",
@@ -7777,7 +8161,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Josh Oliver",
@@ -7797,7 +8182,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Eli Raridon",
@@ -7817,7 +8203,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Drew Sample",
@@ -7837,7 +8224,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Charlie Kolar",
@@ -7857,7 +8245,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Cade Stover",
@@ -7877,7 +8266,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "John Bates",
@@ -7897,7 +8287,8 @@
     "adp": null,
     "injuryStatus": "Questionable",
     "injuryBodyPart": "Hamstring",
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jake Tonges",
@@ -7917,7 +8308,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Eli Stowers",
@@ -7937,7 +8329,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Adam Trautman",
@@ -7957,7 +8350,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Tanner Hudson",
@@ -7977,7 +8371,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Mo Alie-Cox",
@@ -7997,7 +8392,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Luke Schoonmaker",
@@ -8017,7 +8413,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jackson Hawes",
@@ -8037,7 +8434,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Ben Sinnott",
@@ -8057,7 +8455,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Luke Musgrave",
@@ -8077,7 +8476,8 @@
     "adp": null,
     "injuryStatus": "PUP",
     "injuryBodyPart": "Undisclosed",
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Ja'Tavion Sanders",
@@ -8097,7 +8497,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jeremy Ruckert",
@@ -8117,7 +8518,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Durham Smythe",
@@ -8137,7 +8539,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Daniel Bellinger",
@@ -8157,7 +8560,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Foster Moreau",
@@ -8177,7 +8581,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Davis Allen",
@@ -8197,7 +8602,8 @@
     "adp": null,
     "injuryStatus": "Questionable",
     "injuryBodyPart": "Quadriceps",
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Nate Boerkircher",
@@ -8217,7 +8623,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Brock Wright",
@@ -8237,7 +8644,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Payne Durham",
@@ -8257,7 +8665,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Nate Adkins",
@@ -8277,7 +8686,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Joe Royer",
@@ -8297,7 +8707,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Ben Sims",
@@ -8317,7 +8728,8 @@
     "adp": null,
     "injuryStatus": "Questionable",
     "injuryBodyPart": "Undisclosed",
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Luke Farrell",
@@ -8337,7 +8749,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Max Klare",
@@ -8357,7 +8770,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Justin Joly",
@@ -8377,7 +8791,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Brevyn Spann-Ford",
@@ -8397,7 +8812,8 @@
     "adp": null,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Maxx Crosby",
@@ -8411,7 +8827,8 @@
     "clay_pts": 215.0,
     "customPts": 118.7,
     "posRank": 1,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jeffery Simmons",
@@ -8425,7 +8842,8 @@
     "clay_pts": 187.0,
     "customPts": 113.9,
     "posRank": 2,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Myles Garrett",
@@ -8439,7 +8857,8 @@
     "clay_pts": 190.0,
     "customPts": 104.0,
     "posRank": 3,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Brian Burns",
@@ -8453,7 +8872,8 @@
     "clay_pts": 184.0,
     "customPts": 102.7,
     "posRank": 4,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Nick Bosa",
@@ -8467,7 +8887,8 @@
     "clay_pts": 176.0,
     "customPts": 102.1,
     "posRank": 5,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Will Anderson Jr.",
@@ -8481,7 +8902,8 @@
     "clay_pts": 183.0,
     "customPts": 100.2,
     "posRank": 6,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Andrew Van Ginkel",
@@ -8495,7 +8917,8 @@
     "clay_pts": 170.0,
     "customPts": 99.6,
     "posRank": 7,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Aidan Hutchinson",
@@ -8509,7 +8932,8 @@
     "clay_pts": 165.0,
     "customPts": 96.5,
     "posRank": 8,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Danielle Hunter",
@@ -8523,7 +8947,8 @@
     "clay_pts": 164.0,
     "customPts": 93.3,
     "posRank": 9,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Dallas Turner",
@@ -8537,7 +8962,8 @@
     "clay_pts": 161.0,
     "customPts": 93.2,
     "posRank": 10,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "T.J. Watt",
@@ -8551,7 +8977,8 @@
     "clay_pts": 154.0,
     "customPts": 92.6,
     "posRank": 11,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Alex Highsmith",
@@ -8565,7 +8992,8 @@
     "clay_pts": 160.0,
     "customPts": 92.4,
     "posRank": 12,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "DeForest Buckner",
@@ -8579,7 +9007,8 @@
     "clay_pts": 135.0,
     "customPts": 91.7,
     "posRank": 13,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Byron I. Young",
@@ -8593,7 +9022,8 @@
     "clay_pts": 143.0,
     "customPts": 91.6,
     "posRank": 14,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Tuli Tuipulotu",
@@ -8607,7 +9037,8 @@
     "clay_pts": 162.0,
     "customPts": 86.6,
     "posRank": 15,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Derrick Brown",
@@ -8621,7 +9052,8 @@
     "clay_pts": 114.0,
     "customPts": 85.0,
     "posRank": 16,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jonathan Greenard",
@@ -8635,7 +9067,8 @@
     "clay_pts": 147.0,
     "customPts": 84.6,
     "posRank": 17,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jared Verse",
@@ -8649,7 +9082,8 @@
     "clay_pts": 139.0,
     "customPts": 84.5,
     "posRank": 18,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Chase Young",
@@ -8663,7 +9097,8 @@
     "clay_pts": 145.0,
     "customPts": 84.4,
     "posRank": 19,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Joshua Hines-Allen",
@@ -8677,7 +9112,8 @@
     "clay_pts": 135.0,
     "customPts": 83.5,
     "posRank": 20,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "DeMarcus Lawrence",
@@ -8691,7 +9127,8 @@
     "clay_pts": 142.0,
     "customPts": 80.8,
     "posRank": 21,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Quinnen Williams",
@@ -8705,7 +9142,8 @@
     "clay_pts": 126.0,
     "customPts": 80.4,
     "posRank": 22,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Gregory Rousseau",
@@ -8719,7 +9157,8 @@
     "clay_pts": 126.0,
     "customPts": 80.2,
     "posRank": 23,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Trey Hendrickson",
@@ -8733,7 +9172,8 @@
     "clay_pts": 140.0,
     "customPts": 79.9,
     "posRank": 24,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Montez Sweat",
@@ -8747,7 +9187,8 @@
     "clay_pts": 138.0,
     "customPts": 79.2,
     "posRank": 25,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Nik Bonitto",
@@ -8761,7 +9202,8 @@
     "clay_pts": 142.0,
     "customPts": 79.1,
     "posRank": 26,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Travon Walker",
@@ -8775,7 +9217,8 @@
     "clay_pts": 126.0,
     "customPts": 79.1,
     "posRank": 27,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jalen Redmond",
@@ -8789,7 +9232,8 @@
     "clay_pts": 119.0,
     "customPts": 78.1,
     "posRank": 28,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "George Karlaftis",
@@ -8803,7 +9247,8 @@
     "clay_pts": 122.0,
     "customPts": 77.0,
     "posRank": 29,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Odafe Oweh",
@@ -8817,7 +9262,8 @@
     "clay_pts": 130.0,
     "customPts": 76.8,
     "posRank": 30,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Cameron Heyward",
@@ -8831,7 +9277,8 @@
     "clay_pts": 109.0,
     "customPts": 76.1,
     "posRank": 31,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": null
   },
   {
     "name": "Carl Granderson",
@@ -8845,7 +9292,8 @@
     "clay_pts": 125.0,
     "customPts": 76.1,
     "posRank": 32,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "YaYa Diaby",
@@ -8859,7 +9307,8 @@
     "clay_pts": 129.0,
     "customPts": 75.9,
     "posRank": 33,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Harold Landry",
@@ -8873,7 +9322,8 @@
     "clay_pts": 120.0,
     "customPts": 75.2,
     "posRank": 34,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "David Bailey",
@@ -8887,7 +9337,8 @@
     "clay_pts": 128.0,
     "customPts": 74.4,
     "posRank": 35,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Khalil Mack",
@@ -8901,7 +9352,8 @@
     "clay_pts": 128.0,
     "customPts": 73.6,
     "posRank": 36,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Austin Booker",
@@ -8915,7 +9367,8 @@
     "clay_pts": 112.0,
     "customPts": 72.9,
     "posRank": 37,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Laiatu Latu",
@@ -8929,7 +9382,8 @@
     "clay_pts": 125.0,
     "customPts": 72.5,
     "posRank": 38,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Zach Harrison",
@@ -8943,7 +9397,8 @@
     "clay_pts": 108.0,
     "customPts": 72.2,
     "posRank": 39,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Byron Murphy II",
@@ -8957,7 +9412,8 @@
     "clay_pts": 102.0,
     "customPts": 72.0,
     "posRank": 40,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jordan Davis",
@@ -8971,7 +9427,8 @@
     "clay_pts": 99.0,
     "customPts": 71.9,
     "posRank": 41,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Abdul Carter",
@@ -8985,7 +9442,8 @@
     "clay_pts": 115.0,
     "customPts": 71.7,
     "posRank": 42,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Ed Oliver",
@@ -8999,7 +9457,8 @@
     "clay_pts": 118.0,
     "customPts": 71.6,
     "posRank": 43,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Tommy Togiai",
@@ -9013,7 +9472,8 @@
     "clay_pts": 101.0,
     "customPts": 71.6,
     "posRank": 44,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Bradley Chubb",
@@ -9027,7 +9487,8 @@
     "clay_pts": 117.0,
     "customPts": 71.6,
     "posRank": 45,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Myles Murphy",
@@ -9041,7 +9502,8 @@
     "clay_pts": 104.0,
     "customPts": 71.1,
     "posRank": 46,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Donovan Ezeiruaku",
@@ -9055,7 +9517,8 @@
     "clay_pts": 119.0,
     "customPts": 71.0,
     "posRank": 47,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Chop Robinson",
@@ -9069,7 +9532,8 @@
     "clay_pts": 118.0,
     "customPts": 70.8,
     "posRank": 48,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Leonard Williams",
@@ -9083,7 +9547,8 @@
     "clay_pts": 103.0,
     "customPts": 69.7,
     "posRank": 49,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Boye Mafe",
@@ -9097,7 +9562,8 @@
     "clay_pts": 110.0,
     "customPts": 69.7,
     "posRank": 50,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Lukas Van Ness",
@@ -9111,7 +9577,8 @@
     "clay_pts": 113.0,
     "customPts": 69.2,
     "posRank": 51,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jalen Carter",
@@ -9125,7 +9592,8 @@
     "clay_pts": 100.0,
     "customPts": 69.1,
     "posRank": 52,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jonathon Cooper",
@@ -9139,7 +9607,8 @@
     "clay_pts": 108.0,
     "customPts": 69.1,
     "posRank": 53,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Micah Parsons",
@@ -9153,7 +9622,8 @@
     "clay_pts": 117.0,
     "customPts": 68.9,
     "posRank": 54,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Malcolm Roach",
@@ -9167,7 +9637,8 @@
     "clay_pts": 96.0,
     "customPts": 68.7,
     "posRank": 55,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Alex Wright",
@@ -9181,7 +9652,8 @@
     "clay_pts": 118.0,
     "customPts": 68.4,
     "posRank": 56,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jaelan Phillips",
@@ -9195,7 +9667,8 @@
     "clay_pts": 107.0,
     "customPts": 67.6,
     "posRank": 57,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Dorance Armstrong",
@@ -9209,7 +9682,8 @@
     "clay_pts": 109.0,
     "customPts": 67.3,
     "posRank": 58,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jermaine Johnson II",
@@ -9223,7 +9697,8 @@
     "clay_pts": 102.0,
     "customPts": 67.3,
     "posRank": 59,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "A'Shawn Robinson",
@@ -9237,7 +9712,8 @@
     "clay_pts": 86.0,
     "customPts": 67.1,
     "posRank": 60,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Justin Madubuike",
@@ -9251,7 +9727,8 @@
     "clay_pts": 110.0,
     "customPts": 66.8,
     "posRank": 61,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "James Pearce Jr.",
@@ -9265,7 +9742,8 @@
     "clay_pts": 117.0,
     "customPts": 66.7,
     "posRank": 62,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "B.J. Hill",
@@ -9279,7 +9757,8 @@
     "clay_pts": 87.0,
     "customPts": 65.8,
     "posRank": 63,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Adam Butler",
@@ -9293,7 +9772,8 @@
     "clay_pts": 91.0,
     "customPts": 65.2,
     "posRank": 64,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Milton Williams",
@@ -9307,7 +9787,8 @@
     "clay_pts": 108.0,
     "customPts": 64.8,
     "posRank": 65,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Rueben Bain Jr.",
@@ -9321,7 +9802,8 @@
     "clay_pts": 109.0,
     "customPts": 63.2,
     "posRank": 66,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Chris D. Jones",
@@ -9335,7 +9817,8 @@
     "clay_pts": 105.0,
     "customPts": 63.0,
     "posRank": 67,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Devonte Wyatt",
@@ -9349,7 +9832,8 @@
     "clay_pts": 96.0,
     "customPts": 63.0,
     "posRank": 68,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Kayvon Thibodeaux",
@@ -9363,7 +9847,8 @@
     "clay_pts": 102.0,
     "customPts": 62.5,
     "posRank": 69,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Nathan Shepherd",
@@ -9377,7 +9862,8 @@
     "clay_pts": 87.0,
     "customPts": 62.3,
     "posRank": 70,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Mason Graham",
@@ -9391,7 +9877,8 @@
     "clay_pts": 89.0,
     "customPts": 62.1,
     "posRank": 71,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Will McDonald IV",
@@ -9405,7 +9892,8 @@
     "clay_pts": 106.0,
     "customPts": 62.0,
     "posRank": 72,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "T'Vondre Sweat",
@@ -9419,7 +9907,8 @@
     "clay_pts": 85.0,
     "customPts": 61.8,
     "posRank": 73,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Nolan Smith",
@@ -9433,7 +9922,8 @@
     "clay_pts": 95.0,
     "customPts": 61.5,
     "posRank": 74,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Zach Sieler",
@@ -9447,7 +9937,8 @@
     "clay_pts": 97.0,
     "customPts": 61.4,
     "posRank": 75,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Grady Jarrett",
@@ -9461,7 +9952,8 @@
     "clay_pts": 82.0,
     "customPts": 61.4,
     "posRank": 76,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "D.J. Wonnum",
@@ -9475,7 +9967,8 @@
     "clay_pts": 92.0,
     "customPts": 61.4,
     "posRank": 77,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Patrick Jones",
@@ -9489,7 +9982,8 @@
     "clay_pts": 97.0,
     "customPts": 60.9,
     "posRank": 78,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Kobie Turner",
@@ -9503,7 +9997,8 @@
     "clay_pts": 90.0,
     "customPts": 60.6,
     "posRank": 79,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Rashan Gary",
@@ -9517,7 +10012,8 @@
     "clay_pts": 93.0,
     "customPts": 60.5,
     "posRank": 80,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": null
   },
   {
     "name": "Zach Allen",
@@ -9531,7 +10027,8 @@
     "clay_pts": 83.0,
     "customPts": 60.4,
     "posRank": 81,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Javon Hargrave",
@@ -9545,7 +10042,8 @@
     "clay_pts": 83.0,
     "customPts": 60.0,
     "posRank": 82,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jonah Laulu",
@@ -9559,7 +10057,8 @@
     "clay_pts": 88.0,
     "customPts": 59.9,
     "posRank": 83,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Osa Odighizuwa",
@@ -9573,7 +10072,8 @@
     "clay_pts": 84.0,
     "customPts": 59.6,
     "posRank": 84,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Josh Sweat",
@@ -9587,7 +10087,8 @@
     "clay_pts": 106.0,
     "customPts": 59.6,
     "posRank": 85,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Daron Payne",
@@ -9601,7 +10102,8 @@
     "clay_pts": 90.0,
     "customPts": 59.5,
     "posRank": 86,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jadeveon Clowney",
@@ -9615,7 +10117,8 @@
     "clay_pts": 96.0,
     "customPts": 59.2,
     "posRank": 87,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Dre'Mont Jones",
@@ -9629,7 +10132,8 @@
     "clay_pts": 91.0,
     "customPts": 59.2,
     "posRank": 88,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Walter Nolen",
@@ -9643,7 +10147,8 @@
     "clay_pts": 89.0,
     "customPts": 59.1,
     "posRank": 89,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jalyx Hunt",
@@ -9657,7 +10162,8 @@
     "clay_pts": 96.0,
     "customPts": 58.1,
     "posRank": 90,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jonathan Allen",
@@ -9671,7 +10177,8 @@
     "clay_pts": 81.0,
     "customPts": 57.9,
     "posRank": 91,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Dayo Odeyingbo",
@@ -9685,7 +10192,8 @@
     "clay_pts": 93.0,
     "customPts": 57.7,
     "posRank": 92,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Harrison Phillips",
@@ -9699,7 +10207,8 @@
     "clay_pts": 79.0,
     "customPts": 57.5,
     "posRank": 93,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "David Onyemata",
@@ -9713,7 +10222,8 @@
     "clay_pts": 79.0,
     "customPts": 57.3,
     "posRank": 94,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Travis Jones",
@@ -9727,7 +10237,8 @@
     "clay_pts": 91.0,
     "customPts": 56.8,
     "posRank": 95,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Teair Tart",
@@ -9741,7 +10252,8 @@
     "clay_pts": 87.0,
     "customPts": 56.7,
     "posRank": 96,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Keeanu Benton",
@@ -9755,7 +10267,8 @@
     "clay_pts": 84.0,
     "customPts": 56.5,
     "posRank": 97,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Maliek Collins",
@@ -9769,7 +10282,8 @@
     "clay_pts": 86.0,
     "customPts": 56.4,
     "posRank": 98,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "D.J. Jones",
@@ -9783,7 +10297,8 @@
     "clay_pts": 80.0,
     "customPts": 56.4,
     "posRank": 99,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Derrick Harmon",
@@ -9797,7 +10312,8 @@
     "clay_pts": 75.0,
     "customPts": 55.9,
     "posRank": 100,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Uchenna Nwosu",
@@ -9811,7 +10327,8 @@
     "clay_pts": 90.0,
     "customPts": 55.6,
     "posRank": 101,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Mike Green",
@@ -9825,7 +10342,8 @@
     "clay_pts": 87.0,
     "customPts": 55.3,
     "posRank": 102,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Malachi Lawrence",
@@ -9839,7 +10357,8 @@
     "clay_pts": 93.0,
     "customPts": 55.2,
     "posRank": 103,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Gervon Dexter",
@@ -9853,7 +10372,8 @@
     "clay_pts": 79.0,
     "customPts": 55.0,
     "posRank": 104,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "John Franklin-Myers",
@@ -9867,7 +10387,8 @@
     "clay_pts": 86.0,
     "customPts": 54.7,
     "posRank": 105,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Davon Hamilton",
@@ -9881,7 +10402,8 @@
     "clay_pts": 74.0,
     "customPts": 54.6,
     "posRank": 106,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Derick Hall",
@@ -9895,7 +10417,8 @@
     "clay_pts": 85.0,
     "customPts": 54.4,
     "posRank": 107,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Mykel Williams",
@@ -9909,7 +10432,8 @@
     "clay_pts": 87.0,
     "customPts": 53.8,
     "posRank": 108,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Vita Vea",
@@ -9923,7 +10447,8 @@
     "clay_pts": 82.0,
     "customPts": 53.5,
     "posRank": 109,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Levi Drake Rodriguez",
@@ -9937,7 +10462,8 @@
     "clay_pts": 78.0,
     "customPts": 53.4,
     "posRank": 110,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Thomas Booker",
@@ -9951,7 +10477,8 @@
     "clay_pts": 71.0,
     "customPts": 53.3,
     "posRank": 111,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Arik Armstead",
@@ -9965,7 +10492,8 @@
     "clay_pts": 82.0,
     "customPts": 52.4,
     "posRank": 112,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Caleb Banks",
@@ -9979,7 +10507,8 @@
     "clay_pts": 80.0,
     "customPts": 52.4,
     "posRank": 113,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Roy Lopez",
@@ -9993,7 +10522,8 @@
     "clay_pts": 73.0,
     "customPts": 52.3,
     "posRank": 114,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Davon Godchaux",
@@ -10007,7 +10537,8 @@
     "clay_pts": 69.0,
     "customPts": 51.9,
     "posRank": 115,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Arden Key",
@@ -10021,7 +10552,8 @@
     "clay_pts": 84.0,
     "customPts": 51.9,
     "posRank": 116,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Grover Stewart",
@@ -10035,7 +10567,8 @@
     "clay_pts": 72.0,
     "customPts": 51.6,
     "posRank": 117,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Tershawn Wharton",
@@ -10049,7 +10582,8 @@
     "clay_pts": 72.0,
     "customPts": 51.4,
     "posRank": 118,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Ashton Gillotte",
@@ -10063,7 +10597,8 @@
     "clay_pts": 78.0,
     "customPts": 51.3,
     "posRank": 119,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Akheem Mesidor",
@@ -10077,7 +10612,8 @@
     "clay_pts": 89.0,
     "customPts": 51.1,
     "posRank": 120,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Deone Walker",
@@ -10091,7 +10627,8 @@
     "clay_pts": 74.0,
     "customPts": 51.0,
     "posRank": 121,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Poona Ford",
@@ -10105,7 +10642,8 @@
     "clay_pts": 72.0,
     "customPts": 51.0,
     "posRank": 122,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Calijah Kancey",
@@ -10119,7 +10657,8 @@
     "clay_pts": 87.0,
     "customPts": 50.4,
     "posRank": 123,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Kenny Clark",
@@ -10133,7 +10672,8 @@
     "clay_pts": 73.0,
     "customPts": 50.4,
     "posRank": 124,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Bobby Brown III",
@@ -10147,7 +10687,8 @@
     "clay_pts": 69.0,
     "customPts": 50.4,
     "posRank": 125,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Joseph Ossai",
@@ -10161,7 +10702,8 @@
     "clay_pts": 83.0,
     "customPts": 50.1,
     "posRank": 126,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Moro Ojomo",
@@ -10175,7 +10717,8 @@
     "clay_pts": 71.0,
     "customPts": 49.1,
     "posRank": 127,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Brandon Dorlus",
@@ -10189,7 +10732,8 @@
     "clay_pts": 77.0,
     "customPts": 48.8,
     "posRank": 128,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Dexter Lawrence",
@@ -10203,7 +10747,8 @@
     "clay_pts": 69.0,
     "customPts": 48.8,
     "posRank": 129,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Alim McNeill",
@@ -10217,7 +10762,8 @@
     "clay_pts": 77.0,
     "customPts": 48.5,
     "posRank": 130,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "CJ West",
@@ -10231,7 +10777,8 @@
     "clay_pts": 68.0,
     "customPts": 48.5,
     "posRank": 131,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Brenton Cox Jr.",
@@ -10245,7 +10792,8 @@
     "clay_pts": 80.0,
     "customPts": 48.3,
     "posRank": 132,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Christen Miller",
@@ -10259,7 +10807,8 @@
     "clay_pts": 67.0,
     "customPts": 48.2,
     "posRank": 133,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "K'lavon Chaisson",
@@ -10273,7 +10822,8 @@
     "clay_pts": 87.0,
     "customPts": 48.2,
     "posRank": 134,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Samson Ebukam",
@@ -10287,7 +10837,8 @@
     "clay_pts": 78.0,
     "customPts": 48.1,
     "posRank": 135,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Charles Omenihu",
@@ -10301,7 +10852,8 @@
     "clay_pts": 77.0,
     "customPts": 47.7,
     "posRank": 136,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "LaCale London",
@@ -10315,7 +10867,8 @@
     "clay_pts": 71.0,
     "customPts": 47.6,
     "posRank": 137,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jamaree Caldwell",
@@ -10329,7 +10882,8 @@
     "clay_pts": 73.0,
     "customPts": 47.5,
     "posRank": 138,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Calais Campbell",
@@ -10343,7 +10897,8 @@
     "clay_pts": 71.0,
     "customPts": 47.4,
     "posRank": 139,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Christian Barmore",
@@ -10357,7 +10912,8 @@
     "clay_pts": 68.0,
     "customPts": 47.0,
     "posRank": 140,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Justin Eboigbe",
@@ -10371,7 +10927,8 @@
     "clay_pts": 70.0,
     "customPts": 46.9,
     "posRank": 141,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "R Mason Thomas",
@@ -10385,7 +10942,8 @@
     "clay_pts": 74.0,
     "customPts": 46.6,
     "posRank": 142,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Nick Herbig",
@@ -10399,7 +10957,8 @@
     "clay_pts": 85.0,
     "customPts": 45.9,
     "posRank": 143,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Braden Fiske",
@@ -10413,7 +10972,8 @@
     "clay_pts": 68.0,
     "customPts": 45.6,
     "posRank": 144,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Kwity Paye",
@@ -10427,7 +10987,8 @@
     "clay_pts": 72.0,
     "customPts": 45.5,
     "posRank": 145,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Keldric Faulk",
@@ -10441,7 +11002,8 @@
     "clay_pts": 77.0,
     "customPts": 45.1,
     "posRank": 146,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Isaiah McGuire",
@@ -10455,7 +11017,8 @@
     "clay_pts": 75.0,
     "customPts": 44.9,
     "posRank": 147,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Sheldon Rankins",
@@ -10469,7 +11032,8 @@
     "clay_pts": 64.0,
     "customPts": 44.8,
     "posRank": 148,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Eyioma Uwazurike",
@@ -10483,7 +11047,8 @@
     "clay_pts": 61.0,
     "customPts": 44.5,
     "posRank": 149,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Dennis Gardeck",
@@ -10497,7 +11062,8 @@
     "clay_pts": 78.0,
     "customPts": 44.5,
     "posRank": 150,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Felix Anudike-Uzomah",
@@ -10511,7 +11077,8 @@
     "clay_pts": 75.0,
     "customPts": 44.0,
     "posRank": 151,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Darius Robinson",
@@ -10525,7 +11092,8 @@
     "clay_pts": 59.0,
     "customPts": 43.3,
     "posRank": 152,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Javon Kinlaw",
@@ -10539,7 +11107,8 @@
     "clay_pts": 62.0,
     "customPts": 43.2,
     "posRank": 153,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Elijah Ponder",
@@ -10553,7 +11122,8 @@
     "clay_pts": 70.0,
     "customPts": 43.2,
     "posRank": 154,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Baron Browning",
@@ -10567,7 +11137,8 @@
     "clay_pts": 71.0,
     "customPts": 43.0,
     "posRank": 155,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jarran Reed",
@@ -10581,7 +11152,8 @@
     "clay_pts": 59.0,
     "customPts": 42.9,
     "posRank": 156,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Shelby Harris",
@@ -10595,7 +11167,8 @@
     "clay_pts": 65.0,
     "customPts": 42.3,
     "posRank": 157,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Karl Brooks",
@@ -10609,7 +11182,8 @@
     "clay_pts": 57.0,
     "customPts": 42.0,
     "posRank": 158,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Darius Alexander",
@@ -10623,7 +11197,8 @@
     "clay_pts": 59.0,
     "customPts": 40.2,
     "posRank": 159,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Peter Woods",
@@ -10637,7 +11212,8 @@
     "clay_pts": 58.0,
     "customPts": 37.9,
     "posRank": 160,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Blake Cashman",
@@ -10651,7 +11227,8 @@
     "clay_pts": 256.0,
     "customPts": 197.7,
     "posRank": 1,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jordyn Brooks",
@@ -10665,7 +11242,8 @@
     "clay_pts": 263.0,
     "customPts": 193.6,
     "posRank": 2,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jack Campbell",
@@ -10679,7 +11257,8 @@
     "clay_pts": 237.0,
     "customPts": 172.3,
     "posRank": 3,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Nick Bolton",
@@ -10693,7 +11272,8 @@
     "clay_pts": 236.0,
     "customPts": 171.0,
     "posRank": 4,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Cedric Gray",
@@ -10707,7 +11287,8 @@
     "clay_pts": 223.0,
     "customPts": 168.8,
     "posRank": 5,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Fred Warner",
@@ -10721,7 +11302,8 @@
     "clay_pts": 240.0,
     "customPts": 167.3,
     "posRank": 6,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Carson Schwesinger",
@@ -10735,7 +11317,8 @@
     "clay_pts": 225.0,
     "customPts": 165.6,
     "posRank": 7,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Foye Oluokun",
@@ -10749,7 +11332,8 @@
     "clay_pts": 222.0,
     "customPts": 159.7,
     "posRank": 8,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jamien Sherwood",
@@ -10763,7 +11347,8 @@
     "clay_pts": 214.0,
     "customPts": 157.4,
     "posRank": 9,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Ernest Jones",
@@ -10777,7 +11362,8 @@
     "clay_pts": 211.0,
     "customPts": 156.2,
     "posRank": 10,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Alex Singleton",
@@ -10791,7 +11377,8 @@
     "clay_pts": 204.0,
     "customPts": 155.3,
     "posRank": 11,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Quay Walker",
@@ -10805,7 +11392,8 @@
     "clay_pts": 214.0,
     "customPts": 154.8,
     "posRank": 12,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Nakobe Dean",
@@ -10819,7 +11407,8 @@
     "clay_pts": 221.0,
     "customPts": 153.1,
     "posRank": 13,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Roquan Smith",
@@ -10833,7 +11422,8 @@
     "clay_pts": 198.0,
     "customPts": 151.1,
     "posRank": 14,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Nate Landman",
@@ -10847,7 +11437,8 @@
     "clay_pts": 215.0,
     "customPts": 148.3,
     "posRank": 15,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Barrett Carter",
@@ -10861,7 +11452,8 @@
     "clay_pts": 187.0,
     "customPts": 145.3,
     "posRank": 16,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Tremaine Edmunds",
@@ -10875,7 +11467,8 @@
     "clay_pts": 197.0,
     "customPts": 145.1,
     "posRank": 17,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Demario Davis",
@@ -10889,7 +11482,8 @@
     "clay_pts": 194.0,
     "customPts": 143.6,
     "posRank": 18,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Robert Spillane",
@@ -10903,7 +11497,8 @@
     "clay_pts": 196.0,
     "customPts": 142.9,
     "posRank": 19,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "T.J. Edwards",
@@ -10917,7 +11512,8 @@
     "clay_pts": 193.0,
     "customPts": 140.8,
     "posRank": 20,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Zack Baun",
@@ -10931,7 +11527,8 @@
     "clay_pts": 194.0,
     "customPts": 139.6,
     "posRank": 21,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "DeMarvion Overshown",
@@ -10945,7 +11542,8 @@
     "clay_pts": 191.0,
     "customPts": 138.3,
     "posRank": 22,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Daiyan Henley",
@@ -10959,7 +11557,8 @@
     "clay_pts": 185.0,
     "customPts": 136.2,
     "posRank": 23,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Devin Bush",
@@ -10973,7 +11572,8 @@
     "clay_pts": 193.0,
     "customPts": 135.6,
     "posRank": 24,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Sonny Styles",
@@ -10987,7 +11587,8 @@
     "clay_pts": 192.0,
     "customPts": 135.2,
     "posRank": 25,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Edgerrin Cooper",
@@ -11001,7 +11602,8 @@
     "clay_pts": 181.0,
     "customPts": 133.5,
     "posRank": 26,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Azeez Al-Shaair",
@@ -11015,7 +11617,8 @@
     "clay_pts": 181.0,
     "customPts": 132.9,
     "posRank": 27,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Patrick Queen",
@@ -11029,7 +11632,8 @@
     "clay_pts": 180.0,
     "customPts": 130.8,
     "posRank": 28,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Mack Wilson",
@@ -11043,7 +11647,8 @@
     "clay_pts": 189.0,
     "customPts": 129.7,
     "posRank": 29,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Kaden Elliss",
@@ -11057,7 +11662,8 @@
     "clay_pts": 186.0,
     "customPts": 129.2,
     "posRank": 30,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Arvell Reese",
@@ -11071,7 +11677,8 @@
     "clay_pts": 181.0,
     "customPts": 128.1,
     "posRank": 31,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Zaire Franklin",
@@ -11085,7 +11692,8 @@
     "clay_pts": 173.0,
     "customPts": 126.2,
     "posRank": 32,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Terrel Bernard",
@@ -11099,7 +11707,8 @@
     "clay_pts": 179.0,
     "customPts": 125.9,
     "posRank": 33,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jihaad Campbell",
@@ -11113,7 +11722,8 @@
     "clay_pts": 168.0,
     "customPts": 124.8,
     "posRank": 34,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Drue Tranquill",
@@ -11127,7 +11737,8 @@
     "clay_pts": 174.0,
     "customPts": 123.9,
     "posRank": 35,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Quincy Williams",
@@ -11141,7 +11752,8 @@
     "clay_pts": 181.0,
     "customPts": 123.7,
     "posRank": 36,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Divine Deablo",
@@ -11155,7 +11767,8 @@
     "clay_pts": 177.0,
     "customPts": 123.3,
     "posRank": 37,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Demetrius Knight Jr.",
@@ -11169,7 +11782,8 @@
     "clay_pts": 170.0,
     "customPts": 123.0,
     "posRank": 38,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Dre Greenlaw",
@@ -11183,7 +11797,8 @@
     "clay_pts": 158.0,
     "customPts": 117.6,
     "posRank": 39,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Alex Anzalone",
@@ -11197,7 +11812,8 @@
     "clay_pts": 162.0,
     "customPts": 116.8,
     "posRank": 40,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Devin Lloyd",
@@ -11211,7 +11827,8 @@
     "clay_pts": 166.0,
     "customPts": 115.9,
     "posRank": 41,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Akeem Davis-Gaither",
@@ -11225,7 +11842,8 @@
     "clay_pts": 155.0,
     "customPts": 115.5,
     "posRank": 42,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Eric Wilson",
@@ -11239,7 +11857,8 @@
     "clay_pts": 172.0,
     "customPts": 113.2,
     "posRank": 43,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Henry To'oTo'o",
@@ -11253,7 +11872,8 @@
     "clay_pts": 159.0,
     "customPts": 112.7,
     "posRank": 44,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Trevin Wallace",
@@ -11267,7 +11887,8 @@
     "clay_pts": 151.0,
     "customPts": 106.7,
     "posRank": 45,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Frankie Luvu",
@@ -11281,7 +11902,8 @@
     "clay_pts": 152.0,
     "customPts": 106.0,
     "posRank": 46,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Christian Harris",
@@ -11295,7 +11917,8 @@
     "clay_pts": 147.0,
     "customPts": 103.2,
     "posRank": 47,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Tyrel Dodson",
@@ -11309,7 +11932,8 @@
     "clay_pts": 142.0,
     "customPts": 102.4,
     "posRank": 48,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "CJ Allen",
@@ -11323,7 +11947,8 @@
     "clay_pts": 138.0,
     "customPts": 102.1,
     "posRank": 49,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Dee Winters",
@@ -11337,7 +11962,8 @@
     "clay_pts": 142.0,
     "customPts": 99.6,
     "posRank": 50,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Derrick Barnes",
@@ -11351,7 +11977,8 @@
     "clay_pts": 138.0,
     "customPts": 99.5,
     "posRank": 51,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Drake Thomas",
@@ -11365,7 +11992,8 @@
     "clay_pts": 143.0,
     "customPts": 97.8,
     "posRank": 52,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Cody Barton",
@@ -11379,7 +12007,8 @@
     "clay_pts": 140.0,
     "customPts": 97.1,
     "posRank": 53,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Christian Elliss",
@@ -11393,7 +12022,8 @@
     "clay_pts": 132.0,
     "customPts": 95.8,
     "posRank": 54,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Ventrell Miller",
@@ -11407,7 +12037,8 @@
     "clay_pts": 133.0,
     "customPts": 93.7,
     "posRank": 55,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Teddye Buchanan",
@@ -11421,7 +12052,8 @@
     "clay_pts": 122.0,
     "customPts": 92.7,
     "posRank": 56,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Omar Speights",
@@ -11435,7 +12067,8 @@
     "clay_pts": 115.0,
     "customPts": 90.2,
     "posRank": 57,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Dorian Williams",
@@ -11449,7 +12082,8 @@
     "clay_pts": 114.0,
     "customPts": 88.1,
     "posRank": 58,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "SirVocea Dennis",
@@ -11463,7 +12097,8 @@
     "clay_pts": 120.0,
     "customPts": 83.9,
     "posRank": 59,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Cody Simon",
@@ -11477,7 +12112,8 @@
     "clay_pts": 112.0,
     "customPts": 83.4,
     "posRank": 60,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Justin Strnad",
@@ -11491,7 +12127,8 @@
     "clay_pts": 118.0,
     "customPts": 82.8,
     "posRank": 61,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Denzel Perryman",
@@ -11505,7 +12142,8 @@
     "clay_pts": 115.0,
     "customPts": 82.7,
     "posRank": 62,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jacob Rodriguez",
@@ -11519,7 +12157,8 @@
     "clay_pts": 106.0,
     "customPts": 78.1,
     "posRank": 63,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Payton Wilson",
@@ -11533,7 +12172,8 @@
     "clay_pts": 91.0,
     "customPts": 68.0,
     "posRank": 64,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Danny Stutsman",
@@ -11547,7 +12187,8 @@
     "clay_pts": 89.0,
     "customPts": 67.4,
     "posRank": 65,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Pete Werner",
@@ -11561,7 +12202,8 @@
     "clay_pts": 89.0,
     "customPts": 65.2,
     "posRank": 66,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Owen Pappoe",
@@ -11575,7 +12217,8 @@
     "clay_pts": 88.0,
     "customPts": 62.5,
     "posRank": 67,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Austin Ajiake",
@@ -11589,7 +12232,8 @@
     "clay_pts": 83.0,
     "customPts": 61.7,
     "posRank": 68,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "K.J. Britt",
@@ -11603,7 +12247,8 @@
     "clay_pts": 76.0,
     "customPts": 58.7,
     "posRank": 69,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jahlani Tavai",
@@ -11617,7 +12262,8 @@
     "clay_pts": 78.0,
     "customPts": 56.0,
     "posRank": 70,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Devin White",
@@ -11631,7 +12277,8 @@
     "clay_pts": 72.0,
     "customPts": 53.2,
     "posRank": 71,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Oren Burks",
@@ -11645,7 +12292,8 @@
     "clay_pts": 59.0,
     "customPts": 43.4,
     "posRank": 72,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Tatum Bethune",
@@ -11659,7 +12307,8 @@
     "clay_pts": 58.0,
     "customPts": 43.3,
     "posRank": 73,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Anthony Hill Jr.",
@@ -11673,7 +12322,8 @@
     "clay_pts": 55.0,
     "customPts": 41.0,
     "posRank": 74,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jamal Adams",
@@ -11687,7 +12337,8 @@
     "clay_pts": 57.0,
     "customPts": 39.8,
     "posRank": 75,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Josiah Trotter",
@@ -11701,7 +12352,8 @@
     "clay_pts": 52.0,
     "customPts": 38.7,
     "posRank": 76,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Troy Dye",
@@ -11715,7 +12367,8 @@
     "clay_pts": 54.0,
     "customPts": 38.5,
     "posRank": 77,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Trenton Simpson",
@@ -11729,7 +12382,8 @@
     "clay_pts": 53.0,
     "customPts": 38.4,
     "posRank": 78,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Elandon Roberts",
@@ -11743,7 +12397,8 @@
     "clay_pts": 50.0,
     "customPts": 37.2,
     "posRank": 79,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Tyrice Knight",
@@ -11757,7 +12412,8 @@
     "clay_pts": 50.0,
     "customPts": 35.6,
     "posRank": 80,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Kyle Hamilton",
@@ -11771,7 +12427,8 @@
     "clay_pts": 192.0,
     "customPts": 128.1,
     "posRank": 1,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Budda Baker",
@@ -11785,7 +12442,8 @@
     "clay_pts": 176.0,
     "customPts": 128.1,
     "posRank": 2,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Tykee Smith",
@@ -11799,7 +12457,8 @@
     "clay_pts": 192.0,
     "customPts": 127.6,
     "posRank": 3,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jeremy Chinn",
@@ -11813,7 +12472,8 @@
     "clay_pts": 176.0,
     "customPts": 127.2,
     "posRank": 4,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Kamren Curl",
@@ -11827,7 +12487,8 @@
     "clay_pts": 170.0,
     "customPts": 124.2,
     "posRank": 5,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Derwin James",
@@ -11841,7 +12502,8 @@
     "clay_pts": 182.0,
     "customPts": 123.5,
     "posRank": 6,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Nick Cross",
@@ -11855,7 +12517,8 @@
     "clay_pts": 167.0,
     "customPts": 119.3,
     "posRank": 7,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Talanoa Hufanga",
@@ -11869,7 +12532,8 @@
     "clay_pts": 178.0,
     "customPts": 118.8,
     "posRank": 8,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Chamarri Conner",
@@ -11883,7 +12547,8 @@
     "clay_pts": 167.0,
     "customPts": 118.8,
     "posRank": 9,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jordan Battle",
@@ -11897,7 +12562,8 @@
     "clay_pts": 166.0,
     "customPts": 117.7,
     "posRank": 10,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Malik Mustapha",
@@ -11911,7 +12577,8 @@
     "clay_pts": 161.0,
     "customPts": 116.5,
     "posRank": 11,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Xavier McKinney",
@@ -11925,7 +12592,8 @@
     "clay_pts": 165.0,
     "customPts": 116.0,
     "posRank": 12,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Nick Emmanwori",
@@ -11939,7 +12607,8 @@
     "clay_pts": 195.0,
     "customPts": 115.8,
     "posRank": 13,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Josh Metellus",
@@ -11953,7 +12622,8 @@
     "clay_pts": 159.0,
     "customPts": 115.6,
     "posRank": 14,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "DeShon Elliott",
@@ -11967,7 +12637,8 @@
     "clay_pts": 165.0,
     "customPts": 115.1,
     "posRank": 15,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Nick Scott",
@@ -11981,7 +12652,8 @@
     "clay_pts": 150.0,
     "customPts": 114.1,
     "posRank": 16,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jaquan Brisker",
@@ -11995,7 +12667,8 @@
     "clay_pts": 159.0,
     "customPts": 113.3,
     "posRank": 17,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Trevon Moehrig",
@@ -12009,7 +12682,8 @@
     "clay_pts": 166.0,
     "customPts": 113.0,
     "posRank": 18,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jalen Thompson",
@@ -12023,7 +12697,8 @@
     "clay_pts": 158.0,
     "customPts": 112.7,
     "posRank": 19,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Quentin Lake",
@@ -12037,7 +12712,8 @@
     "clay_pts": 178.0,
     "customPts": 110.7,
     "posRank": 20,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Cole Bishop",
@@ -12051,7 +12727,8 @@
     "clay_pts": 159.0,
     "customPts": 110.2,
     "posRank": 21,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Antoine Winfield Jr.",
@@ -12065,7 +12742,8 @@
     "clay_pts": 161.0,
     "customPts": 109.9,
     "posRank": 22,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Ronnie Hickman",
@@ -12079,7 +12757,8 @@
     "clay_pts": 150.0,
     "customPts": 108.9,
     "posRank": 23,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Minkah Fitzpatrick",
@@ -12093,7 +12772,8 @@
     "clay_pts": 160.0,
     "customPts": 108.3,
     "posRank": 24,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "DaRon Bland",
@@ -12107,7 +12787,8 @@
     "clay_pts": 163.0,
     "customPts": 106.3,
     "posRank": 25,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Alohi Gilman",
@@ -12121,7 +12802,8 @@
     "clay_pts": 152.0,
     "customPts": 106.3,
     "posRank": 26,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Kamari Lassiter",
@@ -12135,7 +12817,8 @@
     "clay_pts": 183.0,
     "customPts": 106.2,
     "posRank": 27,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Devon Witherspoon",
@@ -12149,7 +12832,8 @@
     "clay_pts": 165.0,
     "customPts": 106.0,
     "posRank": 28,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Evan Williams",
@@ -12163,7 +12847,8 @@
     "clay_pts": 148.0,
     "customPts": 105.7,
     "posRank": 29,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Paulson Adebo",
@@ -12177,7 +12862,8 @@
     "clay_pts": 160.0,
     "customPts": 105.1,
     "posRank": 30,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jessie Bates",
@@ -12191,7 +12877,8 @@
     "clay_pts": 146.0,
     "customPts": 105.0,
     "posRank": 31,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Amani Hooker",
@@ -12205,7 +12892,8 @@
     "clay_pts": 149.0,
     "customPts": 103.6,
     "posRank": 32,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Trent McDuffie",
@@ -12219,7 +12907,8 @@
     "clay_pts": 164.0,
     "customPts": 102.9,
     "posRank": 33,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Brandon Jones",
@@ -12233,7 +12922,8 @@
     "clay_pts": 142.0,
     "customPts": 102.2,
     "posRank": 34,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Xavier Watts",
@@ -12247,7 +12937,8 @@
     "clay_pts": 145.0,
     "customPts": 102.0,
     "posRank": 35,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Bryan Cook",
@@ -12261,7 +12952,8 @@
     "clay_pts": 139.0,
     "customPts": 100.9,
     "posRank": 36,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Justin Reid",
@@ -12275,7 +12967,8 @@
     "clay_pts": 142.0,
     "customPts": 100.8,
     "posRank": 37,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jalen Pitre",
@@ -12289,7 +12982,8 @@
     "clay_pts": 164.0,
     "customPts": 99.9,
     "posRank": 38,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Craig Woodson",
@@ -12303,7 +12997,8 @@
     "clay_pts": 148.0,
     "customPts": 99.8,
     "posRank": 39,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Caleb Downs",
@@ -12317,7 +13012,8 @@
     "clay_pts": 146.0,
     "customPts": 99.4,
     "posRank": 40,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Cameron Lewis",
@@ -12331,7 +13027,8 @@
     "clay_pts": 148.0,
     "customPts": 99.0,
     "posRank": 41,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Grant Delpit",
@@ -12345,7 +13042,8 @@
     "clay_pts": 142.0,
     "customPts": 98.8,
     "posRank": 42,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Dillon Thieneman",
@@ -12359,7 +13057,8 @@
     "clay_pts": 144.0,
     "customPts": 98.6,
     "posRank": 43,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Dadrion Taylor-Demerson",
@@ -12373,7 +13072,8 @@
     "clay_pts": 141.0,
     "customPts": 97.8,
     "posRank": 44,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Dante Trader Jr.",
@@ -12387,7 +13087,8 @@
     "clay_pts": 132.0,
     "customPts": 97.8,
     "posRank": 45,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Kevin Byard",
@@ -12401,7 +13102,8 @@
     "clay_pts": 141.0,
     "customPts": 97.5,
     "posRank": 46,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Christian Gonzalez",
@@ -12415,7 +13117,8 @@
     "clay_pts": 160.0,
     "customPts": 97.2,
     "posRank": 47,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Tyson Campbell",
@@ -12429,7 +13132,8 @@
     "clay_pts": 163.0,
     "customPts": 96.7,
     "posRank": 48,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Ji'Ayir Brown",
@@ -12443,7 +13147,8 @@
     "clay_pts": 137.0,
     "customPts": 95.8,
     "posRank": 49,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Julian Love",
@@ -12457,7 +13162,8 @@
     "clay_pts": 141.0,
     "customPts": 95.1,
     "posRank": 50,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Cooper DeJean",
@@ -12471,7 +13177,8 @@
     "clay_pts": 160.0,
     "customPts": 94.4,
     "posRank": 51,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Zyon McCollum",
@@ -12485,7 +13192,8 @@
     "clay_pts": 141.0,
     "customPts": 93.8,
     "posRank": 52,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Camryn Bynum",
@@ -12499,7 +13207,8 @@
     "clay_pts": 137.0,
     "customPts": 93.2,
     "posRank": 53,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Eric Murray",
@@ -12513,7 +13222,8 @@
     "clay_pts": 138.0,
     "customPts": 93.1,
     "posRank": 54,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Alontae Taylor",
@@ -12527,7 +13237,8 @@
     "clay_pts": 152.0,
     "customPts": 92.5,
     "posRank": 55,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Ty Okada",
@@ -12541,7 +13252,8 @@
     "clay_pts": 133.0,
     "customPts": 92.0,
     "posRank": 56,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Kevin Winston Jr.",
@@ -12555,7 +13267,8 @@
     "clay_pts": 134.0,
     "customPts": 91.4,
     "posRank": 57,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Daxton Hill",
@@ -12569,7 +13282,8 @@
     "clay_pts": 141.0,
     "customPts": 90.8,
     "posRank": 58,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jevon Holland",
@@ -12583,7 +13297,8 @@
     "clay_pts": 123.0,
     "customPts": 89.5,
     "posRank": 59,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "D.J. Reed",
@@ -12597,7 +13312,8 @@
     "clay_pts": 143.0,
     "customPts": 89.3,
     "posRank": 60,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Reed Blankenship",
@@ -12611,7 +13327,8 @@
     "clay_pts": 122.0,
     "customPts": 89.2,
     "posRank": 61,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jalen Ramsey",
@@ -12625,7 +13342,8 @@
     "clay_pts": 137.0,
     "customPts": 88.9,
     "posRank": 62,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Kamren Kinchens",
@@ -12639,7 +13357,8 @@
     "clay_pts": 122.0,
     "customPts": 88.7,
     "posRank": 63,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Keisean Nixon",
@@ -12653,7 +13372,8 @@
     "clay_pts": 145.0,
     "customPts": 86.9,
     "posRank": 64,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Malaki Starks",
@@ -12667,7 +13387,8 @@
     "clay_pts": 119.0,
     "customPts": 86.8,
     "posRank": 65,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "A.J. Terrell",
@@ -12681,7 +13402,8 @@
     "clay_pts": 144.0,
     "customPts": 86.7,
     "posRank": 66,
-    "injuryRisk": "Very High Risk"
+    "injuryRisk": "Very High Risk",
+    "espnRank": null
   },
   {
     "name": "Carlton Davis",
@@ -12695,7 +13417,8 @@
     "clay_pts": 138.0,
     "customPts": 85.7,
     "posRank": 67,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Marlon Humphrey",
@@ -12709,7 +13432,8 @@
     "clay_pts": 146.0,
     "customPts": 85.4,
     "posRank": 68,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Taron Johnson",
@@ -12723,7 +13447,8 @@
     "clay_pts": 126.0,
     "customPts": 85.2,
     "posRank": 69,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Julian Blackmon",
@@ -12737,7 +13462,8 @@
     "clay_pts": 121.0,
     "customPts": 84.8,
     "posRank": 70,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Andrew Mukuba",
@@ -12751,7 +13477,8 @@
     "clay_pts": 121.0,
     "customPts": 84.8,
     "posRank": 71,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Nate Wiggins",
@@ -12765,7 +13492,8 @@
     "clay_pts": 137.0,
     "customPts": 84.7,
     "posRank": 72,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Kool-Aid McKinstry",
@@ -12779,7 +13507,8 @@
     "clay_pts": 142.0,
     "customPts": 84.5,
     "posRank": 73,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Kyler Gordon",
@@ -12793,7 +13522,8 @@
     "clay_pts": 133.0,
     "customPts": 83.9,
     "posRank": 74,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Mike Sainristil",
@@ -12807,7 +13537,8 @@
     "clay_pts": 131.0,
     "customPts": 83.4,
     "posRank": 75,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Brandon Stephens",
@@ -12821,7 +13552,8 @@
     "clay_pts": 135.0,
     "customPts": 83.3,
     "posRank": 76,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Brian Branch",
@@ -12835,7 +13567,8 @@
     "clay_pts": 127.0,
     "customPts": 83.3,
     "posRank": 77,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Andre Cisco",
@@ -12849,7 +13582,8 @@
     "clay_pts": 112.0,
     "customPts": 83.3,
     "posRank": 78,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Treydan Stukes",
@@ -12863,7 +13597,8 @@
     "clay_pts": 116.0,
     "customPts": 82.3,
     "posRank": 79,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Calen Bullock",
@@ -12877,7 +13612,8 @@
     "clay_pts": 120.0,
     "customPts": 81.9,
     "posRank": 80,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jaylen Watson",
@@ -12891,7 +13627,8 @@
     "clay_pts": 125.0,
     "customPts": 81.0,
     "posRank": 81,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Renardo Green",
@@ -12905,7 +13642,8 @@
     "clay_pts": 125.0,
     "customPts": 80.6,
     "posRank": 82,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Javon Bullard",
@@ -12919,7 +13657,8 @@
     "clay_pts": 116.0,
     "customPts": 80.0,
     "posRank": 83,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Byron Murphy",
@@ -12933,7 +13672,8 @@
     "clay_pts": 124.0,
     "customPts": 79.8,
     "posRank": 84,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Antonio Johnson",
@@ -12947,7 +13687,8 @@
     "clay_pts": 119.0,
     "customPts": 79.4,
     "posRank": 85,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Chauncey Gardner-Johnson",
@@ -12961,7 +13702,8 @@
     "clay_pts": 118.0,
     "customPts": 79.1,
     "posRank": 86,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Kerby Joseph",
@@ -12975,7 +13717,8 @@
     "clay_pts": 117.0,
     "customPts": 78.7,
     "posRank": 87,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jonas Sanker",
@@ -12989,7 +13732,8 @@
     "clay_pts": 120.0,
     "customPts": 78.3,
     "posRank": 88,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Benjamin Morrison",
@@ -13003,7 +13747,8 @@
     "clay_pts": 126.0,
     "customPts": 77.2,
     "posRank": 89,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Upton Stout",
@@ -13017,7 +13762,8 @@
     "clay_pts": 118.0,
     "customPts": 77.1,
     "posRank": 90,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Tarheeb Still",
@@ -13031,7 +13777,8 @@
     "clay_pts": 126.0,
     "customPts": 77.0,
     "posRank": 91,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Marcus Jones",
@@ -13045,7 +13792,8 @@
     "clay_pts": 130.0,
     "customPts": 76.1,
     "posRank": 92,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Mansoor Delane",
@@ -13059,7 +13807,8 @@
     "clay_pts": 129.0,
     "customPts": 76.1,
     "posRank": 93,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jamel Dean",
@@ -13073,7 +13822,8 @@
     "clay_pts": 128.0,
     "customPts": 75.8,
     "posRank": 94,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Sauce Gardner",
@@ -13087,7 +13837,8 @@
     "clay_pts": 125.0,
     "customPts": 75.8,
     "posRank": 95,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Rasul Douglas",
@@ -13101,7 +13852,8 @@
     "clay_pts": 127.0,
     "customPts": 75.6,
     "posRank": 96,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Andru Phillips",
@@ -13115,7 +13867,8 @@
     "clay_pts": 133.0,
     "customPts": 75.3,
     "posRank": 97,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Michael Jackson",
@@ -13129,7 +13882,8 @@
     "clay_pts": 135.0,
     "customPts": 75.0,
     "posRank": 98,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jacob Parrish",
@@ -13143,7 +13897,8 @@
     "clay_pts": 123.0,
     "customPts": 74.8,
     "posRank": 99,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Will Harris",
@@ -13157,7 +13912,8 @@
     "clay_pts": 109.0,
     "customPts": 74.8,
     "posRank": 100,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "A.J. Haulcy",
@@ -13171,7 +13927,8 @@
     "clay_pts": 105.0,
     "customPts": 74.5,
     "posRank": 101,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Mike Hughes",
@@ -13185,7 +13942,8 @@
     "clay_pts": 117.0,
     "customPts": 73.2,
     "posRank": 102,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Isaiah Rodgers",
@@ -13199,7 +13957,8 @@
     "clay_pts": 117.0,
     "customPts": 72.7,
     "posRank": 103,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Elijah Molden",
@@ -13213,7 +13972,8 @@
     "clay_pts": 96.0,
     "customPts": 72.6,
     "posRank": 104,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Tyrique Stevenson",
@@ -13227,7 +13987,8 @@
     "clay_pts": 126.0,
     "customPts": 72.0,
     "posRank": 105,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Josh Jobe",
@@ -13241,7 +14002,8 @@
     "clay_pts": 118.0,
     "customPts": 71.4,
     "posRank": 106,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Deommodore Lenoir",
@@ -13255,7 +14017,8 @@
     "clay_pts": 113.0,
     "customPts": 71.3,
     "posRank": 107,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Maxwell Hairston",
@@ -13269,7 +14032,8 @@
     "clay_pts": 117.0,
     "customPts": 71.2,
     "posRank": 108,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Will Johnson",
@@ -13283,7 +14047,8 @@
     "clay_pts": 126.0,
     "customPts": 70.9,
     "posRank": 109,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Joey Porter Jr.",
@@ -13297,7 +14062,8 @@
     "clay_pts": 120.0,
     "customPts": 70.8,
     "posRank": 110,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Patrick Surtain II",
@@ -13311,7 +14077,8 @@
     "clay_pts": 117.0,
     "customPts": 69.9,
     "posRank": 111,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Marcus Epps",
@@ -13325,7 +14092,8 @@
     "clay_pts": 98.0,
     "customPts": 69.3,
     "posRank": 112,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Theo Jackson",
@@ -13339,7 +14107,8 @@
     "clay_pts": 98.0,
     "customPts": 68.7,
     "posRank": 113,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Montaric Brown",
@@ -13353,7 +14122,8 @@
     "clay_pts": 111.0,
     "customPts": 68.0,
     "posRank": 114,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jaylon Johnson",
@@ -13367,7 +14137,8 @@
     "clay_pts": 112.0,
     "customPts": 67.6,
     "posRank": 115,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Chris A. Johnson",
@@ -13381,7 +14152,8 @@
     "clay_pts": 114.0,
     "customPts": 67.4,
     "posRank": 116,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Marcus X. Harris",
@@ -13395,7 +14167,8 @@
     "clay_pts": 114.0,
     "customPts": 67.2,
     "posRank": 117,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Cam Hart",
@@ -13409,7 +14182,8 @@
     "clay_pts": 110.0,
     "customPts": 67.0,
     "posRank": 118,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Quinyon Mitchell",
@@ -13423,7 +14197,8 @@
     "clay_pts": 121.0,
     "customPts": 66.5,
     "posRank": 119,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Riley Moss",
@@ -13437,7 +14212,8 @@
     "clay_pts": 111.0,
     "customPts": 66.5,
     "posRank": 120,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Travis Hunter",
@@ -13452,7 +14228,8 @@
     "customPts": 66.4,
     "posRank": 121,
     "injuryRisk": "Medium Risk",
-    "adp": 161.4
+    "adp": 161.4,
+    "espnRank": null
   },
   {
     "name": "Jourdan Lewis",
@@ -13466,7 +14243,8 @@
     "clay_pts": 120.0,
     "customPts": 66.4,
     "posRank": 122,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Christian Benford",
@@ -13480,7 +14258,8 @@
     "clay_pts": 109.0,
     "customPts": 66.0,
     "posRank": 123,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Geno Stone",
@@ -13494,7 +14273,8 @@
     "clay_pts": 91.0,
     "customPts": 65.9,
     "posRank": 124,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Charvarius Ward",
@@ -13508,7 +14288,8 @@
     "clay_pts": 110.0,
     "customPts": 65.7,
     "posRank": 125,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Chau Smith-Wade",
@@ -13522,7 +14303,8 @@
     "clay_pts": 95.0,
     "customPts": 65.3,
     "posRank": 126,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Eric Stokes",
@@ -13536,7 +14318,8 @@
     "clay_pts": 102.0,
     "customPts": 64.5,
     "posRank": 127,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jaylinn Hawkins",
@@ -13550,7 +14333,8 @@
     "clay_pts": 93.0,
     "customPts": 64.4,
     "posRank": 128,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Nahshon Wright",
@@ -13564,7 +14348,8 @@
     "clay_pts": 105.0,
     "customPts": 64.3,
     "posRank": 129,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Ja'Quan McMillian",
@@ -13578,7 +14363,8 @@
     "clay_pts": 114.0,
     "customPts": 64.2,
     "posRank": 130,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Dee Alford",
@@ -13592,7 +14378,8 @@
     "clay_pts": 110.0,
     "customPts": 63.9,
     "posRank": 131,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Rock Ya-Sin",
@@ -13606,7 +14393,8 @@
     "clay_pts": 103.0,
     "customPts": 63.6,
     "posRank": 132,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "D.J. Turner",
@@ -13620,7 +14408,8 @@
     "clay_pts": 120.0,
     "customPts": 62.3,
     "posRank": 133,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "CorDale Flott",
@@ -13634,7 +14423,8 @@
     "clay_pts": 114.0,
     "customPts": 62.3,
     "posRank": 134,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Roger McCreary",
@@ -13648,7 +14438,8 @@
     "clay_pts": 97.0,
     "customPts": 61.8,
     "posRank": 135,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Zayne Anderson",
@@ -13662,7 +14453,8 @@
     "clay_pts": 88.0,
     "customPts": 61.3,
     "posRank": 136,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "James Pierre",
@@ -13676,7 +14468,8 @@
     "clay_pts": 107.0,
     "customPts": 61.2,
     "posRank": 137,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Tony Jefferson",
@@ -13690,7 +14483,8 @@
     "clay_pts": 91.0,
     "customPts": 60.9,
     "posRank": 138,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Julius Brents",
@@ -13704,7 +14498,8 @@
     "clay_pts": 94.0,
     "customPts": 60.4,
     "posRank": 139,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Xavier Woods",
@@ -13718,7 +14513,8 @@
     "clay_pts": 84.0,
     "customPts": 60.4,
     "posRank": 140,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Denzel Ward",
@@ -13732,7 +14528,8 @@
     "clay_pts": 100.0,
     "customPts": 59.0,
     "posRank": 141,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Martin Emerson",
@@ -13746,7 +14543,8 @@
     "clay_pts": 93.0,
     "customPts": 58.8,
     "posRank": 142,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Andrew Wingard",
@@ -13760,7 +14558,8 @@
     "clay_pts": 83.0,
     "customPts": 58.0,
     "posRank": 143,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jaycee Horn",
@@ -13774,7 +14573,8 @@
     "clay_pts": 95.0,
     "customPts": 57.9,
     "posRank": 144,
-    "injuryRisk": "Low Risk"
+    "injuryRisk": "Low Risk",
+    "espnRank": null
   },
   {
     "name": "Derek Stingley Jr.",
@@ -13788,7 +14588,8 @@
     "clay_pts": 106.0,
     "customPts": 57.6,
     "posRank": 145,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jason Marshall Jr.",
@@ -13802,7 +14603,8 @@
     "clay_pts": 94.0,
     "customPts": 57.0,
     "posRank": 146,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Tyler Nubin",
@@ -13816,7 +14618,8 @@
     "clay_pts": 80.0,
     "customPts": 55.7,
     "posRank": 147,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Tariq Woolen",
@@ -13830,7 +14633,8 @@
     "clay_pts": 95.0,
     "customPts": 54.9,
     "posRank": 148,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Decobie Durant",
@@ -13844,7 +14648,8 @@
     "clay_pts": 94.0,
     "customPts": 54.8,
     "posRank": 149,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Malik Hooker",
@@ -13858,7 +14663,8 @@
     "clay_pts": 75.0,
     "customPts": 54.7,
     "posRank": 150,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Isaiah Pola-Mao",
@@ -13872,7 +14678,8 @@
     "clay_pts": 75.0,
     "customPts": 54.4,
     "posRank": 151,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Caleb Ransaw",
@@ -13886,7 +14693,8 @@
     "clay_pts": 73.0,
     "customPts": 50.8,
     "posRank": 152,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Tony Adams",
@@ -13900,7 +14708,8 @@
     "clay_pts": 74.0,
     "customPts": 50.1,
     "posRank": 153,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jartavius Martin",
@@ -13914,7 +14723,8 @@
     "clay_pts": 65.0,
     "customPts": 48.1,
     "posRank": 154,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jonathan Owens",
@@ -13928,7 +14738,8 @@
     "clay_pts": 66.0,
     "customPts": 47.7,
     "posRank": 155,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Michael Taaffe",
@@ -13942,7 +14753,8 @@
     "clay_pts": 63.0,
     "customPts": 44.8,
     "posRank": 156,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jason Pinnock",
@@ -13956,7 +14768,8 @@
     "clay_pts": 60.0,
     "customPts": 44.4,
     "posRank": 157,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jaden Hicks",
@@ -13970,7 +14783,8 @@
     "clay_pts": 63.0,
     "customPts": 44.3,
     "posRank": 158,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Chuck Clark",
@@ -13984,7 +14798,8 @@
     "clay_pts": 65.0,
     "customPts": 44.0,
     "posRank": 159,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Malachi Moore",
@@ -13998,7 +14813,8 @@
     "clay_pts": 58.0,
     "customPts": 41.0,
     "posRank": 160,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Brandon Aubrey",
@@ -14009,7 +14825,8 @@
     "adp": 130.4,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 181
   },
   {
     "name": "Harrison Mevis",
@@ -14020,7 +14837,8 @@
     "adp": 137.0,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 184
   },
   {
     "name": "Jason Myers",
@@ -14031,7 +14849,8 @@
     "adp": 137.2,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 183
   },
   {
     "name": "Ka'imi Fairbairn",
@@ -14042,7 +14861,8 @@
     "adp": 142.3,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 185
   },
   {
     "name": "Cameron Dicker",
@@ -14053,7 +14873,8 @@
     "adp": 147.8,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 182
   },
   {
     "name": "Jake Bates",
@@ -14064,7 +14885,8 @@
     "adp": 149.4,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 189
   },
   {
     "name": "Nick Folk",
@@ -14075,7 +14897,8 @@
     "adp": 155.2,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 257
   },
   {
     "name": "Cam Little",
@@ -14086,7 +14909,8 @@
     "adp": 156.1,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 188
   },
   {
     "name": "Cairo Santos",
@@ -14097,7 +14921,8 @@
     "adp": 161.1,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 191
   },
   {
     "name": "Chase McLaughlin",
@@ -14108,7 +14933,8 @@
     "adp": 161.4,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 238
   },
   {
     "name": "Tyler Loop",
@@ -14119,7 +14945,8 @@
     "adp": 161.4,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 190
   },
   {
     "name": "Harrison Butker",
@@ -14130,10 +14957,11 @@
     "adp": 164.6,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 187
   },
   {
-    "name": "Eddy Pi\u00f1eiro",
+    "name": "Eddy Piñeiro",
     "team": "SF",
     "pos": "K",
     "customPts": 105.8,
@@ -14141,7 +14969,8 @@
     "adp": 165.9,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Wil Lutz",
@@ -14152,7 +14981,8 @@
     "adp": 167.5,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Will Reichard",
@@ -14163,7 +14993,8 @@
     "adp": 168.1,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 192
   },
   {
     "name": "Chris Boswell",
@@ -14174,7 +15005,8 @@
     "adp": 168.3,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 237
   },
   {
     "name": "Evan McPherson",
@@ -14185,7 +15017,8 @@
     "adp": 172.1,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 256
   },
   {
     "name": "Denver D/ST",
@@ -14196,7 +15029,8 @@
     "adp": 88.7,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 170
   },
   {
     "name": "Seattle D/ST",
@@ -14207,7 +15041,8 @@
     "adp": 94.3,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 172
   },
   {
     "name": "Houston D/ST",
@@ -14218,7 +15053,8 @@
     "adp": 107.1,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 169
   },
   {
     "name": "Detroit D/ST",
@@ -14229,7 +15065,8 @@
     "adp": 117.8,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 178
   },
   {
     "name": "Minnesota D/ST",
@@ -14240,7 +15077,8 @@
     "adp": 120.1,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 300
   },
   {
     "name": "New England D/ST",
@@ -14251,7 +15089,8 @@
     "adp": 130.2,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 177
   },
   {
     "name": "LA Rams D/ST",
@@ -14262,7 +15101,8 @@
     "adp": 131.3,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 173
   },
   {
     "name": "Philadelphia D/ST",
@@ -14273,7 +15113,8 @@
     "adp": 133.9,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 175
   },
   {
     "name": "LA Chargers D/ST",
@@ -14284,7 +15125,8 @@
     "adp": 143.1,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 180
   },
   {
     "name": "Pittsburgh D/ST",
@@ -14295,7 +15137,8 @@
     "adp": 143.8,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 171
   },
   {
     "name": "Kansas City D/ST",
@@ -14306,7 +15149,8 @@
     "adp": 144.1,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 179
   },
   {
     "name": "Cleveland D/ST",
@@ -14317,7 +15161,8 @@
     "adp": 159.9,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 176
   },
   {
     "name": "Tennessee D/ST",
@@ -14328,7 +15173,8 @@
     "adp": 161.1,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Baltimore D/ST",
@@ -14339,7 +15185,8 @@
     "adp": 162.6,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 174
   },
   {
     "name": "Buffalo D/ST",
@@ -14350,7 +15197,8 @@
     "adp": 162.6,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   },
   {
     "name": "Jacksonville D/ST",
@@ -14361,7 +15209,8 @@
     "adp": 163.3,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": 254
   },
   {
     "name": "Atlanta D/ST",
@@ -14372,6 +15221,7 @@
     "adp": 169.8,
     "injuryStatus": null,
     "injuryBodyPart": null,
-    "injuryRisk": null
+    "injuryRisk": null,
+    "espnRank": null
   }
 ]
