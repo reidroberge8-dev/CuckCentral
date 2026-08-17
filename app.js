@@ -68,8 +68,7 @@ let sortDir = 'asc';
 let searchTerm = '';
 const HIDE_DRAFTED_KEY = 'ffdb_hide_drafted';
 let hideDrafted = localStorage.getItem(HIDE_DRAFTED_KEY) === 'true';
-let showStarredOnly = false;
-let showSleepersOnly = false;
+let showWatchlistOnly = false;
 let pollTimer = null;
 
 document.getElementById('sheet-link').href = SHEET_VIEW_URL;
@@ -292,7 +291,7 @@ const ALL_STAT_COLUMNS = [
 function statColumnsFor(pos) {
   // In starred/sleeper-only views the projected-stats columns are hidden
   // so the board stays compact and focused on the annotation columns.
-  if (showStarredOnly || showSleepersOnly) return [];
+  if (showWatchlistOnly) return [];
   return STAT_COLUMNS_BY_POS[pos] || ALL_STAT_COLUMNS;
 }
 
@@ -837,8 +836,7 @@ function getFiltered() {
     list = list.filter(p => p.pos === activePos);
   }
   if (hideDrafted) list = list.filter(p => !p.drafted);
-  if (showStarredOnly) list = list.filter(p => starredNames.has(p._norm));
-  if (showSleepersOnly) list = list.filter(p => sleeperNames.has(p._norm));
+  if (showWatchlistOnly) list = list.filter(p => starredNames.has(p._norm) || sleeperNames.has(p._norm));
   if (searchTerm) {
     const t = searchTerm.toLowerCase();
     list = list.filter(p => p.name.toLowerCase().includes(t) || p.team.toLowerCase().includes(t));
@@ -1022,9 +1020,8 @@ function buildPosFilters() {
   const container = document.getElementById('pos-filters');
   const all = ['ALL', ...POSITIONS];
   const posButtons = all.map(p => `<button data-pos="${p}" class="${p === activePos ? 'active' : ''}">${p}</button>`).join('');
-  const starButton = `<button id="star-filter-btn" class="star-filter-btn${showStarredOnly ? ' active' : ''}" title="Show starred players only">\u2605 Starred</button>`;
-  const sleeperButton = `<button id="sleeper-filter-btn" class="sleeper-filter-btn${showSleepersOnly ? ' active' : ''}" title="Show sleeper picks only">\uD83D\uDCA4 Sleepers</button>`;
-  container.innerHTML = posButtons + starButton + sleeperButton;
+  const watchlistButton = `<button id="watchlist-filter-btn" class="star-filter-btn${showWatchlistOnly ? ' active' : ''}" title="Show starred and sleeper players">\u2605/\uD83D\uDCA4 Watchlist</button>`;
+  container.innerHTML = posButtons + watchlistButton;
   container.querySelectorAll('button[data-pos]').forEach(btn => {
     btn.addEventListener('click', () => {
       activePos = btn.dataset.pos;
@@ -1033,15 +1030,9 @@ function buildPosFilters() {
       render();
     });
   });
-  document.getElementById('star-filter-btn').addEventListener('click', (e) => {
-    showStarredOnly = !showStarredOnly;
-    e.target.classList.toggle('active', showStarredOnly);
-    buildTableHeader();
-    render();
-  });
-  document.getElementById('sleeper-filter-btn').addEventListener('click', (e) => {
-    showSleepersOnly = !showSleepersOnly;
-    e.target.classList.toggle('active', showSleepersOnly);
+  document.getElementById('watchlist-filter-btn').addEventListener('click', (e) => {
+    showWatchlistOnly = !showWatchlistOnly;
+    e.target.classList.toggle('active', showWatchlistOnly);
     buildTableHeader();
     render();
   });
