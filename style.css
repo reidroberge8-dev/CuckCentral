@@ -472,6 +472,11 @@ th[data-key="posRank"] { width: 44px; white-space: normal; word-break: break-wor
   outline: none;
   background: rgba(255,255,255,0.06);
 }
+.tgt-input.has-value {
+  color: #5dd8d8;
+  font-weight: 700;
+  font-size: 13px;
+}
 .tgt-input::placeholder { color: var(--muted); opacity: 0.5; }
 
 /* ── Target round badge (shown inside star/sleeper btn cells) ── */
