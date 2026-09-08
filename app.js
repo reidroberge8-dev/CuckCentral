@@ -29,6 +29,36 @@ const ESPN_PRO_TEAM_ABBR = {
   33: 'BAL', 34: 'HOU',
 };
 const ESPN_DST_SLOT_ID = 16; // defaultPositionId for team defenses in ESPN's player data
+// Fallback position lookup for a picked player that didn't resolve to one of
+// our own players.json entries (name mismatch) - keeps the roster sidebar
+// showing a sane position badge instead of blank/null in that edge case.
+const ESPN_DEFAULT_POS_ID_MAP = { 1: 'QB', 2: 'RB', 3: 'WR', 4: 'TE', 5: 'K', 16: 'DST' };
+
+// ESPN lineup-slot IDs this league actually uses, mapped to our own
+// eligible-position rules. Order matters: exact-position slots are listed
+// before flex slots so ROSTER_SLOTS (built dynamically below, from this
+// league's real settings - see loadRosterSettings()) fills the best player
+// into their true position first and flex slots only get the next-best
+// leftovers. Slot types this league doesn't use (IDP, TQB, OP, P, HC, etc.)
+// report a count of 0 in the real settings and are skipped automatically.
+const ESPN_SLOT_DEFS = {
+  0:  { label: 'QB',    eligible: ['QB'] },
+  2:  { label: 'RB',    eligible: ['RB'] },
+  4:  { label: 'WR',    eligible: ['WR'] },
+  6:  { label: 'TE',    eligible: ['TE'] },
+  16: { label: 'D/ST',  eligible: ['DST'] },
+  17: { label: 'K',     eligible: ['K'] },
+  3:  { label: 'RB/WR', eligible: ['RB', 'WR'] },
+  5:  { label: 'WR/TE', eligible: ['WR', 'TE'] },
+};
+const ESPN_SLOT_ORDER = [0, 2, 4, 6, 16, 17, 3, 5];
+const ESPN_BENCH_SLOT_ID = 20;
+const ESPN_IR_SLOT_ID = 21;
+
+let ROSTER_SLOTS = [];           // built from this league's real roster settings
+let BENCH_SLOTS = 0;
+let IR_SLOTS = 0;
+let rosterSettingsLoaded = false;
 
 let espnPlayerMap = new Map();   // espn playerId -> { fullName, proTeamId, defaultPositionId }
 let espnPlayersLoaded = false;
@@ -233,6 +263,104 @@ async function fetchEspnDraftState() {
   return res.json();
 }
 
+// Roster shape doesn't change during a draft, so fetch once and cache -
+// this drives ROSTER_SLOTS/BENCH_SLOTS/IR_SLOTS from this league's *actual*
+// settings rather than a hardcoded guess (which is what bit us earlier
+// today: the previous hardcoded roster turned out to be for a different,
+// now-retired league).
+async function loadRosterSettings() {
+  if (rosterSettingsLoaded) return;
+  const res = await fetch(`${ESPN_API_BASE}?view=mSettings`, { cache: 'no-store' });
+  if (!res.ok) throw new Error(`ESPN settings fetch failed: ${res.status}`);
+  const data = await res.json();
+  const counts = (data.settings && data.settings.rosterSettings && data.settings.rosterSettings.lineupSlotCounts) || {};
+  const slots = [];
+  ESPN_SLOT_ORDER.forEach(slotId => {
+    const def = ESPN_SLOT_DEFS[slotId];
+    const n = counts[String(slotId)] || 0;
+    const baseKey = def.label.replace(/[^A-Za-z]/g, '');
+    for (let i = 0; i < n; i++) {
+      slots.push({ key: n > 1 ? `${baseKey}${i + 1}` : baseKey, label: def.label, eligible: def.eligible });
+    }
+  });
+  ROSTER_SLOTS = slots;
+  BENCH_SLOTS = counts[String(ESPN_BENCH_SLOT_ID)] || 0;
+  IR_SLOTS = counts[String(ESPN_IR_SLOT_ID)] || 0;
+  rosterSettingsLoaded = true;
+}
+
+// Sidebar display order: flexes are shown directly under their related
+// position group (RB/WR under the RBs, WR/TE under the WRs), independent
+// of ROSTER_SLOTS fill order (which intentionally fills exact-position
+// slots before flex slots so the best players land in their true slot).
+function buildDisplayOrder() {
+  const order = [];
+  const pushGroup = (label) => ROSTER_SLOTS.filter(s => s.label === label).forEach(s => order.push(s.key));
+  ['QB', 'RB', 'RB/WR', 'WR', 'WR/TE', 'TE', 'D/ST', 'K'].forEach(pushGroup);
+  return order;
+}
+
+// Greedy "best available" lineup builder: fills exact-position slots first,
+// then flex slots, from the team's drafted pool sorted by projected points.
+// This is a projection-based *suggested* optimal lineup, not a read of an
+// actual ESPN lineup - ESPN doesn't assign players to specific start/bench
+// slots until after the draft, so there's nothing else to read yet anyway.
+function assignRoster(picks) {
+  const pool = picks.slice().sort((a, b) => (b.pts ?? -1) - (a.pts ?? -1));
+  const used = new Set();
+  const starters = ROSTER_SLOTS.map(slot => {
+    const idx = pool.findIndex((p, i) => !used.has(i) && slot.eligible.includes(p.pos));
+    if (idx === -1) return { slot, player: null };
+    used.add(idx);
+    return { slot, player: pool[idx] };
+  });
+  const bench = pool.filter((_, i) => !used.has(i));
+  return { starters, bench };
+}
+
+function renderRosterSidebar(starters, bench) {
+  const startersTable = document.getElementById('starters-table');
+  const benchTable = document.getElementById('bench-table');
+  const totalEl = document.getElementById('starters-total');
+  if (!startersTable || !benchTable) return;
+
+  const ordered = buildDisplayOrder()
+    .map(key => starters.find(s => s.slot.key === key))
+    .filter(Boolean);
+
+  startersTable.innerHTML = ordered.map(({ slot, player }) => {
+    const cls = player ? '' : ' empty';
+    const name = player ? escapeHtml(player.name) : '\u2014 empty \u2014';
+    const pts = player && player.pts != null ? player.pts.toFixed(1) : '';
+    return `<tr>
+      <td class="slot-label">${slot.label}</td>
+      <td class="slot-player${cls}">${name}</td>
+      <td class="slot-pts">${pts}</td>
+    </tr>`;
+  }).join('');
+
+  let sum = 0;
+  starters.forEach(({ player }) => { if (player && player.pts != null) sum += player.pts; });
+  if (totalEl) totalEl.textContent = `Starters: ${sum.toFixed(1)} pts`;
+
+  const benchRows = bench.slice(0, BENCH_SLOTS).map(player => {
+    const pts = player.pts != null ? player.pts.toFixed(1) : '';
+    return `<tr>
+      <td class="slot-label">${player.pos}</td>
+      <td class="slot-player">${escapeHtml(player.name)}</td>
+      <td class="slot-pts">${pts}</td>
+    </tr>`;
+  });
+  const emptyBenchCount = Math.max(0, BENCH_SLOTS - bench.length);
+  for (let i = 0; i < emptyBenchCount; i++) {
+    benchRows.push(`<tr><td class="slot-label">BE</td><td class="slot-player empty">\u2014 empty \u2014</td><td class="slot-pts"></td></tr>`);
+  }
+  for (let i = 0; i < IR_SLOTS; i++) {
+    benchRows.push(`<tr><td class="slot-label">IR</td><td class="slot-player empty">\u2014 empty \u2014</td><td class="slot-pts"></td></tr>`);
+  }
+  benchTable.innerHTML = benchRows.join('');
+}
+
 function updateTeamMap(data) {
   teamMap = {};
   (data.teams || []).forEach(t => {
@@ -287,13 +415,17 @@ async function syncEspnDraft(manual) {
   if (manual && statusEl) statusEl.textContent = 'Refreshing…';
   try {
     await loadEspnPlayerUniverse();
+    await loadRosterSettings();
     const data = await fetchEspnDraftState();
     updateTeamMap(data);
+    const rosterTitleEl = document.getElementById('roster-title');
+    if (rosterTitleEl) rosterTitleEl.textContent = myTeamId != null && teamMap[myTeamId] ? `${teamMap[myTeamId]} Roster` : 'My Roster';
     const dd = data.draftDetail || {};
     const picks = (dd.picks || []).slice().sort((a, b) => a.overallPickNumber - b.overallPickNumber);
 
     players.forEach(p => { p.drafted = false; p.draftedByTeam = null; });
 
+    const myPicks = [];
     const newlySeen = [];
     let onClockTeamId = null;
     for (const pick of picks) {
@@ -303,6 +435,13 @@ async function syncEspnDraft(manual) {
         if (match) {
           match.drafted = true;
           match.draftedByTeam = teamMap[pick.teamId] || 'Unknown';
+        }
+        if (pick.teamId === myTeamId) {
+          myPicks.push({
+            name: (match && match.name) || (espnPlayer && espnPlayer.fullName) || `Player ${pick.playerId}`,
+            pos: (match && match.pos) || (espnPlayer && ESPN_DEFAULT_POS_ID_MAP[espnPlayer.defaultPositionId]) || '?',
+            pts: match ? match.customPts : null,
+          });
         }
         if (!seenPickNumbers.has(pick.overallPickNumber)) {
           seenPickNumbers.add(pick.overallPickNumber);
