@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Beautiful Dogs War Room 2026</title>
-<link rel="stylesheet" href="style.css?v=20260908">
+<link rel="stylesheet" href="style.css?v=20260908b">
 </head>
 <body>
 <header>
@@ -13,12 +13,21 @@
     <a id="adp-link-btn" class="source-btn" href="https://fantasyfootballcalculator.com/adp" target="_blank" rel="noopener">ADP: FantasyFootballCalculator</a>
     <a id="injury-link-btn" class="source-btn" href="https://www.draftsharks.com/injury-predictor" target="_blank" rel="noopener">Injury Risk: Draft Sharks</a>
   </div>
+  <div id="on-clock-indicator" class="on-clock-indicator"></div>
+  <div class="status-bar">
+    <span id="sync-status">Loading draft…</span>
+    <button id="refresh-btn" title="Refresh now">&#8635; Refresh</button>
+  </div>
 </header>
 
 <main>
+<div id="activity-ticker" class="activity-ticker"></div>
 <div class="controls">
   <input type="text" id="search" placeholder="Search player or team...">
   <div class="pos-filters" id="pos-filters"></div>
+  <label class="avail-toggle">
+    <input type="checkbox" id="hide-drafted"> Hide drafted
+  </label>
   <span id="count-label"></span>
 </div>
 
@@ -37,6 +46,6 @@
   Custom league scoring (6pt PaTD, 0.2 PPR). Projections: ESPN Mike Clay 2026 draft kit.
 </footer>
 
-<script src="app.js?v=20260908"></script>
+<script src="app.js?v=20260908b"></script>
 </body>
 </html>
