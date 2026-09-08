@@ -438,7 +438,7 @@ const BASE_START_COLS = [
   { key: 'pos', label: 'Pos' },
   { key: 'team', label: 'Team' },
   { key: 'injuryRisk', label: 'Inj Risk', title: 'Injury risk category (Draft Sharks)' },
-  { key: 'adp', label: 'ADP', title: 'Average Draft Position, 12-team non-PPR mocks (FantasyFootballCalculator.com)' },
+  { key: 'adp', label: 'ADP', title: 'Average Draft Position, 8-team standard/non-PPR mocks (FantasyFootballCalculator.com)' },
   { key: 'customPts', label: 'Proj Pts' },
 ];
 const BASE_NOTES_COL = { key: 'notes', label: 'Notes', title: 'Personal notes (saved in browser)' };
