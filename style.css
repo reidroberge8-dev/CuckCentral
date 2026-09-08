@@ -421,3 +421,103 @@ th[data-key="posRank"] { width: 44px; white-space: normal; word-break: break-wor
   .source-links { position: static; top: auto; right: auto; margin-top: 10px; justify-content: flex-start; max-width: 100%; }
 }
 
+/* Below this width there is no room for a fixed side column - stack the
+   roster panel above the player table and let it size to its content
+   instead of pinning to a sticky 300px column. */
+@media (max-width: 900px) {
+  .page { flex-direction: column; }
+  .roster-sidebar {
+    width: 100%;
+    flex: none;
+    position: static;
+    max-height: none;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+  .roster-sidebar.collapsed {
+    width: 100%;
+    padding: 12px 14px 20px;
+  }
+  .roster-sidebar.collapsed .panel-toggle-top {
+    width: 100%;
+    writing-mode: horizontal-tb;
+    padding: 6px 8px;
+  }
+}
+
+/* ---------- roster sidebar (My Roster, live from ESPN draft picks) ---------- */
+.page {
+  display: flex;
+  align-items: flex-start;
+}
+main { flex: 1; min-width: 0; }
+.roster-sidebar {
+  flex: 0 0 300px;
+  width: 300px;
+  position: sticky;
+  top: var(--header-h, 74px);
+  max-height: calc(100vh - var(--header-h, 74px));
+  overflow-y: auto;
+  background: var(--panel);
+  border-right: 1px solid var(--border);
+  padding: 12px 14px 20px;
+  transition: width 0.15s ease, padding 0.15s ease;
+}
+.roster-sidebar.collapsed {
+  width: 0;
+  flex: 0 0 0;
+  padding: 12px 0 20px;
+  overflow: hidden;
+  border-right: none;
+}
+.roster-sidebar.collapsed .roster-header,
+.roster-sidebar.collapsed #roster-body {
+  display: none;
+}
+.panel-toggle-top {
+  display: block;
+  width: 100%;
+  background: var(--panel2);
+  color: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 8px;
+  font-size: 12px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  white-space: nowrap;
+}
+.panel-toggle-top:hover { color: var(--accent); border-color: var(--accent); }
+.roster-sidebar.collapsed .panel-toggle-top {
+  width: 28px;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  margin-bottom: 0;
+  padding: 8px 4px;
+}
+.roster-header { margin-bottom: 8px; }
+.roster-header h2 { margin: 0; font-size: 16px; color: var(--text); }
+.roster-section-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin: 14px 0 4px;
+}
+.roster-section-label:first-child { margin-top: 0; }
+.roster-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.roster-table td {
+  padding: 4px 4px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+.roster-table td.slot-label {
+  color: var(--muted);
+  width: 42px;
+  font-size: 11px;
+  font-weight: 600;
+}
+.roster-table td.slot-player { color: var(--text); }
+.roster-table td.slot-player.empty { color: var(--muted); font-style: italic; }
+.roster-table td.slot-pts { text-align: right; color: var(--muted); width: 42px; font-size: 12px; }
+.roster-total { margin-top: 6px; font-size: 12px; color: var(--muted); text-align: right; }

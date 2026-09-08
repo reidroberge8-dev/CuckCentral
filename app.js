@@ -128,6 +128,19 @@ function savePlayerNotes() {
   try { localStorage.setItem(PLAYER_NOTES_KEY, JSON.stringify(playerNotes)); } catch (e) {}
 }
 
+// ---------- roster sidebar collapse (persisted locally per-browser) ----------
+const ROSTER_COLLAPSE_KEY = 'ffdb_roster_collapsed';
+let rosterCollapsed = false;
+try { rosterCollapsed = localStorage.getItem(ROSTER_COLLAPSE_KEY) === '1'; } catch (e) { rosterCollapsed = false; }
+function applyRosterCollapsed() {
+  const sidebar = document.getElementById('roster-sidebar');
+  const btn = document.getElementById('panel-toggle-top');
+  if (!sidebar || !btn) return;
+  sidebar.classList.toggle('collapsed', rosterCollapsed);
+  btn.textContent = rosterCollapsed ? 'Show side panel' : 'Hide side panel';
+  btn.title = rosterCollapsed ? 'Show side panel' : 'Hide side panel';
+}
+
 // The header's height can still vary (title wraps at narrow widths), and
 // .controls reads this CSS var for its sticky top offset.
 function updateHeaderHeightVar() {
@@ -465,6 +478,11 @@ async function syncEspnDraft(manual) {
     }
     renderActivity();
 
+    if (myTeamId != null) {
+      const { starters, bench } = assignRoster(myPicks);
+      renderRosterSidebar(starters, bench);
+    }
+
     const indicator = document.getElementById('on-clock-indicator');
     if (indicator) {
       if (onClockTeamId != null) {
@@ -766,6 +784,15 @@ function wireControls() {
       return;
     }
   });
+
+  const panelToggle = document.getElementById('panel-toggle-top');
+  if (panelToggle) {
+    panelToggle.addEventListener('click', () => {
+      rosterCollapsed = !rosterCollapsed;
+      try { localStorage.setItem(ROSTER_COLLAPSE_KEY, rosterCollapsed ? '1' : '0'); } catch (e) {}
+      applyRosterCollapsed();
+    });
+  }
 }
 
 // Placeholder rows shown between page load and the first real render, so
@@ -786,6 +813,7 @@ function renderTableSkeleton() {
   buildPosFilters();
   buildTableHeader();
   wireControls();
+  applyRosterCollapsed();
   renderTableSkeleton();
   renderActivity();
   updateHeaderHeightVar();
