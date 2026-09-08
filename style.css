@@ -9,8 +9,6 @@
   --green: #3ecf8e;
   --yellow: #e8c547;
   --red: #ef5a6a;
-  --drafted: #3a3f4d;
-  --sync: #2dd4bf;
 }
 * { box-sizing: border-box; }
 body {
@@ -22,9 +20,7 @@ body {
 header {
   /* position:sticky also establishes a containing block for absolutely
      positioned descendants (like relative would), which is what lets
-     .status-bar below pin itself to header's own top-right corner - i.e.
-     the literal top-right corner of the page, not just "somewhere in the
-     flex row". */
+     .source-links below pin itself to header's own top-right corner. */
   position: sticky;
   top: 0;
   z-index: 10;
@@ -33,42 +29,10 @@ header {
   border-bottom: 1px solid var(--border);
 }
 /* Reserve room on the right so a long title never runs under the pinned
-   link buttons (they wrap to 2 lines within max-width: 340px, so this only
-   needs to cover that box's width, not one long unbroken row). */
-h1 { margin: 0 0 8px 0; font-size: 22px; max-width: calc(100% - 360px); }
+   link buttons. */
+h1 { margin: 0 0 8px 0; font-size: 22px; max-width: calc(100% - 300px); }
 h1 .sub { color: var(--muted); font-size: 14px; font-weight: normal; }
-/* Sync/refresh pill now sits at the bottom-left of the header, in normal
-   flow (same spot the source links used to occupy) - still teal so it
-   reads as its own distinct thing next to the on-clock banner above it. */
-.status-bar {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 13px;
-  font-weight: 600;
-  color: #0f1117;
-  background: var(--sync);
-  padding: 6px 10px 6px 14px;
-  border-radius: 20px;
-  white-space: nowrap;
-  width: fit-content;
-  margin-top: 10px;
-}
-#refresh-btn {
-  background: #0f1117;
-  color: var(--sync);
-  border: 1px solid transparent;
-  border-radius: 14px;
-  padding: 4px 12px;
-  cursor: pointer;
-  font-size: 13px;
-  font-weight: 700;
-}
-#refresh-btn:hover { background: #1a1d29; }
-/* Source links now pinned to the header's top-right corner (swapped with
-   the sync pill's old spot). Capped at max-width so 3 buttons wrap to a
-   compact 2-line block in the corner instead of one very wide row that
-   would run behind the title on most screen widths. */
+/* Source links pinned to the header's top-right corner (ADP + Injury Risk). */
 .source-links {
   position: absolute;
   top: 16px;
@@ -91,8 +55,6 @@ h1 .sub { color: var(--muted); font-size: 14px; font-weight: normal; }
   cursor: pointer;
 }
 .source-btn:hover { color: var(--accent); border-color: var(--accent); }
-#sheet-link-btn { color: var(--green); }
-#sheet-link-btn:hover { border-color: var(--green); color: var(--green); }
 #adp-link-btn, #injury-link-btn { color: var(--accent); border-color: var(--accent); }
 #adp-link-btn:hover, #injury-link-btn:hover { color: var(--accent); border-color: var(--accent); background: #4da3ff1a; }
 .controls {
@@ -154,7 +116,6 @@ h1 .sub { color: var(--muted); font-size: 14px; font-weight: normal; }
   border-color: #5dd8d8;
   font-weight: 600;
 }
-.avail-toggle { font-size: 13px; color: var(--muted); display: flex; gap: 6px; align-items: center; }
 #count-label { margin-left: auto; font-size: 13px; color: var(--muted); }
 .table-wrap { padding: 0 24px 40px; overflow-x: auto; }
 .skeleton-row td { padding: 8px 10px; }
@@ -202,24 +163,8 @@ tbody td { padding: 8px 12px; }
 .pos-DB { background: #40d9ff33; color: #40d9ff; }
 .pos-K { background: #f472b633; color: #f472b6; }
 .pos-DST { background: #94a3b833; color: #94a3b8; }
-tr.drafted { opacity: 0.4; }
-tr.drafted td.name-cell { text-decoration: line-through; }
-.drafted-tag {
-  background: var(--red);
-  color: #fff;
-  font-size: 11px;
-  padding: 2px 6px;
-  border-radius: 4px;
-  font-weight: 700;
-}
-.avail-tag {
-  color: var(--green);
-  font-size: 11px;
-  font-weight: 600;
-}
 .stat-line { color: var(--muted); font-size: 12.5px; }
 .stat-cell { color: var(--muted); font-size: 13px; text-align: right; white-space: nowrap; }
-#sync-status.sync-error { color: var(--red); }
 .inj-badge {
   display: inline-block;
   padding: 2px 6px;
@@ -235,125 +180,6 @@ tr.drafted td.name-cell { text-decoration: line-through; }
 .inj-vhigh { background: var(--red); color: #fff; }
 .inj-na    { color: var(--muted); }
 
-/* ---- Roster sidebar layout ---- */
-.page {
-  display: flex;
-  align-items: flex-start;
-  gap: 0;
-}
-main { flex: 1; min-width: 0; }
-#roster-sidebar {
-  width: 300px;
-  flex-shrink: 0;
-  background: var(--panel);
-  border-right: 1px solid var(--border);
-  padding: 16px;
-  position: sticky;
-  top: var(--header-h, 74px);
-  align-self: flex-start;
-  max-height: calc(100vh - var(--header-h, 74px));
-  overflow-y: auto;
-  transition: width 0.15s ease;
-}
-#roster-sidebar h2 {
-  margin: 0 0 4px 0;
-  font-size: 16px;
-  color: var(--accent);
-}
-
-.roster-header h2 { margin: 0; }
-.panel-toggle-top {
-  display: block;
-  width: 100%;
-  background: var(--panel2);
-  color: var(--muted);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 6px 8px;
-  cursor: pointer;
-  font-size: 12.5px;
-  font-weight: 600;
-  margin-bottom: 12px;
-  flex-shrink: 0;
-}
-.panel-toggle-top:hover { color: var(--accent); border-color: var(--accent); }
-#roster-sidebar.collapsed {
-  width: 40px;
-  padding: 16px 8px;
-  overflow: visible;
-}
-#roster-sidebar.collapsed #activity-box,
-#roster-sidebar.collapsed #roster-body,
-#roster-sidebar.collapsed .roster-header h2,
-#roster-sidebar.collapsed #team-select {
-  display: none;
-}
-#roster-sidebar.collapsed .panel-toggle-top {
-  width: 22px;
-  height: 22px;
-  padding: 0;
-  font-size: 0;
-  writing-mode: vertical-rl;
-}
-#roster-sidebar.collapsed .panel-toggle-top::before {
-  content: '\2630';
-  font-size: 14px;
-}
-#activity-box {
-  margin-bottom: 16px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid var(--border);
-}
-.activity-list { display: flex; flex-direction: column; gap: 6px; max-height: 220px; overflow-y: auto; padding-right: 5px; }
-.activity-item {
-  font-size: 12px;
-  line-height: 1.4;
-  color: var(--text);
-  background: var(--panel2);
-  border-radius: 6px;
-  padding: 5px 7px;
-}
-.activity-item .activity-team { color: var(--accent); font-weight: 700; }
-.activity-item .activity-time { color: var(--muted); font-size: 10.5px; display: block; margin-top: 1px; }
-.activity-empty { color: var(--muted); font-size: 12px; font-style: italic; }
-.activity-item.activity-fresh {
-  outline: 2px solid var(--yellow);
-  outline-offset: 1px;
-  animation: activity-blink 0.5s ease-in-out 3;
-}
-@keyframes activity-blink {
-  0%, 100% { background: var(--panel2); box-shadow: none; }
-  50% { background: rgba(232, 197, 71, 0.28); box-shadow: 0 0 8px 1px var(--yellow); }
-}
-.on-clock-indicator {
-  display: block;
-  width: fit-content;
-  margin: 10px auto 12px auto;
-  padding: 10px 32px;
-  border-radius: 10px;
-  font-size: 22px;
-  font-weight: 800;
-  letter-spacing: 0.3px;
-  text-align: center;
-  color: var(--text);
-  background: var(--panel2);
-  border: 2px solid var(--border);
-}
-.on-clock-indicator:empty { display: none; margin: 0; padding: 0; border: none; }
-.on-clock-indicator.my-turn {
-  border: 3px solid var(--yellow);
-  animation: on-clock-blink 1s ease-in-out infinite;
-  cursor: pointer;
-}
-/* Clicked-to-silence state: keeps the gold border as a static reminder
-   it's still our pick, just without the blink/ding loop. Resets back to
-   .my-turn (flashing) the next time a *new* turn of ours starts. */
-.on-clock-indicator.my-turn-ack {
-  border: 3px solid var(--yellow);
-  background: var(--panel2);
-  color: var(--text);
-  cursor: default;
-}
 .stat-group-label {
   text-align: center;
   color: var(--muted);
@@ -363,44 +189,6 @@ main { flex: 1; min-width: 0; }
   letter-spacing: 0.04em;
   border-bottom: 1px solid var(--border);
   background: var(--panel2);
-}
-@keyframes on-clock-blink {
-  0%, 100% { background: var(--panel2); color: var(--text); box-shadow: none; }
-  50% { background: var(--yellow); color: #1a1508; box-shadow: 0 0 20px 4px var(--yellow); }
-}
-.roster-note {
-  color: var(--muted);
-  font-size: 11.5px;
-  margin-bottom: 12px;
-  line-height: 1.4;
-}
-.roster-section-label {
-  color: var(--muted);
-  font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  margin: 14px 0 6px 0;
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 4px;
-}
-.roster-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
-.roster-table td { padding: 4px 2px; border-bottom: 1px solid var(--border); vertical-align: middle; }
-.roster-table td.slot-label {
-  color: var(--muted);
-  font-weight: 700;
-  width: 44px;
-  font-size: 11px;
-}
-.roster-table td.slot-player { color: var(--text); }
-.roster-table td.slot-player.empty { color: var(--muted); font-style: italic; }
-.roster-table td.slot-pts { text-align: right; color: var(--muted); white-space: nowrap; }
-.roster-total {
-  text-align: right;
-  font-size: 12.5px;
-  color: var(--accent);
-  font-weight: 700;
-  padding: 6px 2px 0 0;
 }
 .star-cell { text-align: center; width: 40px; }
 .star-btn {
@@ -513,13 +301,6 @@ th[data-key="posRank"] { width: 44px; white-space: normal; word-break: break-wor
 }
 .notes-input::placeholder { color: var(--muted); opacity: 0.5; }
 
-
-@media (max-width: 900px) {
-  .page { flex-direction: column; }
-  #roster-sidebar { width: 100%; position: static; max-height: none; border-right: none; border-bottom: 1px solid var(--border); }
-  #roster-sidebar.collapsed { width: 100%; }
-}
-
 /* Below this width the absolutely-positioned top-right link buttons would
    have to squeeze the title down to nothing to avoid overlapping it -
    drop back to plain stacked flow instead (title, then links, full width)
@@ -529,41 +310,3 @@ th[data-key="posRank"] { width: 44px; white-space: normal; word-break: break-wor
   .source-links { position: static; top: auto; right: auto; margin-top: 10px; justify-content: flex-start; max-width: 100%; }
 }
 
-/* Team selector dropdown in the roster header */
-.roster-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  flex-wrap: wrap;
-  padding: 0 0 6px 0;
-}
-.roster-header h2 { margin: 0; flex: 1 1 auto; min-width: 0; }
-#team-select {
-  background: var(--panel2);
-  color: var(--text);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 4px 8px;
-  font-size: 12px;
-  cursor: pointer;
-  max-width: 150px;
-}
-#team-select:hover { border-color: var(--accent); }
-
-/* All-teams roster view */
-.team-section-header td {
-  background: var(--panel2);
-  color: var(--accent);
-  font-size: 12px;
-  font-weight: 700;
-  padding: 5px 6px 4px;
-  border-top: 1px solid var(--border);
-  letter-spacing: .02em;
-}
-.team-section + .team-section .team-section-header td {
-  border-top: 2px solid var(--border);
-}
-.team-section .slot-player { font-size: 11px; }
-.team-section .slot-label  { font-size: 11px; opacity: .8; }
-.team-section .slot-pts    { font-size: 11px; opacity: .8; }
