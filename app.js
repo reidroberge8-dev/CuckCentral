@@ -27,15 +27,21 @@ const ROSTER_SLOTS = [
   { key: 'QB',   label: 'QB',    eligible: ['QB'] },
   { key: 'RB1',  label: 'RB',    eligible: ['RB'] },
   { key: 'RB2',  label: 'RB',    eligible: ['RB'] },
+  { key: 'RB3',  label: 'RB',    eligible: ['RB'] },
   { key: 'WR1',  label: 'WR',    eligible: ['WR'] },
   { key: 'WR2',  label: 'WR',    eligible: ['WR'] },
+  { key: 'WR3',  label: 'WR',    eligible: ['WR'] },
   { key: 'TE',   label: 'TE',    eligible: ['TE'] },
   { key: 'DST',  label: 'D/ST',  eligible: ['DST'] },
   { key: 'K',    label: 'K',     eligible: ['K'] },
   { key: 'RBWR', label: 'RB/WR', eligible: ['RB', 'WR'] },
   { key: 'WRTE', label: 'WR/TE', eligible: ['WR', 'TE'] },
 ];
-const BENCH_SLOTS = 5; // + 1 IR shown separately, always empty (no IR status data available)
+// League roster: 12 starters (QB1/RB3/WR3/TE1/RBWR1/WRTE1/DST1/K1) + 6 bench
+// (4 regular + 2 IR). IR slots are always-empty placeholders (no injury-designation
+// data available to auto-assign a player to IR).
+const BENCH_SLOTS = 4;
+const IR_SLOTS = 2;
 
 // ESPN's own position labels (as they appear in the sheet's "POS - TEAM(bye)"
 // line) collapsed onto the combined IDP categories used in the projections
@@ -568,7 +574,7 @@ function assignRoster(picks) {
 // roster layout convention. This is independent of ROSTER_SLOTS fill order
 // above, which intentionally fills exact-position slots before flex slots so
 // the best players land in their true slot and flexes only get leftovers.
-const DISPLAY_ORDER = ['QB', 'RB1', 'RB2', 'RBWR', 'WR1', 'WR2', 'WRTE', 'TE', 'DST', 'K'];
+const DISPLAY_ORDER = ['QB', 'RB1', 'RB2', 'RB3', 'RBWR', 'WR1', 'WR2', 'WR3', 'WRTE', 'TE', 'DST', 'K'];
 
 function renderRosterSidebar(starters, bench) {
   const startersTable = document.getElementById('starters-table');
@@ -606,7 +612,9 @@ function renderRosterSidebar(starters, bench) {
   for (let i = 0; i < emptyBenchCount; i++) {
     benchRows.push(`<tr><td class="slot-label">BE</td><td class="slot-player empty">\u2014 empty \u2014</td><td class="slot-pts"></td></tr>`);
   }
-  benchRows.push(`<tr><td class="slot-label">IR</td><td class="slot-player empty">\u2014 empty \u2014</td><td class="slot-pts"></td></tr>`);
+  for (let i = 0; i < IR_SLOTS; i++) {
+    benchRows.push(`<tr><td class="slot-label">IR</td><td class="slot-player empty">\u2014 empty \u2014</td><td class="slot-pts"></td></tr>`);
+  }
   benchTable.innerHTML = benchRows.join('');
 }
 
