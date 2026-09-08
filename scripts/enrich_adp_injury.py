@@ -2,7 +2,9 @@
 """Bake ADP (and optionally injury risk) into data/players.json.
 
 Data sources:
-  - ADP: FantasyFootballCalculator.com public API (12-team PPR mock drafts).
+  - ADP: FantasyFootballCalculator.com public API (8-team standard/non-PPR
+    mock drafts - matches this league's actual size as of 9/8/2026;
+    was 12-team before that).
   - Injury Risk: Draft Sharks Injury Predictor (manual paste into
     scripts/enrich_adp_injury.py; not available via public API). The
     injuryRisk field is set separately by parse_draftsharks_risk().
@@ -27,7 +29,7 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parent.parent
 PLAYERS_PATH = REPO / "data" / "players.json"
 
-FFC_ADP_URL = "https://fantasyfootballcalculator.com/api/v1/adp/ppr?teams=12&year=2026"
+FFC_ADP_URL = "https://fantasyfootballcalculator.com/api/v1/adp/standard?teams=8&year=2026"
 SLEEPER_PLAYERS_URL = "https://api.sleeper.app/v1/players/nfl"
 DRAFT_SHARKS_URL = "https://www.draftsharks.com/injury-predictor/"
 
